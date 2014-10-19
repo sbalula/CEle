@@ -81,7 +81,7 @@ includefoot
  
 
 \title{}
-\thanks{}
+%\thanks{}
 
 \author{Pedro Ribeiro}%
 \email{73221, pedro.q.ribeiro@tecnico.ulisboa.pt}
@@ -112,7 +112,15 @@ includefoot
 \label{s:intro}
 %Situar o problema, incluir fórmulas.
 %Quem lê o relatório deve conseguir perceber exatamente o que foi feito.
+\subsection*{I.2. Determinação da característica magnética do núcleo do transformador}
+Conforme a nomenclatura da \rfig{../img/I-2_esq.png}, podem determinar-se os campos B e H em função dos valores de tensão medidos no osciloscópio.
+\eq{\oint_l \mathbf{H} \cdot \, \mathbf{dl} = n_1 i_1}
+\eq{H \approx \frac{n_1 i_1}{l} = \frac{n_1 Y_1}{R_1 l} }
 
+
+\eq{u_2 = \frac{d \phi_2}{d t} \approx n_2 S \frac{d B}{dt}}
+\eq{u_2 = uc + R C \frac {d u_c}{d _t} \approx R C \frac{d u_c}{dt}}
+\eq{B \approx \frac{R_2 C_1}{n_2 S} Y_2}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Experiência realizada %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experiência Realizada}
@@ -137,12 +145,30 @@ De acordo com as instruções do guia, implentou-se o circuito da \rfig{../img/c
 %incluir tabelas. Excesso de dados => grafico com valores mais significativos
 
 \subsection*{I.2. Determinação da característica magnética do núcleo do transformador}
-Apresenta-se na \rfig{../img/
+
+\fig{../dat/ALL0000/A0000DS.png}{Característica Y2(Y1) do núcleo do transformador. Não foi possível converter os dados de tensão para unidades de campo por os dados exportados pelo osciloscópio não serem coerentes com a figura observada, não sendo portanto válidos}
+\tabela{Parâmetros do núcleo do transformador}{ccc}{
+Parâmetro	&Valor			&Unidades \\ \hline
+comprimento	&$8.70\pm0.05$		&cm		\\
+largura		&$3.95\pm0.05$		&cm		\\
+altura		&$10.50\pm0.05$		&cm		\\
+espessura	&$1.70\pm0.05$		&cm		\\	\hline
++B saturação	&$2.976\pm.041$		&T		\\
+-B saturação	&$-2.935\pm0.041$	&T		\\
++B remanescente	&$1.447\pm.041$		&T		\\
+-B remanescente	&$-1.323\pm.041$	&T		\\
++H coercivo	&$128.5\pm1.2$		&$A m^{-1}$	\\
+-H coercivo	&$-134.4\pm1.2$		&$A m^{-1}$	\\
+$\mu$ increm.	&$1.81\pm0.09$		&$T m A^{-1}$	\\
+}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Análise dos resultados %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Análise de resultados}
 \label{s:aresul}
 
+\subsection*{I.2. Determinação da característica magnética do núcleo do transformador}
+O transformador encontra-se bem dimensionado para a tensão normal de trabalho (230V), já que para estas tensões a sua característica B(H) não se apresenta na região de saturação.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Conclusões e Críticas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
