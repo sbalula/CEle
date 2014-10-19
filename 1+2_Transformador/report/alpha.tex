@@ -208,10 +208,7 @@ $\mu$ increm.	&$1.81\pm0.09$		&$T m A^{-1}$	\\
 }
 
 \subsection*{I.3. Ensaio em vazio do transformador}
-Neste ponto considerou-se que o erro das grandezas dadas pelo software de aquisição era de $0,5\%$ do valor da grandeza. Os resultados fornecidos pelo software para o estudo do transformador com o secundário em vazio estão representados na tabela 
-
-
-  
+Neste ponto considerou-se que o erro das grandezas dadas pelo software de aquisição era de $0,5\%$ do valor da grandeza. Os resultados fornecidos pelo software para o estudo do transformador com o secundário e primário em vazio estão representados nas tabelas
   \tabela{Dados recolhidos do software para o estudo do transformador com o secundário em vazio}{c|c|c}{
     Posição & a     & b \\
   
@@ -219,12 +216,31 @@ Neste ponto considerou-se que o erro das grandezas dadas pelo software de aquisi
     $V2_ef(ac)(V)$ & $0,840\pm0,004$ & $0,857\pm0,004$ \\ \hline
     $<v1*v2>ac(V^2)$ & $54,555\pm0,273$ & $-6,475\pm0,032$ \\ \hline
     $<v1>(V)$ & $-5,609\pm0,028$ & $-0,059\pm0,001$ \\ \hline
-    $<v2>(V)$ & $2,989\pm0,015$ & $0,0241\pm0,001$ \\ 
-    
+    $<v2>(V)$ & $2,989\pm0,015$ & $0,0248\pm0,001$ \\     
 }
+  \tabela{Dados recolhidos do software para o estudo do transformador com o primário em vazio}{c|c|c}{
+    Posição & a     & b \\
+  
+    $V1_ef(ac) (V)$ & $219,047\pm1,095$ & $28,983\pm0,145$ \\ \hline
+    $V2_ef(ac)(V)$ & $7,202\pm0,036$ & $7,069\pm0,035$ \\ \hline
+    $<v1*v2>ac(V^2)$ & $52,047\pm0,260$ & $110,506\pm0,552$ \\ \hline
+    $<v1>(V)$ & $-4,150\pm0,021$ & $-0,025\pm0,001$ \\ \hline
+    $<v2>(V)$ & $0,175\pm0,001$ & $0,236\pm0,001$ \\     
+}
+Sendo que a posição $a$ corresponde à ponta de prova do osciloscópio a medir a tensão no primário e a posição $b$ corresponde à ponta de prova do osciloscópio a medir a tensão no secundário.
+É de notar que era pretendido obter o mesmo estado de magnetização para ambas as situações, sendo que para tal, aquando do estudo do transformador com o primário em vazio, se impôs uma tensão no secundário semelhante à tensão obtida no secundário em vazio, imponto no primário cerca de $220V$
+\subsection*{I.4. Ensaio em curto-circuito do transformador}
 
 
-
+ \tabela{Dados recolhidos do software para o estudo do transformador em curto-circuito}{c|c}{   
+  
+    $V1_ef(ac) (V)$ & $33,403\pm0,167$  \\ \hline
+    $V2_ef(ac)(V)$ & $0,837\pm0,004$  \\ \hline
+    $<v1*v2>ac(V^2)$ & $21,176\pm0,106$  \\ \hline
+    $<v1>(V)$ & $-0,240\pm0,001$ \\ \hline
+    $<v2>(V)$ & $0,024\pm0,001$ \\
+} 
+Neste ponto impôs-se uma corrente de cerca de $I_{1ef}=820mA$ visto que a corrente nominal do transformador é de $818mA$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Análise dos resultados %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Análise de resultados}
@@ -232,6 +248,24 @@ Neste ponto considerou-se que o erro das grandezas dadas pelo software de aquisi
 
 \subsection*{I.2. Determinação da característica magnética do núcleo do transformador}
 O transformador encontra-se bem dimensionado para a tensão normal de trabalho (230V), já que para estas tensões a sua característica B(H) não se apresenta na região de saturação.
+
+
+\subsection*{I.3. Ensaio em vazio do transformador}
+Os dados obtidos para o estudo do transformador em vazio encontram-se na tabela
+
+ \tabela{Dados obtidos para o estudo do transformador em vazio}{c|c|c}{
+          Casos                    & A   & B \\
+  
+    $I_{1ef} / I_{2ef} (A)$ & $0,084\pm0,001$ & $0,720\pm0,003$ \\ \hline
+    $P_{12}  / P_{21} (W)$ & $0,647\pm0,003$ & $5,205\pm0,026$ \\ \hline
+    $P_{10}  / P_{20}(W)$ & $5,455\pm0,027$ & $11,051\pm0,055$ \\ \hline
+    $r_{fe}(\Omega)$ & $791,982\pm11,959$ & $86,609\pm1,308$ \\ \hline
+    $r_1   / r_2'(\Omega)$ & $-18,813\pm23,556$ & $1500,465\pm25,433$ \\ 
+    $\phi_{fe}$ & $17,449\pm0,005$ & $1,891\pm0,001$ \\ \hline
+    $cos(\phi_{fe})$ & $0,953\pm0,001$ & $0,999\pm0,001$ \\ \hline
+    $l_{11}(H)$ & $8,406\pm0,085$ & $8,356\pm0,084$ \\ \hline
+    $\lambda_{11} /\lambda_{22}'(H)$ & $-0,129\pm8,949$ & $-0,257\pm0,360$ \\ 
+}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Conclusões e Críticas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
