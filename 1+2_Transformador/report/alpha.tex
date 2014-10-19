@@ -122,7 +122,7 @@ Conforme a nomenclatura da \rfig{../img/I-2_esq.png}, podem determinar-se os cam
 \eq{u_2 = uc + R C \frac {d u_c}{d _t} \approx R C \frac{d u_c}{dt}}
 \eq{B \approx \frac{R_2 C_1}{n_2 S} Y_2}
 
-\subsection{I.3. Ensaio em vazio do transformador}
+\subsection*{I.3. Ensaio em vazio do transformador}
 O objectivo deste ponto é determinar as impedâncias internas do transformador. A representação do transformador de acordo com o esquema equivalente de Steinmetz encontra-se na figura \rfig{../img/I-3_steinmetz.png}.
 Começando por estudar o secundário em vazio é possível determinar $r_1$,$\lambda_{11}$, $r_{fe}$, $l_{11}*cos(\phi_{fe})$, a partir de $I_{1ef}$, $U_{2ef}$, $P_{10}=<u_1 i_1>$ e $P_{12}=<u_2 i_1>$ utilizando as seguintes relações
 
@@ -150,7 +150,7 @@ Estudando agora o primário em vazio é possível determinar $r_2'$,$\lambda_{22
 
 \fig{../img/I-3_steinmetz.png}{I.3. Esquema equivalente de Steinmetz}
 
-\subsection{I.4. Ensaio em curto-circuito do transformador}
+\subsection*{I.4. Ensaio em curto-circuito do transformador}
 Neste estudo do transformador com o secundário em curto-circuito assume-se que nenhuma corrente passa por $r_{fe}$ e $l_{11}cos(\phi_{fe})$. Neste caso é possível determinar $r_1+r_{2'}$ e $\lambda_{11} + \lambda_{22}'$ a partir de $U_{1ef}$ e de $P_{10}=<u_1 i_1>$ utilizando as seguintes relações
 
 \eq{r_1+r_2'=\frac{P_{10}}{I_{1ef}^2}}
@@ -171,6 +171,18 @@ Apresentam-se na tabela \ref{partlist} os componentes utilizados.
 }
 
 \fig{../img/I-2_esq.png}{I.2. Circuito utilizado na determinação da característica magnética do núcleo do transformador}
+
+
+Para se fazer o estudo do transformador com o secundário em vazio utilizou-se o seguinte circuito
+\fig{../img/I-3_secundario_vazio.png}{I.3. Circuito utilizado no estudo do transformador com o secundário em vazio}
+
+Utilizaram-se as duas resistências de $10K\Omega$ para que fosse possível medir a tensão no osciloscópio, uma vez que se aplicaram cerca de 220V.
+
+Para estudar o transformador com o primário em vazio e o transformador com o secundário em curto circuito utilizaram-se os seguintes circuitos
+\fig{../img/I-3_primario_vazio.png}{I.3. Circuito utilizado no estudo do transformador com o primário em vazio}
+
+\fig{../img/I-4_curto_circuito.png}{I.4. Circuito utilizado no estudo do transformador com o secundário em curto circuito}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Resultados %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Resultados}
