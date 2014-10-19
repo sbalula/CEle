@@ -157,6 +157,81 @@ Neste estudo do transformador com o secundário em curto-circuito assume-se que 
 
 \eq{\lambda_{11} + \lambda_{22}'=\sqrt{\frac{\left(\frac{U_{1ef}}{I_{1ef}}\right)^2-(r_1+r_2')^2}{\omega^2}}}
 
+\subsection{Relações entre o primário e o secundário}
+Conhecem-se as seguintes relações para um transformador ideal:
+\begin{equation}
+\frac{U_{pri}}{U_{sec}}=\frac{n_{pri}}{n_{sec}}
+\label{eq:trans_volt}
+\end{equation}
+\begin{equation}
+n_{pri}I_{pri}=n_{sec}I_{sec} \Rightarrow \frac{I_{sec}}{I_{pri}}=\frac{n_{pri}}{n_{sec}}
+\label{eq:trans_corr}
+\end{equation}
+No entanto, os transformadores com núcleo de ferro possuem não-idealidades, pelo que se utiliza o esquema equivalente de Steinmetz, que pode ser visto na figura \ref{../img/I-3_steinmetz.png}, para o modelizar. Para estudar este tipo de transformador vamos supor duas condições: uma em que o secundário se encontra em vazio (isto é $R_{\mathrm{LOAD}}=\infty$) e outra em que o secundário já possui uma resistência de carga bem definida no secundário.\\
+Para o primeiro caso, tem-se a seguinte condição:
+\begin{equation}
+i_2=i_2'=0
+\end{equation}
+Logo se não passa corrente em $i_2'$, toda a corrente irá passar pela resistência $r_{fe}$ e pela bobine $l_11\cos \phi_{fe}$. Logo:
+\begin{equation}
+\overline{U_{\mathrm{s}}}=\overline{I_{\mathrm{s}}}(r_1+r_{fe}+j\omega(l_{11}\cos \phi_{fe}+\lambda_{11}))
+\end{equation}
+\begin{equation}
+\overline{U_2'}=\overline{I_{\mathrm{s}}} (r_{fe}+j\omega l_{11}\cos \phi_{fe})
+\end{equation}
+A partir destas equações, tem-se:
+\begin{equation}
+\overline{U_2}=\frac{n_{sec}}{n_{pri}}\frac{r_{fe}+j\omega l_{11}\cos \phi_{fe}}{r_1+r_{fe}+j\omega(l11\cos \phi_{fe}+\lambda_{11})}\overline{U_\mathrm{s}}
+\end{equation}
+Para o caso em que o enrolamento secundário se encontra fechado através de uma resistência de carga ($R_{\mathrm{LOAD}}$), visto que $r_{fe}\gg r_2$ e que vai existir agora corrente a passar em $i_2'$, pode-se então admitir:
+\begin{equation}
+i_{r_{fe}}\ll i_2 \Rightarrow -i_2'\approx i_1=i,\ \ i_{r_{fe}}\approx 0
+\end{equation}
+Utilizando esta aproximação, tem-se, determinando a equação de circulação no primário:
+\begin{equation}
+\overline{U_{\mathrm{s}}}=\overline{I_{\mathrm{s}}}(r_1+r_2'+j\omega(\lambda_{11}+\lambda_{22}')+\overline{U_2'}
+\label{eq:cc}
+\end{equation}
+Para conseguir expressar $\overline{U_2}=\overline{U_2}(\overline{U_{\mathrm{s}}})$ é necessário determinar qual a impedância na bobine do primário. Recorrendo às equações \ref{eq:trans_volt} e \ref{eq:trans_corr} e à lei de Ohm, chega-se a:
+\begin{equation}
+\frac{\overline{U_{2}'}}{\overline{U_{2}}}=\frac{n_{pri}}{n_{sec}}\Rightarrow \frac{Z_2'}{Z_2}=\left (\frac{n_{pri}}{n_{sec}}\right)^2
+\end{equation}
+Visto que $Z_2=R_{\mathrm{LOAD}}$, pode-se escrever \ref{eq:cc} como:
+\begin{equation}
+\overline{U_{\mathrm{s}}}=\overline{I_{\mathrm{s}}}(r_1+r_2'+R_{\mathrm{LOAD}}\left(\frac{n_{pri}}{n_{sec}}\right)^2+j\omega(\lambda_{11}+\lambda_{22}')
+\label{eq:tens_u2}
+\end{equation}
+Da mesma maneira que no exercício anterior, fazendo:
+\begin{equation}
+\overline{I_s}=\frac{U_2'}{R_{LOAD}\left(\frac{n_{pri}}{n_{sec}}\right)^2}
+\end{equation}
+Chega-se à relação final da tensão em carga:
+\begin{equation}
+\overline{U_2}=\frac{\left(\frac{n_{pri}}{n_{sec}}\right)R_{\mathrm{LOAD}}}{(r_1+r_2'+R_{\mathrm{LOAD}}\left(\frac{n_{pri}}{n_{sec}}\right)^2+j\omega(\lambda_{11}+\lambda_{22}')}\overline{U_s}
+\label{eq:derradeira}
+\end{equation}
+Recorrendo à expressão \ref{eq:tens_u2}, sabendo que $\overline{U_2}=R_{LOAD}\overline{I_2}$ e substituindo em \label{eq:derradeira}, obtém-se a relação de correntes:
+\begin{equation}
+\overline{I_2}=\left(\frac{n_{pri}}{n_{sec}}\right)\overline{I_s}
+\label{eq:cool}
+\end{equation}
+A relação de impedâncias é dada por:
+\begin{equation}
+Z_s=Z_{cc}+\left (\frac{n_{pri}}{n_{sec}}\right)^2Z_2
+\end{equation}
+Em que $Z_2=R_{\mathrm{LOAD}}$ e
+\begin{equation}
+Z_{cc}=r_1+r_2'+j\omega(\lambda_{11}+\lambda_{22}')
+\end{equation}
+Por fim a eficiência pode ser calculada fazendo:
+\begin{equation}
+\eta=\frac{P_{20}}{P_{10}}=\frac{\mathrm{Re}(U_2I_2)}{\mathrm{Re}(U_1I_1)}
+\end{equation}
+Através da lei de ohm e das expressões \ref{eq:tens_u2} e \ref{eq:cool}, obtém-se finalemente:
+\begin{equation}
+\eta=\frac{R_\mathrm{LOAD}}{r_1+r_2'+R_{\mathrm{LOAD}}\left(\frac{n_{pri}}{n_{sec}}\right)^2}
+\end{equation}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Experiência realizada %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experiência Realizada}
 \label{s:expreal}
