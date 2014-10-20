@@ -182,6 +182,7 @@ Logo se não passa corrente em $i_2'$, toda a corrente irá passar pela resistê
 A partir destas equações, tem-se:
 \begin{equation}
 \overline{U_2}=\frac{n_{sec}}{n_{pri}}\frac{r_{fe}+j\omega l_{11}\cos \phi_{fe}}{r_1+r_{fe}+j\omega(l11\cos \phi_{fe}+\lambda_{11})}\overline{U_\mathrm{s}}
+\label{eq:aberto}
 \end{equation}
 Para o caso em que o enrolamento secundário se encontra fechado através de uma resistência de carga ($R_{\mathrm{LOAD}}$), visto que $r_{fe}\gg r_2$ e que vai existir agora corrente a passar em $i_2'$, pode-se então admitir:
 \begin{equation}
@@ -229,7 +230,7 @@ Por fim a eficiência pode ser calculada fazendo:
 \end{equation}
 Através da lei de ohm e das expressões \ref{eq:tens_u2} e \ref{eq:cool}, obtém-se finalemente:
 \begin{equation}
-\eta=\frac{R_\mathrm{LOAD}}{r_1+r_2'+R_{\mathrm{LOAD}}\left(\frac{n_{pri}}{n_{sec}}\right)^2}
+\eta=\frac{\left(\frac{n_{pri}}{n_{sec}}\right)^2R_\mathrm{LOAD}}{r_1+r_2'+R_{\mathrm{LOAD}}\left(\frac{n_{pri}}{n_{sec}}\right)^2}
 \end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Experiência realizada %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -341,6 +342,8 @@ Os dados obtidos para o estudo do transformador em vazio encontram-se na tabela
     $l_{11}(H)$ & $8,406\pm0,085$ & $8,356\pm0,084$ \\ \hline
     $\lambda_{11} /\lambda_{22}'(H)$ & $-0,129\pm8,949$ & $-0,257\pm0,360$ \\ 
 }
+Fazendo o módulo da expressão \ref{eq:aberto}, obtém-se a relação $V_{2_{ef}}(V_{1_{ef}})$ para o transformador em aberto. Impondo $V_{1_{ef}}=219.047$, obtém-se 
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Conclusões e Críticas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
