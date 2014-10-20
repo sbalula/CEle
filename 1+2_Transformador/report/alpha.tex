@@ -284,8 +284,8 @@ $\mu$ increm.	&$1.81\pm0.09$		&$T m A^{-1}$	\\
 }
 
 \subsection*{I.3. Ensaio em vazio do transformador}
-Neste ponto considerou-se que o erro das grandezas dadas pelo software de aquisição era de $0,5\%$ do valor da grandeza. Os resultados fornecidos pelo software para o estudo do transformador com o secundário e primário em vazio estão representados nas tabelas
-  \tabela{Dados recolhidos do software para o estudo do transformador com o secundário em vazio}{c|c|c}{
+Neste ponto considerou-se que o erro das grandezas dadas pelo software de aquisição era de $0,5\%$ do valor da grandeza. Os resultados fornecidos pelo software para o estudo do transformador com o secundário e primário em vazio estão representados nas tabelas \ref{tab:dadosvaziosec} e \ref{tab:dadosvaziopri}.
+  \tabela[tab:dadosvaziosec]{Dados recolhidos do software para o estudo do transformador com o secundário em vazio}{c|c|c}{
     Posição & a     & b \\
   
     $V1_ef(ac) (V)$ & $218,139\pm1,091$ & $25,705\pm0,129$ \\ \hline
@@ -294,7 +294,7 @@ Neste ponto considerou-se que o erro das grandezas dadas pelo software de aquisi
     $<v1>(V)$ & $-5,609\pm0,028$ & $-0,059\pm0,001$ \\ \hline
     $<v2>(V)$ & $2,989\pm0,015$ & $0,0248\pm0,001$ \\     
 }
-  \tabela{Dados recolhidos do software para o estudo do transformador com o primário em vazio}{c|c|c}{
+  \tabela[tab:dadosvaziopri]{Dados recolhidos do software para o estudo do transformador com o primário em vazio}{c|c|c}{
     Posição & a     & b \\
   
     $V1_ef(ac) (V)$ & $219,047\pm1,095$ & $28,983\pm0,145$ \\ \hline
@@ -307,8 +307,9 @@ Sendo que a posição $a$ corresponde à ponta de prova do osciloscópio a medir
 É de notar que era pretendido obter o mesmo estado de magnetização para ambas as situações, sendo que para tal, aquando do estudo do transformador com o primário em vazio, se impôs uma tensão no secundário semelhante à tensão obtida no secundário em vazio, imponto no primário cerca de $220V$
 \subsection*{I.4. Ensaio em curto-circuito do transformador}
 
+Os dados obtidos pelo software para o estudo do transformador em curto-circuito encontram-se na tabela \ref{tab:dadoscc}
 
- \tabela{Dados recolhidos do software para o estudo do transformador em curto-circuito}{c|c}{   
+ \tabela[tab:dadoscc]{Dados recolhidos do software para o estudo do transformador em curto-circuito}{c|c}{   
   
     $V1_ef(ac) (V)$ & $33,403\pm0,167$  \\ \hline
     $V2_ef(ac)(V)$ & $0,837\pm0,004$  \\ \hline
@@ -327,30 +328,35 @@ O transformador encontra-se bem dimensionado para a tensão normal de trabalho (
 
 
 \subsection*{I.3. Ensaio em vazio do transformador}
-Os dados obtidos para o estudo do transformador em vazio encontram-se na tabela
+Os dados obtidos para o estudo do transformador em vazio encontram-se na tabela \ref{tab:vazio}, sendo que a situação A corresponde ao transformador com o secundário em vazio e a situação B corresponde ao transformador com o primário em vazio.
 
- \tabela{Dados obtidos para o estudo do transformador em vazio}{c|c|c}{
+ \tabela[tab:vazio]{Dados obtidos para o estudo do transformador em vazio}{c|c|c}{
           Casos                    & A   & B \\
   
-    $I_{1ef} / I_{2ef} (A)$ & $0,084\pm0,001$ & $0,720\pm0,003$ \\ \hline
-    $P_{12}  / P_{21} (W)$ & $0,647\pm0,003$ & $5,205\pm0,026$ \\ \hline
-    $P_{10}  / P_{20}(W)$ & $5,455\pm0,027$ & $11,051\pm0,055$ \\ \hline
+    $I_{1ef} (A)$ & $0,084\pm0,001$ & --- \\ \hline
+    $ I_{2ef} (A)$ & --- & $0,720\pm0,003$ \\ \hline
+    $P_{12}  (W)$ & $0,647\pm0,003$ & --- \\ \hline
+    $ P_{21} (W)$ &--- & $5,205\pm0,026$ \\ \hline
+    $P_{10}  (W)$ & $5,455\pm0,027$ & $11,051\pm0,055$ \\ \hline
+    $ P_{20} (W)$&---& $11,051\pm0,055$ \\ \hline
     $r_{fe}(\Omega)$ & $791,982\pm11,959$ & $86,609\pm1,308$ \\ \hline
-    $r_1   / r_2'(\Omega)$ & $-18,813\pm23,556$ & $1500,465\pm25,433$ \\ 
+    $r_1   (\Omega)$ & $-18,813\pm23,556$ & --- \\  \hline
+    $ r_2'(\Omega)$ & --- & $1500,465\pm25,433$ \\ \hline
     $\phi_{fe}$ & $17,449\pm0,005$ & $1,891\pm0,001$ \\ \hline
     $cos(\phi_{fe})$ & $0,953\pm0,001$ & $0,999\pm0,001$ \\ \hline
     $l_{11}(H)$ & $8,406\pm0,085$ & $8,356\pm0,084$ \\ \hline
-    $\lambda_{11} /\lambda_{22}'(H)$ & $-0,129\pm8,949$ & $-0,257\pm0,360$ \\ 
+    $\lambda_{11} (H)$ & $-0,129\pm8,949$ &  \\ \hline
+    $\lambda_{22}'(H)$ & --- & $-0,257\pm0,360$\\  
 }
 
 Note-se que para estes cálculos se utilizou $I_{ef}=	\frac{U_R}{R}$, sendo $U_R$ a tensão aos terminais da resistência $R=10\Omega$.
-O pretendido neste ponto era obter um estado de magnetização semelhante com o secundário em aberto e com o primário em aberto. Isso é alcançado se os valores de $r_{fe}$, $\phi_{fe}$  e $l_{11}$ forem semelhantes. Analisando os resultados obtidos conclui-se que os valores de $l_{11}$ são bastante próximos mas que todos os outros valores apresentam uma grande discrepância, pelo que o estado de magnetização obtido muito provavelmente não foi o mesmo.
+O pretendido neste ponto era obter um estado de magnetização semelhante com o secundário em aberto e com o primário em aberto. Isso é alcançado se os valores de $r_{fe}$, $\phi_{fe}$  e $l_{11}$ forem semelhantes. Analisando os resultados obtidos conclui-se que os valores de $l_{11}$ são bastante próximos mas que todos os outros valores apresentam uma grande discrepância. Dado que o valor dos parâmetros do esquema equivalente de Steinmetz variam com as tensões aplicadas e com o estado de magnetização, em particular $l_{11}$, e tendo em conta  que os valores de $l_{11}$ obtidos são semelhantes conclui-se que os estados de magnetização para ambas as situações são semelhantes.
 Note-se que alguns parâmetros têm valores negativos, mas os erros englobam valores positivos, pelo que uma interpretação possível é que os valores sejam tão pequenos que se tenham obtido valores negativos.
 
 \subsection*{I.4. Ensaio em curto-circuito do transformador}
-Os dados obtidos para o estudo do transformador em curto-circuito encontram-se na tabela
+Os dados obtidos para o estudo do transformador em curto-circuito encontram-se na tabela \ref{tab:curtocircuito}
 
-\tabela{Dados recolhidos do software para o estudo do transformador em curto-circuito}{c|c}{   
+\tabela[tab:curtocircuito]{Dados recolhidos do software para o estudo do transformador em curto-circuito}{c|c}{   
   
     $I_{1ef}(A)$ & $0,837\pm0,004$  \\ \hline
     $U_{2ef}(ac)(V)$ & $32,774\pm0,164$  \\ \hline
@@ -358,6 +364,8 @@ Os dados obtidos para o estudo do transformador em curto-circuito encontram-se n
     $r_1+r_2'(\Omega)$ & $29,026\pm0,435$ \\ \hline
     $\lambda_{11}+\lambda_{22}'(H)$ & $0,084\pm0,003$ \\
 }
+
+Comparando os resultados obtidos no ponto $4$ com os obtidos no ponto $3$ conclui-se que os resultados mais fidedignos são os obtidos no ponto $4$, uma vez que os erros das grandezas obtidas para este caso são menores.
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Conclusões e Críticas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusões e Críticas}
 \label{s:conclu}
