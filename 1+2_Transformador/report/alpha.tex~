@@ -268,13 +268,36 @@ Para estudar o transformador com o primário em vazio e o transformador com o se
 
 \fig{../img/I-4_curto_circuito.png}{I.4. Circuito utilizado no estudo do transformador com o secundário em curto circuito}
 
-
+\vspace{-.7cm}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Resultados %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Resultados}
 \label{s:resul}
 %incluir tabelas. Excesso de dados => grafico com valores mais significativos
+\vspace{-.7cm}
+\subsection*{I.1 Determinação do número de espiras}
+\vspace{-.7cm}
+Os valores de tensão obtidos nesta parte da experiância apresentam-se na tabela \ref{tab:mmo_fixe}.
+\begin{table}[h]
+\begin{tabular}{l|l|l}
+$U_{pri}$(V)   & $U_5$(mV)     & $U_{sec}$(V)    \\ \hline
+15,03$\pm$0,03 & 120,5$\pm$0,2 & 1,723$\pm$0,005 \\ \hline
+30,57$\pm$0,04 & 246,3$\pm$0,2 & 3,54$\pm$0,01   \\ \hline
+45,01$\pm$0,04 & 361,5$\pm$0,3 & 5,195$\pm$0,005 \\ \hline
+60,16$\pm$0,05 & 486,0$\pm$0,5 & 6,96$\pm$0,01   \\ \hline
+75,26$\pm$0,02 & 602,5$\pm$0,7 & 8,65$\pm$0,03   \\ \hline
+90,4$\pm$0,1   & 726,0$\pm$0,8 & 10,45$\pm$0,01  \\ \hline
+105,1$\pm$0,3  & 848,3$\pm$0,5 & 12,17$\pm$0,01  \\ \hline
+120,5$\pm$0,1  & 971$\pm$1     & 13,94$\pm$0,02  \\ \hline
+135,0$\pm$0,1  & 1084$\pm$2    & 15,62$\pm$0,02  \\ \hline
+149,8$\pm$0,2  & 1203$\pm$3    & 17,34$\pm$0,03 
+\end{tabular}
+\caption{Valores de tensão obtidos nos enrolamentos primário, secundário e no enrolamento de 5 espiras ($U_5$)}
+\label{tab:mmo_fixe}
+\end{table}
 
+\vspace{-.7cm}
 \subsection*{I.2. Determinação da característica magnética do núcleo do transformador}
+\vspace{-.7cm}
 Apresentam-se na \rfig{../dat/ALL0000/A0000DS.png} e na tabela \ref{hujf} os resultados experimentais.
 \fig{../dat/ALL0000/A0000DS.png}{Característica Y2(Y1) do núcleo do transformador. Não foi possível converter os dados de tensão para unidades de campo por os dados exportados pelo osciloscópio não serem coerentes com a figura observada, não sendo portanto válidos}
 \tabela[hujf]{Parâmetros do núcleo do transformador}{ccc}{
@@ -291,8 +314,9 @@ espessura	&$1.70\pm0.05$		&cm		\\	\hline
 -H coercivo	&$-134.4\pm1.2$		&$A m^{-1}$	\\
 $\mu$ increm.	&$1.81\pm0.09$		&$T m A^{-1}$	\\
 }
-
+\vspace{-.7cm}
 \subsection*{I.3. Ensaio em vazio do transformador}
+\vspace{-.7cm}
 Neste ponto considerou-se que o erro das grandezas dadas pelo software de aquisição era de $0,5\%$ do valor da grandeza. Os resultados fornecidos pelo software para o estudo do transformador com o secundário e primário em vazio estão representados nas tabelas \ref{tab:dadosvaziosec} e \ref{tab:dadosvaziopri}.
   \tabela[tab:dadosvaziosec]{Dados recolhidos do software para o estudo do transformador com o secundário em vazio}{c|c|c}{
     Posição & a     & b \\
@@ -314,8 +338,9 @@ Neste ponto considerou-se que o erro das grandezas dadas pelo software de aquisi
 }
 Sendo que a posição $a$ corresponde à ponta de prova do osciloscópio a medir a tensão no primário e a posição $b$ corresponde à ponta de prova do osciloscópio a medir a tensão no secundário.
 É de notar que era pretendido obter o mesmo estado de magnetização para ambas as situações, sendo que para tal, aquando do estudo do transformador com o primário em vazio, se impôs uma tensão no secundário semelhante à tensão obtida no secundário em vazio, imponto no primário cerca de $220V$
+\vspace{-.7cm}
 \subsection*{I.4. Ensaio em curto-circuito do transformador}
-
+\vspace{-.7cm}
 Os dados obtidos pelo software para o estudo do transformador em curto-circuito encontram-se na tabela \ref{tab:dadoscc}
 
  \tabela[tab:dadoscc]{Dados recolhidos do software para o estudo do transformador em curto-circuito}{c|c}{   
@@ -327,11 +352,13 @@ Os dados obtidos pelo software para o estudo do transformador em curto-circuito 
     $<v2>(V)$ & $0,024\pm0,001$ \\
 } 
 Neste ponto impôs-se uma corrente de cerca de $I_{1ef}=820mA$ visto que a corrente nominal do transformador é de $818mA$.
-
+\vspace{-.7cm}
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Análise dos resultados %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Análise de resultados}
 \label{s:aresul}
+\vspace{-.7cm}
 \subsection*{I.1. Determinação da relação de espiras}
+\vspace{-.7cm}
 A relação entre o número de espiras de dois enrolamentos e as suas tensões é linear, pelo que se pode ajustar uma função do tipo:
 \begin{equation}
 y=ax+b
@@ -349,11 +376,12 @@ Para confirmar, pode-se dividir o valor obtido através do ajuste com o número 
 \frac{n_{pri}}{n_{sec}}=\frac{621.89}{72.05}=8.63\approx a_{\mathrm{ajuste}}
 \end{equation}
  O que implica que o valor da relação de espiras foi bem determinado.
-
+\vspace{-.7cm}
 \subsection*{I.2. Determinação da característica magnética do núcleo do transformador}
+\vspace{-.7cm}
 O transformador encontra-se bem dimensionado para a tensão normal de trabalho (230V), já que para estas tensões a sua característica B(H) não se apresenta na região de saturação.
 
-
+\vspace{-.7cm}
 \subsection*{I.3. Ensaio em vazio do transformador}
 Os dados obtidos para o estudo do transformador em vazio encontram-se na tabela \ref{tab:vazio}, sendo que a situação A corresponde ao transformador com o secundário em vazio e a situação B corresponde ao transformador com o primário em vazio.
 
@@ -379,6 +407,17 @@ Os dados obtidos para o estudo do transformador em vazio encontram-se na tabela 
 Note-se que para estes cálculos se utilizou $I_{ef}=	\frac{U_R}{R}$, sendo $U_R$ a tensão aos terminais da resistência $R=10\Omega$.
 O pretendido neste ponto era obter um estado de magnetização semelhante com o secundário em aberto e com o primário em aberto. Isso é alcançado se os valores de $r_{fe}$, $\phi_{fe}$  e $l_{11}$ forem semelhantes. Analisando os resultados obtidos conclui-se que os valores de $l_{11}$ são bastante próximos mas que todos os outros valores apresentam uma grande discrepância. Dado que o valor dos parâmetros do esquema equivalente de Steinmetz variam com as tensões aplicadas e com o estado de magnetização, em particular $l_{11}$, e tendo em conta  que os valores de $l_{11}$ obtidos são semelhantes conclui-se que os estados de magnetização para ambas as situações são semelhantes.
 Note-se que alguns parâmetros têm valores negativos, mas os erros englobam valores positivos, pelo que uma interpretação possível é que os valores sejam tão pequenos que se tenham obtido valores negativos.
+
+%ISTO NAO DEVIA ESTAR AQUI; E SO PARA CABER
+\tabelao[tab:tabelao]{Dados obtidos para o transformador em carga}{c|c|c|c|c|c|c}{  
+                             & \multicolumn{2}{c|}{R=20$\Omega$}     & \multicolumn{2}{c|}{R=15$\Omega$}   & \multicolumn{2}{c|}{R=10$\Omega$}    \\ \cline{2-7} 
+                               & Primário           & Secundário       & Primário         & Secundário       & Primário          & Secundário       \\ \hline
+V1ef(ac)                       & 223,517$\pm$1.11   & 25,01$\pm$0.13   & 225,693$\pm$1.12 & 24,957$\pm$0.12  & 225,367$\pm$1.12  & 24,474$\pm$0.12  \\ \hline
+V2ef(ac)                       & 1,817$\pm$0.009    & 1,821$\pm$0.009  & 2,089$\pm$0.010  & 2,086$\pm$0.010  & 3,314$\pm$0.017   & 3,314$\pm$0.017  \\ \hline
+\textless v1xv2\textgreater(ac) & 353,221$\pm$12.611 & 39,659$\pm$0.183 & 425,83$\pm$2.129 & 47,222$\pm$0.236 & 720,513$\pm$3.603 & 78,67$\pm$0.393  \\ \hline
+\textless v1\textgreater        & -4,4$\pm$0.1       & -0,12$\pm$0.01   & -3,3$\pm$0.01    & -0,112$\pm$0.001 & -3,97$\pm$0.01    & -0.093$\pm$0.002 \\ \hline
+\textless v2\textgreater        & 0.037$\pm$0.01          &4.56$\pm$0.01        & 0.044$\pm$0.01        & 0.052$\pm$0.01        & 0.054$\pm$0.01         & 0.067$\pm$0.01        \\ \hline
+multimetro                     & 220$\pm$1.1        & 220$\pm$1.1      & 222,6$\pm$1.1    & 222,3$\pm$1.1    & 222.6$\pm$1.1     & 222,6$\pm$1.1}
 
 
 Pode-se comparar os dados obtidos com a previsão teórica, fazendo o módulo da fórmula \ref{eq:aberto}. Os resultados obtidos estão na tabela \ref{tab:vazio}.
@@ -408,15 +447,6 @@ Eficiência (\%)          & 88.54         & 73.13         & 41.57
 \end{table}
 
 
-\tabelao[tab:tabelao]{Dados obtidos para o transformador em carga}{c|c|c|c|c|c|c}{  
-                             & \multicolumn{2}{c|}{R=20$\Omega$}     & \multicolumn{2}{c|}{R=15$\Omega$}   & \multicolumn{2}{c|}{R=10$\Omega$}    \\ \cline{2-7} 
-                               & Primário           & Secundário       & Primário         & Secundário       & Primário          & Secundário       \\ \hline
-V1ef(ac)                       & 223,517$\pm$1.11   & 25,01$\pm$0.13   & 225,693$\pm$1.12 & 24,957$\pm$0.12  & 225,367$\pm$1.12  & 24,474$\pm$0.12  \\ \hline
-V2ef(ac)                       & 1,817$\pm$0.009    & 1,821$\pm$0.009  & 2,089$\pm$0.010  & 2,086$\pm$0.010  & 3,314$\pm$0.017   & 3,314$\pm$0.017  \\ \hline
-\textless v1xv2\textgreater(ac) & 353,221$\pm$12.611 & 39,659$\pm$0.183 & 425,83$\pm$2.129 & 47,222$\pm$0.236 & 720,513$\pm$3.603 & 78,67$\pm$0.393  \\ \hline
-\textless v1\textgreater        & -4,4$\pm$0.1       & -0,12$\pm$0.01   & -3,3$\pm$0.01    & -0,112$\pm$0.001 & -3,97$\pm$0.01    & -0.093$\pm$0.002 \\ \hline
-\textless v2\textgreater        & 0.037$\pm$0.01          &4.56$\pm$0.01        & 0.044$\pm$0.01        & 0.052$\pm$0.01        & 0.054$\pm$0.01         & 0.067$\pm$0.01        \\ \hline
-multimetro                     & 220$\pm$1.1        & 220$\pm$1.1      & 222,6$\pm$1.1    & 222,3$\pm$1.1    & 222.6$\pm$1.1     & 222,6$\pm$1.1}
 
 \begin{table}[h]
 \begin{tabular}{c|c|c|c}
@@ -443,12 +473,12 @@ $\eta$                 &9           &25           &57
 \label{tab:exac}
 \end{table}
 
+
+\vspace{-.7cm}
+
 \subsection*{II.Ensaio em carga do transformador}
 Os dados obtidos para várias resistência de carga apresentam-se na tabela \ref{tab:carga}
-
-
-
-
+\vspace{-.7cm}
 \subsection*{I.4. Ensaio em curto-circuito do transformador}
 Os dados obtidos para o estudo do transformador em curto-circuito encontram-se na tabela \ref{tab:curtocircuito}
 
@@ -461,6 +491,8 @@ Os dados obtidos para o estudo do transformador em curto-circuito encontram-se n
 }
 
 Comparando os resultados obtidos no ponto $4$ com os obtidos no ponto $3$ conclui-se que os resultados mais fidedignos são os obtidos no ponto $4$, uma vez que os erros das grandezas obtidas para este caso são menores.
+
+\vspace{-.7cm}
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Conclusões e Críticas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusões e Críticas}
 \label{s:conclu}
