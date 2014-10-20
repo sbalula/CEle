@@ -330,6 +330,24 @@ Neste ponto impôs-se uma corrente de cerca de $I_{1ef}=820mA$ visto que a corre
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Análise dos resultados %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Análise de resultados}
 \label{s:aresul}
+\subsection*{I.1. Determinação da relação de espiras}
+A relação entre o número de espiras de dois enrolamentos e as suas tensões é linear, pelo que se pode ajustar uma função do tipo:
+\begin{equation}
+y=ax+b
+\end{equation}
+Sendo que a vai representar a relação entre espiras. Para determinar a relação entre espiras do primário e do secundário e o número aproximado de espiras em cada enrolamento, fazendo relação com um enrolamento com um número conhecido de espiras.
+Efectuando o ajuste linear aos dados obtidos obtiveram-se os gráficos \ref{../dat/p_vs_s.pdf}, \ref{../dat/5_vs_prim.pdf} e \ref{../dat/5_vs_sec.pdf}.
+\fig{../dat/p_vs_s.pdf}{Ajuste obtido para a relação entre primário e secundário}
+Para a relação entre primário e secundário obteve-se $a=\frac{n_{pri}}{n_{sec}}=8.63\pm0.01$.\\
+\fig{../dat/5_vs_prim.pdf}{Ajuste obtido para a relação entre primário e o enrolamento de 5 espiras}
+Para a relação entre o enrolamento de 5 espiras e o enrolamento primário obteve-se $a=\frac{n_{5}}{n_{pri}}=0.008\pm0.001$, o que implica que o número de espiras no enrolamento primário deverá ser $n_{pri}=621.89\pm0.01$.\\
+\fig{../dat/5_vs_sec.pdf}{Ajuste obtido para a relação entre o secundário e o enrolamento de 5 espiras}
+Para a relação entre o enrolamento de 5 espiras e o enrolamento secundário obteve-se  $a=\frac{n_{5}}{n_{sec}}=0.0694\pm0.001$ o que implica que o número de espiras no enrolamento secundário deverá ser $n_{sec}=72.05\pm0.01$.\\
+Para confirmar, pode-se dividir o valor obtido através do ajuste com o número de espiras do secundário e do primário, o que resulta em:
+\begin{equation}
+\frac{n_{pri}}{n_{sec}}=\frac{621.89}{72.05}=8.63\approx a_{\mathrm{ajuste}}
+\end{equation}
+ O que implica que o valor da relação de espiras foi bem determinado.
 
 \subsection*{I.2. Determinação da característica magnética do núcleo do transformador}
 O transformador encontra-se bem dimensionado para a tensão normal de trabalho (230V), já que para estas tensões a sua característica B(H) não se apresenta na região de saturação.
@@ -363,24 +381,29 @@ Note-se que alguns parâmetros têm valores negativos, mas os erros englobam val
 
 
 Pode-se comparar os dados obtidos com a previsão teórica, fazendo o módulo da fórmula \ref{eq:aberto}. Os resultados obtidos estão na tabela \ref{tab:vazio}.
-\tabela{Valores obtidos teoricamente para o secundário em vazio.}{|c|c|}{
+\begin{table}[h]
+\begin{tabular}{|c|c|}
                        & Tensão (V)     \\ \hline
 $V1_{ef}$  imposto     & 219$\pm$1      \\
 $V2_{ef}$ teórico      & 25.29$\pm$2.67 \\
 Desvio à exactidão (\%) & 14.5\%        
-}
+\end{tabular}
+\caption{Valores obtidos teoricamente para o secundário em vazio.}
+\label{tab:vazio}
+\end{table}
 
 \subsection*{I.4. Ensaio em curto-circuito do transformador}
 Os dados obtidos para o estudo do transformador em curto-circuito encontram-se na tabela \ref{tab:tabelao}. Os valores de corrente, impedância e eficiência apresentam-se na tabela \ref{tab:imp} Utilizando o módulo das relações obtidas nas fórmulas presentes na introdução teórica, pode-se prever teoricamente as tensões, correntes e impedâncias no secundário. Utilizou-se como tensão no primário a tensão medida no multímetro, visto esta ser mais precisa que a obtida através do osciloscópio. Os resultados apresentam-se na tabela \ref{tab:carga}.
 
 \begin{table}[h]
 \begin{tabular}{c|c|c|c}
-                         & R=10$\Omega$  & R=15$\Omega$  & R=20$\Omega$  \\ \hline
+                         & R=20$\Omega$  & R=15$\Omega$  & R=10$\Omega$  \\ \hline
 $I2_{ef}$ experim. (A)   & 1.25$\pm$0.01 & 1.66$\pm$0.01 & 2.45$\pm$0.01 \\ \hline
 $Z_s$ teórico ($\Omega$) & 1230$\pm$19   & 1080$\pm$15   & 680$\pm$6     \\ \hline
 Eficiência (\%)          & 88.54         & 73.13         & 41.57        
 \end{tabular}
 \caption{Valores obtidos experimentalmente para a eficiência, corrente no secundário e impedância}
+\label{tab:imp}
 \end{table}
 
 \begin{table}[h]
@@ -389,7 +412,8 @@ Eficiência (\%)          & 88.54         & 73.13         & 41.57
 $V1_{ef}$ imposta (V)    & 220.0$\pm$1.1   & 222.6$\pm$1.1   & 222.6$\pm$1.1   \\ \hline
 $V2_{ef}$ teorica (V)    & 24.81$\pm$0.27  & 25.14$\pm$0.27  & 25.40$\pm$0.27  \\ \hline
 $I2_{ef}$ teórica (V)    & 2.851$\pm$0.089 & 1.803$\pm$0.089 & 1.572$\pm$0.088 \\ \hline
-$Z_s$ teórico ($\Omega$) & 774$\pm$2       & 1146$\pm$3      & 1518$\pm$4     
+$Z_s$ teórico ($\Omega$) & 774$\pm$2       & 1146$\pm$3      & 1518$\pm$4     \\ \hline
+$\eta$ teórico (\%) &96.2&97.5&98
 \end{tabular}
 \caption{Valores obtidos para a previsão teórica das tensões, correntes e impedâncias}
 \label{tab:carga}
@@ -400,7 +424,8 @@ Os desvios à exactidão dos vários valores experimentais estão apresentados n
 Desvio à exactidão (\%) & R=10$\Omega$ & R=15$\Omega$ & R=20$\Omega$ \\ \hline
 $V2_{ef}$               & 1.3          & 0.7          & 1.3          \\ \hline
 $I2_{ef}$               & 14           & 8            & 17           \\ \hline
-$Z_s$                   & 12           & 6            & 19          
+$Z_s$                   & 12           & 6            & 19           \\ \hline
+$\eta$                 &9           &25           &57
 \end{tabular}
 \caption{Desvios à exactidão das várias grandezas do transformador obtidas}
 \label{tab:exac}
@@ -410,7 +435,7 @@ $Z_s$                   & 12           & 6            & 19
 Os dados obtidos para várias resistência de carga apresentam-se na tabela \ref{tab:carga}
 
 \tabelao[tab:tabelao]{Dados obtidos para o transformador em carga}{c|c|c|c|c|c|c}{  
-                             & \multicolumn{2}{c|}{R=10$\Omega$}     & \multicolumn{2}{c|}{R=15$\Omega$}   & \multicolumn{2}{c|}{R=20$\Omega$}    \\ \cline{2-7} 
+                             & \multicolumn{2}{c|}{R=20$\Omega$}     & \multicolumn{2}{c|}{R=15$\Omega$}   & \multicolumn{2}{c|}{R=10$\Omega$}    \\ \cline{2-7} 
                                & Primário           & Secundário       & Primário         & Secundário       & Primário          & Secundário       \\ \hline
 V1ef(ac)                       & 223,517$\pm$1.11   & 25,01$\pm$0.13   & 225,693$\pm$1.12 & 24,957$\pm$0.12  & 225,367$\pm$1.12  & 24,474$\pm$0.12  \\ \hline
 V2ef(ac)                       & 1,817$\pm$0.009    & 1,821$\pm$0.009  & 2,089$\pm$0.010  & 2,086$\pm$0.010  & 3,314$\pm$0.017   & 3,314$\pm$0.017  \\ \hline
@@ -436,7 +461,7 @@ Comparando os resultados obtidos no ponto $4$ com os obtidos no ponto $3$ conclu
 \section{Conclusões e Críticas}
 \label{s:conclu}
 %Incluir melhorias propostas à experiência
-
+Na primeira parte do trabalho determinou-se a relação entre as espiras do transformador utilizado, sendo que se chegou à relação de $\frac{n_{pri}}{n_{sec}}=8,63\pm0,01$. Este valor é fiável uma vez que o resultado obtido através do ajuste linear e através da divisão do número de espiras são compatíveis. Observou-se uma curva de histerese do núcleo do transformador de acordo com o esperado.  
 
 %\begin{acknowledgments}
 %\end{acknowledgments}
