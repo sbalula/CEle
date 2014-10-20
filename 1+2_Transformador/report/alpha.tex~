@@ -461,7 +461,12 @@ Comparando os resultados obtidos no ponto $4$ com os obtidos no ponto $3$ conclu
 \section{Conclusões e Críticas}
 \label{s:conclu}
 %Incluir melhorias propostas à experiência
-Na primeira parte do trabalho determinou-se a relação entre as espiras do transformador utilizado, sendo que se chegou à relação de $\frac{n_{pri}}{n_{sec}}=8,63\pm0,01$. Este valor é fiável uma vez que o resultado obtido através do ajuste linear e através da divisão do número de espiras são compatíveis. Observou-se uma curva de histerese do núcleo do transformador de acordo com o esperado.  
+Na primeira parte do trabalho determinou-se a relação entre as espiras do transformador utilizado, sendo que se chegou à relação de $\frac{n_{pri}}{n_{sec}}=8,63\pm0,01$. Este valor é fiável uma vez que o resultado obtido através do ajuste linear e através da divisão do número de espiras são compatíveis.
+Observou-se uma curva de histerese do núcleo do transformador de acordo com o esperado.  
+No estudo em vazio do transformador conseguiram-se estados de magnetização semelhantes, para a fonte aplicada no primário e secundário. Os valores obtidos para os parâmetros do esquema equivalente de Steinmetz são plausíveis, conforme discutido na análise de resultados.
+Os valores teóricos comparados com os experimentais para os ensaios com o secundário em aberto e em carga são próximos, com desvios à exactidão de cerca de 10\% à excepção da eficiência, que para um resistência de $R=10\Omega$ apresenta um desvio de 57\%. Para valores baixos da resistência de carga, os valores da resistência das ligações eléctricas (algo instáveis na montagem experimental), da mesma ordem de grandeza, podem influenciar os resultados obtidos.
+
+
 
 %\begin{acknowledgments}
 %\end{acknowledgments}
