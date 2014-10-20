@@ -330,6 +330,24 @@ Neste ponto impôs-se uma corrente de cerca de $I_{1ef}=820mA$ visto que a corre
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Análise dos resultados %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Análise de resultados}
 \label{s:aresul}
+\subsection*{I.1. Determinação da relação de espiras}
+A relação entre o número de espiras de dois enrolamentos e as suas tensões é linear, pelo que se pode ajustar uma função do tipo:
+\begin{equation}
+y=ax+b
+\end{equation}
+Sendo que a vai representar a relação entre espiras. Para determinar a relação entre espiras do primário e do secundário e o número aproximado de espiras em cada enrolamento, fazendo relação com um enrolamento com um número conhecido de espiras.
+Efectuando o ajuste linear aos dados obtidos obtiveram-se os gráficos \ref{p_vs_s.pdf}, \ref{5_vs_prim.pdf} e \ref{5_vs_sec.pdf}.
+\fig{p_vs_s.pdf}{Ajuste obtido para a relação entre primário e secundário}
+Para a relação entre primário e secundário obteve-se $a=\frac{n_{pri}}{n_{sec}}=8.63\pm0.01$.\\
+\fig{5_vs_prim.pdf}{Ajuste obtido para a relação entre primário e o enrolamento de 5 espiras}
+Para a relação entre o enrolamento de 5 espiras e o enrolamento primário obteve-se $a=\frac{n_{5}}{n_{pri}}=0.008\pm0.001$, o que implica que o número de espiras no enrolamento primário deverá ser $n_{pri}=621.89\pm0.01$.\\
+\fig{5_vs_sec.pdf}{Ajuste obtido para a relação entre o secundário e o enrolamento de 5 espiras}
+Para a relação entre o enrolamento de 5 espiras e o enrolamento secundário obteve-se  $a=\frac{n_{5}}{n_{sec}}=0.0694\pm0.001$ o que implica que o número de espiras no enrolamento secundário deverá ser $n_{sec}=72.05\pm0.01$.\\
+Para confirmar, pode-se dividir o valor obtido através do ajuste com o número de espiras do secundário e do primário, o que resulta em:
+\begin{equation}
+\frac{n_{pri}}{n_{sec}}=\frac{621.89}{72.05}=8.63\approx a_{\mathrm{ajuste}}
+\end{equation}
+ O que implica que o valor da relação de espiras foi bem determinado.
 
 \subsection*{I.2. Determinação da característica magnética do núcleo do transformador}
 O transformador encontra-se bem dimensionado para a tensão normal de trabalho (230V), já que para estas tensões a sua característica B(H) não se apresenta na região de saturação.
@@ -379,7 +397,7 @@ Os dados obtidos para o estudo do transformador em curto-circuito encontram-se n
 
 \begin{table}[h]
 \begin{tabular}{c|c|c|c}
-                         & R=10$\Omega$  & R=15$\Omega$  & R=20$\Omega$  \\ \hline
+                         & R=20$\Omega$  & R=15$\Omega$  & R=10$\Omega$  \\ \hline
 $I2_{ef}$ experim. (A)   & 1.25$\pm$0.01 & 1.66$\pm$0.01 & 2.45$\pm$0.01 \\ \hline
 $Z_s$ teórico ($\Omega$) & 1230$\pm$19   & 1080$\pm$15   & 680$\pm$6     \\ \hline
 Eficiência (\%)          & 88.54         & 73.13         & 41.57        
@@ -393,7 +411,8 @@ Eficiência (\%)          & 88.54         & 73.13         & 41.57
 $V1_{ef}$ imposta (V)    & 220.0$\pm$1.1   & 222.6$\pm$1.1   & 222.6$\pm$1.1   \\ \hline
 $V2_{ef}$ teorica (V)    & 24.81$\pm$0.27  & 25.14$\pm$0.27  & 25.40$\pm$0.27  \\ \hline
 $I2_{ef}$ teórica (V)    & 2.851$\pm$0.089 & 1.803$\pm$0.089 & 1.572$\pm$0.088 \\ \hline
-$Z_s$ teórico ($\Omega$) & 774$\pm$2       & 1146$\pm$3      & 1518$\pm$4     
+$Z_s$ teórico ($\Omega$) & 774$\pm$2       & 1146$\pm$3      & 1518$\pm$4     \\ \hline
+$\eta$ teórico (\%) &96.2&97.5&0.98
 \end{tabular}
 \caption{Valores obtidos para a previsão teórica das tensões, correntes e impedâncias}
 \label{tab:carga}
@@ -414,7 +433,7 @@ $Z_s$                   & 12           & 6            & 19
 Os dados obtidos para várias resistência de carga apresentam-se na tabela \ref{tab:carga}
 
 \tabelao[tab:tabelao]{Dados obtidos para o transformador em carga}{c|c|c|c|c|c|c}{  
-                             & \multicolumn{2}{c|}{R=10$\Omega$}     & \multicolumn{2}{c|}{R=15$\Omega$}   & \multicolumn{2}{c|}{R=20$\Omega$}    \\ \cline{2-7} 
+                             & \multicolumn{2}{c|}{R=20$\Omega$}     & \multicolumn{2}{c|}{R=15$\Omega$}   & \multicolumn{2}{c|}{R=10$\Omega$}    \\ \cline{2-7} 
                                & Primário           & Secundário       & Primário         & Secundário       & Primário          & Secundário       \\ \hline
 V1ef(ac)                       & 223,517$\pm$1.11   & 25,01$\pm$0.13   & 225,693$\pm$1.12 & 24,957$\pm$0.12  & 225,367$\pm$1.12  & 24,474$\pm$0.12  \\ \hline
 V2ef(ac)                       & 1,817$\pm$0.009    & 1,821$\pm$0.009  & 2,089$\pm$0.010  & 2,086$\pm$0.010  & 3,314$\pm$0.017   & 3,314$\pm$0.017  \\ \hline
