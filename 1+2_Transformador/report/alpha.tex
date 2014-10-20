@@ -270,9 +270,9 @@ Para estudar o transformador com o primário em vazio e o transformador com o se
 %incluir tabelas. Excesso de dados => grafico com valores mais significativos
 
 \subsection*{I.2. Determinação da característica magnética do núcleo do transformador}
-
+Apresentam-se na \rfig{../dat/ALL0000/A0000DS.png} e na tabela \ref{hujf} os resultados experimentais.
 \fig{../dat/ALL0000/A0000DS.png}{Característica Y2(Y1) do núcleo do transformador. Não foi possível converter os dados de tensão para unidades de campo por os dados exportados pelo osciloscópio não serem coerentes com a figura observada, não sendo portanto válidos}
-\tabela{Parâmetros do núcleo do transformador}{ccc}{
+\tabela[hujf]{Parâmetros do núcleo do transformador}{ccc}{
 Parâmetro	&Valor			&Unidades \\ \hline
 comprimento	&$8.70\pm0.05$		&cm		\\
 largura		&$3.95\pm0.05$		&cm		\\
@@ -357,11 +357,72 @@ Note-se que para estes cálculos se utilizou $I_{ef}=	\frac{U_R}{R}$, sendo $U_R
 O pretendido neste ponto era obter um estado de magnetização semelhante com o secundário em aberto e com o primário em aberto. Isso é alcançado se os valores de $r_{fe}$, $\phi_{fe}$  e $l_{11}$ forem semelhantes. Analisando os resultados obtidos conclui-se que os valores de $l_{11}$ são bastante próximos mas que todos os outros valores apresentam uma grande discrepância. Dado que o valor dos parâmetros do esquema equivalente de Steinmetz variam com as tensões aplicadas e com o estado de magnetização, em particular $l_{11}$, e tendo em conta  que os valores de $l_{11}$ obtidos são semelhantes conclui-se que os estados de magnetização para ambas as situações são semelhantes.
 Note-se que alguns parâmetros têm valores negativos, mas os erros englobam valores positivos, pelo que uma interpretação possível é que os valores sejam tão pequenos que se tenham obtido valores negativos.
 
+<<<<<<< HEAD
+Pode-se comparar os dados obtidos com a previsão teórica, fazendo o módulo da fórmula \ref{eq:aberto}. Os resultados obtidos estão na tabela \ref{tab:vazio}.
+\begin{table}[h]
+\begin{tabular}{cc}
+                       & Tensão (V)     \\
+$V1_{ef}$  imposto     & 219$\pm$1      \\
+$V2_{ef}$ teórico      & 25.29$\pm$2.67 \\
+Desvio à exactidão (\%) & 14.5\%        
+\end{tabular}
+\caption{Valores obtidos teoricamente para o secundário em vazio.}
+\label{tab:vazio}
+\end{table}
+
+\subsection*{I.4. Ensaio em curto-circuito do transformador}
+Os dados obtidos para o estudo do transformador em curto-circuito encontram-se na tabela \ref{tab:tabelao}. Os valores de corrente, impedância e eficiência apresentam-se na tabela \ref{tab:imp} Utilizando o módulo das relações obtidas nas fórmulas presentes na introdução teórica, pode-se prever teoricamente as tensões, correntes e impedâncias no secundário. Utilizou-se como tensão no primário a tensão medida no multímetro, visto esta ser mais precisa que a obtida através do osciloscópio. Os resultados apresentam-se na tabela \ref{tab:carga}.
+
+\begin{table}[h]
+\begin{tabular}{c|c|c|c}
+                         & R=10$\Omega$  & R=15$\Omega$  & R=20$\Omega$  \\ \hline
+$I2_{ef}$ experim. (A)   & 1.25$\pm$0.01 & 1.66$\pm$0.01 & 2.45$\pm$0.01 \\ \hline
+$Z_s$ teórico ($\Omega$) & 1230$\pm$19   & 1080$\pm$15   & 680$\pm$6     \\ \hline
+Eficiência (\%)          & 88.54         & 73.13         & 41.57        
+\end{tabular}
+\caption{Valores obtidos experimentalmente para a eficiência, corrente no secundário e impedância}
+\end{table}
+
+\begin{table}[h]
+\begin{tabular}{c|c|c|c}
+                         & R=10$\Omega$    & R=15$\Omega$    & R=20$\Omega$    \\ \hline
+$V1_{ef}$ imposta (V)    & 220.0$\pm$1.1   & 222.6$\pm$1.1   & 222.6$\pm$1.1   \\ \hline
+$V2_{ef}$ teorica (V)    & 24.81$\pm$0.27  & 25.14$\pm$0.27  & 25.40$\pm$0.27  \\ \hline
+$I2_{ef}$ teórica (V)    & 2.851$\pm$0.089 & 1.803$\pm$0.089 & 1.572$\pm$0.088 \\ \hline
+$Z_s$ teórico ($\Omega$) & 774$\pm$2       & 1146$\pm$3      & 1518$\pm$4     
+\end{tabular}
+\caption{Valores obtidos para a previsão teórica das tensões, correntes e impedâncias}
+\label{tab:carga}
+\end{table}
+Os desvios à exactidão dos vários valores experimentais estão apresentados na tabela \ref{tab:exac}
+\begin{table}[h]
+\begin{tabular}{c|c|c|c}
+Desvio à exactidão (\%) & R=10$\Omega$ & R=15$\Omega$ & R=20$\Omega$ \\ \hline
+$V2_{ef}$               & 1.3          & 0.7          & 1.3          \\ \hline
+$I2_{ef}$               & 14           & 8            & 17           \\ \hline
+$Z_s$                   & 12           & 6            & 19          
+\end{tabular}
+\caption{Desvios à exactidão das várias grandezas do transformador obtidas}
+\label{tab:exac}
+\end{table}
+
+\subsection*{II.Ensaio em carga do transformador}
+Os dados obtidos para várias resistência de carga apresentam-se na tabela \ref{tab:carga}
+
+\tabelao[tab:tabelao]{Dados obtidos para o transformador em carga}{c|c|c|c|c|c|c}{                               & \multicolumn{2}{c|}{R=10$\Omega$}     & \multicolumn{2}{c|}{R=15$\Omega$}   & \multicolumn{2}{c|}{R=20$\Omega$}    \\ \cline{2-7} 
+                               & Primário           & Secundário       & Primário         & Secundário       & Primário          & Secundário       \\ \hline
+V1ef(ac)                       & 223,517$\pm$1.11   & 25,01$\pm$0.13   & 225,693$\pm$1.12 & 24,957$\pm$0.12  & 225,367$\pm$1.12  & 24,474$\pm$0.12  \\ \hline
+V2ef(ac)                       & 1,817$\pm$0.009    & 1,821$\pm$0.009  & 2,089$\pm$0.010  & 2,086$\pm$0.010  & 3,314$\pm$0.017   & 3,314$\pm$0.017  \\ \hline
+\textless v1xv2\textgreater(ac) & 353,221$\pm$12.611 & 39,659$\pm$0.183 & 425,83$\pm$2.129 & 47,222$\pm$0.236 & 720,513$\pm$3.603 & 78,67$\pm$0.393  \\ \hline
+\textless v1\textgreater        & -4,4$\pm$0.1       & -0,12$\pm$0.01   & -3,3$\pm$0.01    & -0,112$\pm$0.001 & -3,97$\pm$0.01    & -0.093$\pm$0.002 \\ \hline
+\textless v2\textgreater        & 0.037$\pm$0.01          &4.56$\pm$0.01        & 0.044$\pm$0.01        & 0.052$\pm$0.01        & 0.054$\pm$0.01         & 0.067$\pm$0.01        \\ \hline
+multimetro                     & 220$\pm$1.1        & 220$\pm$1.1      & 222,6$\pm$1.1    & 222,3$\pm$1.1    & 222.6$\pm$1.1     & 222,6$\pm$1.1}
+
+\tabela{Dados recolhidos do software para o estudo do transformador em curto-circuito}{c|c}{
 \subsection*{I.4. Ensaio em curto-circuito do transformador}
 Os dados obtidos para o estudo do transformador em curto-circuito encontram-se na tabela \ref{tab:curtocircuito}
 
 \tabela[tab:curtocircuito]{Dados recolhidos do software para o estudo do transformador em curto-circuito}{c|c}{   
-  
     $I_{1ef}(A)$ & $0,837\pm0,004$  \\ \hline
     $U_{2ef}(ac)(V)$ & $32,774\pm0,164$  \\ \hline
     $P_{10}(V)$ & $20,339\pm0,101$  \\ \hline
