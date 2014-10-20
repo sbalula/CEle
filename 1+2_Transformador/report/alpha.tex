@@ -112,52 +112,8 @@ Neste trabalho laboratorial determinam-se as características eléctricas do tra
 \label{s:intro}
 %Situar o problema, incluir fórmulas.
 %Quem lê o relatório deve conseguir perceber exatamente o que foi feito.
-\subsection*{I.2. Determinação da característica magnética do núcleo do transformador}
-Conforme a nomenclatura da \rfig{../img/I-2_esq.png}, podem determinar-se os campos B e H em função dos valores de tensão medidos no osciloscópio.
-\eq{\oint_l \mathbf{H} \cdot \, \mathbf{dl} = n_1 i_1}
-\eq{H \approx \frac{n_1 i_1}{l} = \frac{n_1 Y_1}{R_1 l} }
 
-
-\eq{u_2 = \frac{d \phi_2}{d t} \approx n_2 S \frac{d B}{dt}}
-\eq{u_2 = uc + R C \frac {d u_c}{d _t} \approx R C \frac{d u_c}{dt}}
-\eq{B \approx \frac{R_2 C_1}{n_2 S} Y_2}
-
-\subsection*{I.3. Ensaio em vazio do transformador}
-O objectivo deste ponto é determinar as impedâncias internas do transformador. A representação do transformador de acordo com o esquema equivalente de Steinmetz encontra-se na figura \rfig{../img/I-3_steinmetz.png}.
-Começando por estudar o secundário em vazio é possível determinar $r_1$,$\lambda_{11}$, $r_{fe}$, $l_{11}*cos(\phi_{fe})$, a partir de $I_{1ef}$, $U_{2ef}$, $P_{10}=<u_1 i_1>$ e $P_{12}=<u_2 i_1>$ utilizando as seguintes relações
-
-\eq{r_{fe}=\frac{P_{12}}{\frac{n_2}{n_1}I_{1ef}^2}}
-
-\eq{r1=\frac{P_{10}}{I_{1ef}^2}-r_{fe}}
-
-\eq{l_{11}=\frac{U_{2ef}}{I_{1ef}\frac{n2}{n1}\omega}}
-
-\eq{\phi_{fe}=Arcsin{\frac{P_{12}}{U_{2ef}{I_{1ef}}}}}
-
-\eq{\lambda_{11}=\sqrt{\frac{\left(\frac{U_{1ef}}{I_{1ef}}\right)^2-(r_1+r_{fe})^2}{\omega^2}}-l_{11}cos(\phi_{fe})}
-
-Estudando agora o primário em vazio é possível determinar $r_2'$,$\lambda_{22}'$, $r_{fe}$, $l_{11}cos(\phi_{fe})$ a partir de $I_{2ef}$, $U_{1ef}$,$P_{2}=<u_2 i_2>$ e $P_{21}=<u_1 i_2>$, utilizando as relações
-
-\eq{r_{fe}=\frac{P_{21}}{I_{2ef}^2\frac{n2}{n1}}}
-
-\eq{r_{2}'=\frac{P_2}{\left(I_{2ef}\frac{n_2}{n_1}\right)^2}-r_{fe}}
-
-\eq{l_{11}=\frac{U_{1ef}}{\frac{n_2}{n_1}I_{2ef}\omega}}
-
-\eq{\phi_{fe}=Arcsin{\frac{r_{fe}}{\omega l_{11}}}}
-
-\eq{\lambda_{22}'=\sqrt{\frac{\left(\frac{U_{2ef}}{I_{1ef}}\right)^2\frac{1}{\left(\frac{n_2}{n_1}\right)^4}-(r_{2}'+r_{fe})^2}{\omega^2}}-l_{11}cos(\phi_{fe})}
-
-\fig{../img/I-3_steinmetz.png}{I.3. Esquema equivalente de Steinmetz}
-
-\subsection*{I.4. Ensaio em curto-circuito do transformador}
-Neste estudo do transformador com o secundário em curto-circuito assume-se que nenhuma corrente passa por $r_{fe}$ e $l_{11}cos(\phi_{fe})$. Neste caso é possível determinar $r_1+r_{2'}$ e $\lambda_{11} + \lambda_{22}'$ a partir de $U_{1ef}$ e de $P_{10}=<u_1 i_1>$ utilizando as seguintes relações
-
-\eq{r_1+r_2'=\frac{P_{10}}{I_{1ef}^2}}
-
-\eq{\lambda_{11} + \lambda_{22}'=\sqrt{\frac{\left(\frac{U_{1ef}}{I_{1ef}}\right)^2-(r_1+r_2')^2}{\omega^2}}}
-
-\subsection{Relações entre o primário e o secundário}
+\subsection*{I.1./II Relações entre o primário e o secundário}
 Conhecem-se as seguintes relações para um transformador ideal:
 \begin{equation}
 \frac{U_{pri}}{U_{sec}}=\frac{n_{pri}}{n_{sec}}
@@ -228,10 +184,58 @@ Por fim a eficiência pode ser calculada fazendo:
 \begin{equation}
 \eta=\frac{P_{20}}{P_{10}}=\frac{\mathrm{Re}(U_2I_2)}{\mathrm{Re}(U_1I_1)}
 \end{equation}
-Através da lei de ohm e das expressões \ref{eq:tens_u2} e \ref{eq:cool}, obtém-se finalemente:
+Através da lei de ohm e das expressões \ref{eq:tens_u2} e \ref{eq:cool}, obtém-se finalmente:
 \begin{equation}
 \eta=\frac{\left(\frac{n_{pri}}{n_{sec}}\right)^2R_\mathrm{LOAD}}{r_1+r_2'+R_{\mathrm{LOAD}}\left(\frac{n_{pri}}{n_{sec}}\right)^2}
 \end{equation}
+
+
+\subsection*{I.2. Determinação da característica magnética do núcleo do transformador}
+Conforme a nomenclatura da \rfig{../img/I-2_esq.png}, podem determinar-se os campos B e H em função dos valores de tensão medidos no osciloscópio.
+\eq{\oint_l \mathbf{H} \cdot \, \mathbf{dl} = n_1 i_1}
+\eq{H \approx \frac{n_1 i_1}{l} = \frac{n_1 Y_1}{R_1 l} }
+
+
+\eq{u_2 = \frac{d \phi_2}{d t} \approx n_2 S \frac{d B}{dt}}
+\eq{u_2 = uc + R C \frac {d u_c}{d _t} \approx R C \frac{d u_c}{dt}}
+\eq{B \approx \frac{R_2 C_1}{n_2 S} Y_2}
+
+\subsection*{I.3. Ensaio em vazio do transformador}
+O objectivo deste ponto é determinar as impedâncias internas do transformador. A representação do transformador de acordo com o esquema equivalente de Steinmetz encontra-se na figura \rfig{../img/I-3_steinmetz.png}.
+Começando por estudar o secundário em vazio é possível determinar $r_1$,$\lambda_{11}$, $r_{fe}$, $l_{11}*cos(\phi_{fe})$, a partir de $I_{1ef}$, $U_{2ef}$, $P_{10}=<u_1 i_1>$ e $P_{12}=<u_2 i_1>$ utilizando as seguintes relações
+
+\eq{r_{fe}=\frac{P_{12}}{\frac{n_2}{n_1}I_{1ef}^2}}
+
+\eq{r1=\frac{P_{10}}{I_{1ef}^2}-r_{fe}}
+
+\eq{l_{11}=\frac{U_{2ef}}{I_{1ef}\frac{n2}{n1}\omega}}
+
+\eq{\phi_{fe}=Arcsin{\frac{P_{12}}{U_{2ef}{I_{1ef}}}}}
+
+\eq{\lambda_{11}=\sqrt{\frac{\left(\frac{U_{1ef}}{I_{1ef}}\right)^2-(r_1+r_{fe})^2}{\omega^2}}-l_{11}cos(\phi_{fe})}
+
+Estudando agora o primário em vazio é possível determinar $r_2'$,$\lambda_{22}'$, $r_{fe}$, $l_{11}cos(\phi_{fe})$ a partir de $I_{2ef}$, $U_{1ef}$,$P_{2}=<u_2 i_2>$ e $P_{21}=<u_1 i_2>$, utilizando as relações
+
+\eq{r_{fe}=\frac{P_{21}}{I_{2ef}^2\frac{n2}{n1}}}
+
+\eq{r_{2}'=\frac{P_2}{\left(I_{2ef}\frac{n_2}{n_1}\right)^2}-r_{fe}}
+
+\eq{l_{11}=\frac{U_{1ef}}{\frac{n_2}{n_1}I_{2ef}\omega}}
+
+\eq{\phi_{fe}=Arcsin{\frac{r_{fe}}{\omega l_{11}}}}
+
+\eq{\lambda_{22}'=\sqrt{\frac{\left(\frac{U_{2ef}}{I_{1ef}}\right)^2\frac{1}{\left(\frac{n_2}{n_1}\right)^4}-(r_{2}'+r_{fe})^2}{\omega^2}}-l_{11}cos(\phi_{fe})}
+
+\fig{../img/I-3_steinmetz.png}{I.3. Esquema equivalente de Steinmetz}
+
+\subsection*{I.4. Ensaio em curto-circuito do transformador}
+Neste estudo do transformador com o secundário em curto-circuito assume-se que nenhuma corrente passa por $r_{fe}$ e $l_{11}cos(\phi_{fe})$. Neste caso é possível determinar $r_1+r_{2'}$ e $\lambda_{11} + \lambda_{22}'$ a partir de $U_{1ef}$ e de $P_{10}=<u_1 i_1>$ utilizando as seguintes relações
+
+\eq{r_1+r_2'=\frac{P_{10}}{I_{1ef}^2}}
+
+\eq{\lambda_{11} + \lambda_{22}'=\sqrt{\frac{\left(\frac{U_{1ef}}{I_{1ef}}\right)^2-(r_1+r_2')^2}{\omega^2}}}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Experiência realizada %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experiência Realizada}
