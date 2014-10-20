@@ -112,52 +112,8 @@ Neste trabalho laboratorial determinam-se as características eléctricas do tra
 \label{s:intro}
 %Situar o problema, incluir fórmulas.
 %Quem lê o relatório deve conseguir perceber exatamente o que foi feito.
-\subsection*{I.2. Determinação da característica magnética do núcleo do transformador}
-Conforme a nomenclatura da \rfig{../img/I-2_esq.png}, podem determinar-se os campos B e H em função dos valores de tensão medidos no osciloscópio.
-\eq{\oint_l \mathbf{H} \cdot \, \mathbf{dl} = n_1 i_1}
-\eq{H \approx \frac{n_1 i_1}{l} = \frac{n_1 Y_1}{R_1 l} }
 
-
-\eq{u_2 = \frac{d \phi_2}{d t} \approx n_2 S \frac{d B}{dt}}
-\eq{u_2 = uc + R C \frac {d u_c}{d _t} \approx R C \frac{d u_c}{dt}}
-\eq{B \approx \frac{R_2 C_1}{n_2 S} Y_2}
-
-\subsection*{I.3. Ensaio em vazio do transformador}
-O objectivo deste ponto é determinar as impedâncias internas do transformador. A representação do transformador de acordo com o esquema equivalente de Steinmetz encontra-se na figura \rfig{../img/I-3_steinmetz.png}.
-Começando por estudar o secundário em vazio é possível determinar $r_1$,$\lambda_{11}$, $r_{fe}$, $l_{11}*cos(\phi_{fe})$, a partir de $I_{1ef}$, $U_{2ef}$, $P_{10}=<u_1 i_1>$ e $P_{12}=<u_2 i_1>$ utilizando as seguintes relações
-
-\eq{r_{fe}=\frac{P_{12}}{\frac{n_2}{n_1}I_{1ef}^2}}
-
-\eq{r1=\frac{P_{10}}{I_{1ef}^2}-r_{fe}}
-
-\eq{l_{11}=\frac{U_{2ef}}{I_{1ef}\frac{n2}{n1}\omega}}
-
-\eq{\phi_{fe}=Arcsin{\frac{P_{12}}{U_{2ef}{I_{1ef}}}}}
-
-\eq{\lambda_{11}=\sqrt{\frac{\left(\frac{U_{1ef}}{I_{1ef}}\right)^2-(r_1+r_{fe})^2}{\omega^2}}-l_{11}cos(\phi_{fe})}
-
-Estudando agora o primário em vazio é possível determinar $r_2'$,$\lambda_{22}'$, $r_{fe}$, $l_{11}cos(\phi_{fe})$ a partir de $I_{2ef}$, $U_{1ef}$,$P_{2}=<u_2 i_2>$ e $P_{21}=<u_1 i_2>$, utilizando as relações
-
-\eq{r_{fe}=\frac{P_{21}}{I_{2ef}^2\frac{n2}{n1}}}
-
-\eq{r_{2}'=\frac{P_2}{\left(I_{2ef}\frac{n_2}{n_1}\right)^2}-r_{fe}}
-
-\eq{l_{11}=\frac{U_{1ef}}{\frac{n_2}{n_1}I_{2ef}\omega}}
-
-\eq{\phi_{fe}=Arcsin{\frac{r_{fe}}{\omega l_{11}}}}
-
-\eq{\lambda_{22}'=\sqrt{\frac{\left(\frac{U_{2ef}}{I_{1ef}}\right)^2\frac{1}{\left(\frac{n_2}{n_1}\right)^4}-(r_{2}'+r_{fe})^2}{\omega^2}}-l_{11}cos(\phi_{fe})}
-
-\fig{../img/I-3_steinmetz.png}{I.3. Esquema equivalente de Steinmetz}
-
-\subsection*{I.4. Ensaio em curto-circuito do transformador}
-Neste estudo do transformador com o secundário em curto-circuito assume-se que nenhuma corrente passa por $r_{fe}$ e $l_{11}cos(\phi_{fe})$. Neste caso é possível determinar $r_1+r_{2'}$ e $\lambda_{11} + \lambda_{22}'$ a partir de $U_{1ef}$ e de $P_{10}=<u_1 i_1>$ utilizando as seguintes relações
-
-\eq{r_1+r_2'=\frac{P_{10}}{I_{1ef}^2}}
-
-\eq{\lambda_{11} + \lambda_{22}'=\sqrt{\frac{\left(\frac{U_{1ef}}{I_{1ef}}\right)^2-(r_1+r_2')^2}{\omega^2}}}
-
-\subsection{Relações entre o primário e o secundário}
+\subsection*{I.1./II Relações entre o primário e o secundário}
 Conhecem-se as seguintes relações para um transformador ideal:
 \begin{equation}
 \frac{U_{pri}}{U_{sec}}=\frac{n_{pri}}{n_{sec}}
@@ -228,10 +184,58 @@ Por fim a eficiência pode ser calculada fazendo:
 \begin{equation}
 \eta=\frac{P_{20}}{P_{10}}=\frac{\mathrm{Re}(U_2I_2)}{\mathrm{Re}(U_1I_1)}
 \end{equation}
-Através da lei de ohm e das expressões \ref{eq:tens_u2} e \ref{eq:cool}, obtém-se finalemente:
+Através da lei de ohm e das expressões \ref{eq:tens_u2} e \ref{eq:cool}, obtém-se finalmente:
 \begin{equation}
 \eta=\frac{\left(\frac{n_{pri}}{n_{sec}}\right)^2R_\mathrm{LOAD}}{r_1+r_2'+R_{\mathrm{LOAD}}\left(\frac{n_{pri}}{n_{sec}}\right)^2}
 \end{equation}
+
+
+\subsection*{I.2. Determinação da característica magnética do núcleo do transformador}
+Conforme a nomenclatura da \rfig{../img/I-2_esq.png}, podem determinar-se os campos B e H em função dos valores de tensão medidos no osciloscópio.
+\eq{\oint_l \mathbf{H} \cdot \, \mathbf{dl} = n_1 i_1}
+\eq{H \approx \frac{n_1 i_1}{l} = \frac{n_1 Y_1}{R_1 l} }
+
+
+\eq{u_2 = \frac{d \phi_2}{d t} \approx n_2 S \frac{d B}{dt}}
+\eq{u_2 = uc + R C \frac {d u_c}{d _t} \approx R C \frac{d u_c}{dt}}
+\eq{B \approx \frac{R_2 C_1}{n_2 S} Y_2}
+
+\subsection*{I.3. Ensaio em vazio do transformador}
+O objectivo deste ponto é determinar as impedâncias internas do transformador. A representação do transformador de acordo com o esquema equivalente de Steinmetz encontra-se na figura \rfig{../img/I-3_steinmetz.png}.
+Começando por estudar o secundário em vazio é possível determinar $r_1$,$\lambda_{11}$, $r_{fe}$, $l_{11}*cos(\phi_{fe})$, a partir de $I_{1ef}$, $U_{2ef}$, $P_{10}=<u_1 i_1>$ e $P_{12}=<u_2 i_1>$ utilizando as seguintes relações
+
+\eq{r_{fe}=\frac{P_{12}}{\frac{n_2}{n_1}I_{1ef}^2}}
+
+\eq{r1=\frac{P_{10}}{I_{1ef}^2}-r_{fe}}
+
+\eq{l_{11}=\frac{U_{2ef}}{I_{1ef}\frac{n2}{n1}\omega}}
+
+\eq{\phi_{fe}=Arcsin{\frac{P_{12}}{U_{2ef}{I_{1ef}}}}}
+
+\eq{\lambda_{11}=\sqrt{\frac{\left(\frac{U_{1ef}}{I_{1ef}}\right)^2-(r_1+r_{fe})^2}{\omega^2}}-l_{11}cos(\phi_{fe})}
+
+Estudando agora o primário em vazio é possível determinar $r_2'$,$\lambda_{22}'$, $r_{fe}$, $l_{11}cos(\phi_{fe})$ a partir de $I_{2ef}$, $U_{1ef}$,$P_{2}=<u_2 i_2>$ e $P_{21}=<u_1 i_2>$, utilizando as relações
+
+\eq{r_{fe}=\frac{P_{21}}{I_{2ef}^2\frac{n2}{n1}}}
+
+\eq{r_{2}'=\frac{P_2}{\left(I_{2ef}\frac{n_2}{n_1}\right)^2}-r_{fe}}
+
+\eq{l_{11}=\frac{U_{1ef}}{\frac{n_2}{n_1}I_{2ef}\omega}}
+
+\eq{\phi_{fe}=Arcsin{\frac{r_{fe}}{\omega l_{11}}}}
+
+\eq{\lambda_{22}'=\sqrt{\frac{\left(\frac{U_{2ef}}{I_{1ef}}\right)^2\frac{1}{\left(\frac{n_2}{n_1}\right)^4}-(r_{2}'+r_{fe})^2}{\omega^2}}-l_{11}cos(\phi_{fe})}
+
+\fig{../img/I-3_steinmetz.png}{I.3. Esquema equivalente de Steinmetz}
+
+\subsection*{I.4. Ensaio em curto-circuito do transformador}
+Neste estudo do transformador com o secundário em curto-circuito assume-se que nenhuma corrente passa por $r_{fe}$ e $l_{11}cos(\phi_{fe})$. Neste caso é possível determinar $r_1+r_{2'}$ e $\lambda_{11} + \lambda_{22}'$ a partir de $U_{1ef}$ e de $P_{10}=<u_1 i_1>$ utilizando as seguintes relações
+
+\eq{r_1+r_2'=\frac{P_{10}}{I_{1ef}^2}}
+
+\eq{\lambda_{11} + \lambda_{22}'=\sqrt{\frac{\left(\frac{U_{1ef}}{I_{1ef}}\right)^2-(r_1+r_2')^2}{\omega^2}}}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Experiência realizada %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experiência Realizada}
@@ -239,22 +243,26 @@ Através da lei de ohm e das expressões \ref{eq:tens_u2} e \ref{eq:cool}, obté
 %Incluir diagrama de blocos da montagem
 Apresentam-se na tabela \ref{partlist} os componentes utilizados.
 
-\tabela[partlist]{Lista dos componentes utilizados}{lrrr}{
-	Descrição		&Modelo/Valor		&Qt.			&Referência	\\ \hline
-	Ampl. operacional	&			&1			&		\\
-	Cond. cerâmico		&nF			&1			&		\\
-	Resistência .25W	&$\Omega$		&4			&		\\
+\tabela[partlist]{Lista dos componentes utilizados}{lrr}{
+	Descrição		&Modelo/Valor		&Qt.				\\ \hline
+	Transformador		&			&1	\\
+	Cond. cerâmico		&1$\mu$F		&1	\\
+	Resistência 10W		&1$\Omega$		&1	\\
+	Resistência 10W		&10$\Omega$		&2	\\
+	Resistência 2.5W	&10K$\Omega$		&4	\\
+	Potenciometro		&12$\Omega$		&1	\\
+		
 }
 
 \fig{../img/I-2_esq.png}{I.2. Circuito utilizado na determinação da característica magnética do núcleo do transformador}
 
 
-Para se fazer o estudo do transformador com o secundário em vazio utilizou-se o seguinte circuito
+Para se fazer o estudo do transformador com o secundário em vazio utilizou-se o circuito representado na figura \ref{../img/I-3_secundario_vazio.png}
 \fig{../img/I-3_secundario_vazio.png}{I.3. Circuito utilizado no estudo do transformador com o secundário em vazio}
 
 Utilizaram-se as duas resistências de $10K\Omega$ para que fosse possível medir a tensão no osciloscópio, uma vez que se aplicaram cerca de 220V.
 
-Para estudar o transformador com o primário em vazio e o transformador com o secundário em curto circuito utilizaram-se os seguintes circuitos
+Para estudar o transformador com o primário em vazio e o transformador com o secundário em curto circuito utilizaram-se os circuitos representados nas figuras \ref{../img/I-3_primario_vazio.png} e \ref{../img/I-4_curto_circuito.png}, respectivamente. 
 \fig{../img/I-3_primario_vazio.png}{I.3. Circuito utilizado no estudo do transformador com o primário em vazio}
 
 \fig{../img/I-4_curto_circuito.png}{I.4. Circuito utilizado no estudo do transformador com o secundário em curto circuito}
@@ -353,11 +361,69 @@ Note-se que para estes cálculos se utilizou $I_{ef}=	\frac{U_R}{R}$, sendo $U_R
 O pretendido neste ponto era obter um estado de magnetização semelhante com o secundário em aberto e com o primário em aberto. Isso é alcançado se os valores de $r_{fe}$, $\phi_{fe}$  e $l_{11}$ forem semelhantes. Analisando os resultados obtidos conclui-se que os valores de $l_{11}$ são bastante próximos mas que todos os outros valores apresentam uma grande discrepância. Dado que o valor dos parâmetros do esquema equivalente de Steinmetz variam com as tensões aplicadas e com o estado de magnetização, em particular $l_{11}$, e tendo em conta  que os valores de $l_{11}$ obtidos são semelhantes conclui-se que os estados de magnetização para ambas as situações são semelhantes.
 Note-se que alguns parâmetros têm valores negativos, mas os erros englobam valores positivos, pelo que uma interpretação possível é que os valores sejam tão pequenos que se tenham obtido valores negativos.
 
+
+Pode-se comparar os dados obtidos com a previsão teórica, fazendo o módulo da fórmula \ref{eq:aberto}. Os resultados obtidos estão na tabela \ref{tab:vazio}.
+\tabela{Valores obtidos teoricamente para o secundário em vazio.}{|c|c|}{
+                       & Tensão (V)     \\ \hline
+$V1_{ef}$  imposto     & 219$\pm$1      \\
+$V2_{ef}$ teórico      & 25.29$\pm$2.67 \\
+Desvio à exactidão (\%) & 14.5\%        
+}
+
+\subsection*{I.4. Ensaio em curto-circuito do transformador}
+Os dados obtidos para o estudo do transformador em curto-circuito encontram-se na tabela \ref{tab:tabelao}. Os valores de corrente, impedância e eficiência apresentam-se na tabela \ref{tab:imp} Utilizando o módulo das relações obtidas nas fórmulas presentes na introdução teórica, pode-se prever teoricamente as tensões, correntes e impedâncias no secundário. Utilizou-se como tensão no primário a tensão medida no multímetro, visto esta ser mais precisa que a obtida através do osciloscópio. Os resultados apresentam-se na tabela \ref{tab:carga}.
+
+\begin{table}[h]
+\begin{tabular}{c|c|c|c}
+                         & R=10$\Omega$  & R=15$\Omega$  & R=20$\Omega$  \\ \hline
+$I2_{ef}$ experim. (A)   & 1.25$\pm$0.01 & 1.66$\pm$0.01 & 2.45$\pm$0.01 \\ \hline
+$Z_s$ teórico ($\Omega$) & 1230$\pm$19   & 1080$\pm$15   & 680$\pm$6     \\ \hline
+Eficiência (\%)          & 88.54         & 73.13         & 41.57        
+\end{tabular}
+\caption{Valores obtidos experimentalmente para a eficiência, corrente no secundário e impedância}
+\end{table}
+
+\begin{table}[h]
+\begin{tabular}{c|c|c|c}
+                         & R=10$\Omega$    & R=15$\Omega$    & R=20$\Omega$    \\ \hline
+$V1_{ef}$ imposta (V)    & 220.0$\pm$1.1   & 222.6$\pm$1.1   & 222.6$\pm$1.1   \\ \hline
+$V2_{ef}$ teorica (V)    & 24.81$\pm$0.27  & 25.14$\pm$0.27  & 25.40$\pm$0.27  \\ \hline
+$I2_{ef}$ teórica (V)    & 2.851$\pm$0.089 & 1.803$\pm$0.089 & 1.572$\pm$0.088 \\ \hline
+$Z_s$ teórico ($\Omega$) & 774$\pm$2       & 1146$\pm$3      & 1518$\pm$4     
+\end{tabular}
+\caption{Valores obtidos para a previsão teórica das tensões, correntes e impedâncias}
+\label{tab:carga}
+\end{table}
+Os desvios à exactidão dos vários valores experimentais estão apresentados na tabela \ref{tab:exac}
+\begin{table}[h]
+\begin{tabular}{c|c|c|c}
+Desvio à exactidão (\%) & R=10$\Omega$ & R=15$\Omega$ & R=20$\Omega$ \\ \hline
+$V2_{ef}$               & 1.3          & 0.7          & 1.3          \\ \hline
+$I2_{ef}$               & 14           & 8            & 17           \\ \hline
+$Z_s$                   & 12           & 6            & 19          
+\end{tabular}
+\caption{Desvios à exactidão das várias grandezas do transformador obtidas}
+\label{tab:exac}
+\end{table}
+
+\subsection*{II.Ensaio em carga do transformador}
+Os dados obtidos para várias resistência de carga apresentam-se na tabela \ref{tab:carga}
+
+\tabelao[tab:tabelao]{Dados obtidos para o transformador em carga}{c|c|c|c|c|c|c}{  
+                             & \multicolumn{2}{c|}{R=10$\Omega$}     & \multicolumn{2}{c|}{R=15$\Omega$}   & \multicolumn{2}{c|}{R=20$\Omega$}    \\ \cline{2-7} 
+                               & Primário           & Secundário       & Primário         & Secundário       & Primário          & Secundário       \\ \hline
+V1ef(ac)                       & 223,517$\pm$1.11   & 25,01$\pm$0.13   & 225,693$\pm$1.12 & 24,957$\pm$0.12  & 225,367$\pm$1.12  & 24,474$\pm$0.12  \\ \hline
+V2ef(ac)                       & 1,817$\pm$0.009    & 1,821$\pm$0.009  & 2,089$\pm$0.010  & 2,086$\pm$0.010  & 3,314$\pm$0.017   & 3,314$\pm$0.017  \\ \hline
+\textless v1xv2\textgreater(ac) & 353,221$\pm$12.611 & 39,659$\pm$0.183 & 425,83$\pm$2.129 & 47,222$\pm$0.236 & 720,513$\pm$3.603 & 78,67$\pm$0.393  \\ \hline
+\textless v1\textgreater        & -4,4$\pm$0.1       & -0,12$\pm$0.01   & -3,3$\pm$0.01    & -0,112$\pm$0.001 & -3,97$\pm$0.01    & -0.093$\pm$0.002 \\ \hline
+\textless v2\textgreater        & 0.037$\pm$0.01          &4.56$\pm$0.01        & 0.044$\pm$0.01        & 0.052$\pm$0.01        & 0.054$\pm$0.01         & 0.067$\pm$0.01        \\ \hline
+multimetro                     & 220$\pm$1.1        & 220$\pm$1.1      & 222,6$\pm$1.1    & 222,3$\pm$1.1    & 222.6$\pm$1.1     & 222,6$\pm$1.1}
+
+
 \subsection*{I.4. Ensaio em curto-circuito do transformador}
 Os dados obtidos para o estudo do transformador em curto-circuito encontram-se na tabela \ref{tab:curtocircuito}
 
 \tabela[tab:curtocircuito]{Dados recolhidos do software para o estudo do transformador em curto-circuito}{c|c}{   
-  
     $I_{1ef}(A)$ & $0,837\pm0,004$  \\ \hline
     $U_{2ef}(ac)(V)$ & $32,774\pm0,164$  \\ \hline
     $P_{10}(V)$ & $20,339\pm0,101$  \\ \hline
