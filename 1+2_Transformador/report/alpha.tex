@@ -380,6 +380,17 @@ Note-se que para estes cálculos se utilizou $I_{ef}=	\frac{U_R}{R}$, sendo $U_R
 O pretendido neste ponto era obter um estado de magnetização semelhante com o secundário em aberto e com o primário em aberto. Isso é alcançado se os valores de $r_{fe}$, $\phi_{fe}$  e $l_{11}$ forem semelhantes. Analisando os resultados obtidos conclui-se que os valores de $l_{11}$ são bastante próximos mas que todos os outros valores apresentam uma grande discrepância. Dado que o valor dos parâmetros do esquema equivalente de Steinmetz variam com as tensões aplicadas e com o estado de magnetização, em particular $l_{11}$, e tendo em conta  que os valores de $l_{11}$ obtidos são semelhantes conclui-se que os estados de magnetização para ambas as situações são semelhantes.
 Note-se que alguns parâmetros têm valores negativos, mas os erros englobam valores positivos, pelo que uma interpretação possível é que os valores sejam tão pequenos que se tenham obtido valores negativos.
 
+%ISTO NAO DEVIA ESTAR AQUI; E SO PARA CABER
+\tabelao[tab:tabelao]{Dados obtidos para o transformador em carga}{c|c|c|c|c|c|c}{  
+                             & \multicolumn{2}{c|}{R=20$\Omega$}     & \multicolumn{2}{c|}{R=15$\Omega$}   & \multicolumn{2}{c|}{R=10$\Omega$}    \\ \cline{2-7} 
+                               & Primário           & Secundário       & Primário         & Secundário       & Primário          & Secundário       \\ \hline
+V1ef(ac)                       & 223,517$\pm$1.11   & 25,01$\pm$0.13   & 225,693$\pm$1.12 & 24,957$\pm$0.12  & 225,367$\pm$1.12  & 24,474$\pm$0.12  \\ \hline
+V2ef(ac)                       & 1,817$\pm$0.009    & 1,821$\pm$0.009  & 2,089$\pm$0.010  & 2,086$\pm$0.010  & 3,314$\pm$0.017   & 3,314$\pm$0.017  \\ \hline
+\textless v1xv2\textgreater(ac) & 353,221$\pm$12.611 & 39,659$\pm$0.183 & 425,83$\pm$2.129 & 47,222$\pm$0.236 & 720,513$\pm$3.603 & 78,67$\pm$0.393  \\ \hline
+\textless v1\textgreater        & -4,4$\pm$0.1       & -0,12$\pm$0.01   & -3,3$\pm$0.01    & -0,112$\pm$0.001 & -3,97$\pm$0.01    & -0.093$\pm$0.002 \\ \hline
+\textless v2\textgreater        & 0.037$\pm$0.01          &4.56$\pm$0.01        & 0.044$\pm$0.01        & 0.052$\pm$0.01        & 0.054$\pm$0.01         & 0.067$\pm$0.01        \\ \hline
+multimetro                     & 220$\pm$1.1        & 220$\pm$1.1      & 222,6$\pm$1.1    & 222,3$\pm$1.1    & 222.6$\pm$1.1     & 222,6$\pm$1.1}
+
 
 Pode-se comparar os dados obtidos com a previsão teórica, fazendo o módulo da fórmula \ref{eq:aberto}. Os resultados obtidos estão na tabela \ref{tab:vazio}.
 \begin{table}[h]
@@ -406,6 +417,8 @@ Eficiência (\%)          & 88.54         & 73.13         & 41.57
 \caption{Valores obtidos experimentalmente para a eficiência, corrente no secundário e impedância}
 \label{tab:imp}
 \end{table}
+
+
 
 \begin{table}[h]
 \begin{tabular}{c|c|c|c}
@@ -435,15 +448,7 @@ $\eta$                 &9           &25           &57
 \subsection*{II.Ensaio em carga do transformador}
 Os dados obtidos para várias resistência de carga apresentam-se na tabela \ref{tab:carga}
 
-\tabelao[tab:tabelao]{Dados obtidos para o transformador em carga}{c|c|c|c|c|c|c}{  
-                             & \multicolumn{2}{c|}{R=20$\Omega$}     & \multicolumn{2}{c|}{R=15$\Omega$}   & \multicolumn{2}{c|}{R=10$\Omega$}    \\ \cline{2-7} 
-                               & Primário           & Secundário       & Primário         & Secundário       & Primário          & Secundário       \\ \hline
-V1ef(ac)                       & 223,517$\pm$1.11   & 25,01$\pm$0.13   & 225,693$\pm$1.12 & 24,957$\pm$0.12  & 225,367$\pm$1.12  & 24,474$\pm$0.12  \\ \hline
-V2ef(ac)                       & 1,817$\pm$0.009    & 1,821$\pm$0.009  & 2,089$\pm$0.010  & 2,086$\pm$0.010  & 3,314$\pm$0.017   & 3,314$\pm$0.017  \\ \hline
-\textless v1xv2\textgreater(ac) & 353,221$\pm$12.611 & 39,659$\pm$0.183 & 425,83$\pm$2.129 & 47,222$\pm$0.236 & 720,513$\pm$3.603 & 78,67$\pm$0.393  \\ \hline
-\textless v1\textgreater        & -4,4$\pm$0.1       & -0,12$\pm$0.01   & -3,3$\pm$0.01    & -0,112$\pm$0.001 & -3,97$\pm$0.01    & -0.093$\pm$0.002 \\ \hline
-\textless v2\textgreater        & 0.037$\pm$0.01          &4.56$\pm$0.01        & 0.044$\pm$0.01        & 0.052$\pm$0.01        & 0.054$\pm$0.01         & 0.067$\pm$0.01        \\ \hline
-multimetro                     & 220$\pm$1.1        & 220$\pm$1.1      & 222,6$\pm$1.1    & 222,3$\pm$1.1    & 222.6$\pm$1.1     & 222,6$\pm$1.1}
+
 
 
 \subsection*{I.4. Ensaio em curto-circuito do transformador}

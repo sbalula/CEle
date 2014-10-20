@@ -254,6 +254,7 @@ Apresentam-se na tabela \ref{partlist} os componentes utilizados.
 		
 }
 
+\fig{../img/I-1_esq.png}{I.1. Circuito utilizado na determinação da relação de espiras entre primário e secundário}
 \fig{../img/I-2_esq.png}{I.2. Circuito utilizado na determinação da característica magnética do núcleo do transformador}
 
 
@@ -406,6 +407,17 @@ Eficiência (\%)          & 88.54         & 73.13         & 41.57
 \label{tab:imp}
 \end{table}
 
+
+\tabelao[tab:tabelao]{Dados obtidos para o transformador em carga}{c|c|c|c|c|c|c}{  
+                             & \multicolumn{2}{c|}{R=20$\Omega$}     & \multicolumn{2}{c|}{R=15$\Omega$}   & \multicolumn{2}{c|}{R=10$\Omega$}    \\ \cline{2-7} 
+                               & Primário           & Secundário       & Primário         & Secundário       & Primário          & Secundário       \\ \hline
+V1ef(ac)                       & 223,517$\pm$1.11   & 25,01$\pm$0.13   & 225,693$\pm$1.12 & 24,957$\pm$0.12  & 225,367$\pm$1.12  & 24,474$\pm$0.12  \\ \hline
+V2ef(ac)                       & 1,817$\pm$0.009    & 1,821$\pm$0.009  & 2,089$\pm$0.010  & 2,086$\pm$0.010  & 3,314$\pm$0.017   & 3,314$\pm$0.017  \\ \hline
+\textless v1xv2\textgreater(ac) & 353,221$\pm$12.611 & 39,659$\pm$0.183 & 425,83$\pm$2.129 & 47,222$\pm$0.236 & 720,513$\pm$3.603 & 78,67$\pm$0.393  \\ \hline
+\textless v1\textgreater        & -4,4$\pm$0.1       & -0,12$\pm$0.01   & -3,3$\pm$0.01    & -0,112$\pm$0.001 & -3,97$\pm$0.01    & -0.093$\pm$0.002 \\ \hline
+\textless v2\textgreater        & 0.037$\pm$0.01          &4.56$\pm$0.01        & 0.044$\pm$0.01        & 0.052$\pm$0.01        & 0.054$\pm$0.01         & 0.067$\pm$0.01        \\ \hline
+multimetro                     & 220$\pm$1.1        & 220$\pm$1.1      & 222,6$\pm$1.1    & 222,3$\pm$1.1    & 222.6$\pm$1.1     & 222,6$\pm$1.1}
+
 \begin{table}[h]
 \begin{tabular}{c|c|c|c}
                          & R=10$\Omega$    & R=15$\Omega$    & R=20$\Omega$    \\ \hline
@@ -434,15 +446,7 @@ $\eta$                 &9           &25           &57
 \subsection*{II.Ensaio em carga do transformador}
 Os dados obtidos para várias resistência de carga apresentam-se na tabela \ref{tab:carga}
 
-\tabelao[tab:tabelao]{Dados obtidos para o transformador em carga}{c|c|c|c|c|c|c}{  
-                             & \multicolumn{2}{c|}{R=20$\Omega$}     & \multicolumn{2}{c|}{R=15$\Omega$}   & \multicolumn{2}{c|}{R=10$\Omega$}    \\ \cline{2-7} 
-                               & Primário           & Secundário       & Primário         & Secundário       & Primário          & Secundário       \\ \hline
-V1ef(ac)                       & 223,517$\pm$1.11   & 25,01$\pm$0.13   & 225,693$\pm$1.12 & 24,957$\pm$0.12  & 225,367$\pm$1.12  & 24,474$\pm$0.12  \\ \hline
-V2ef(ac)                       & 1,817$\pm$0.009    & 1,821$\pm$0.009  & 2,089$\pm$0.010  & 2,086$\pm$0.010  & 3,314$\pm$0.017   & 3,314$\pm$0.017  \\ \hline
-\textless v1xv2\textgreater(ac) & 353,221$\pm$12.611 & 39,659$\pm$0.183 & 425,83$\pm$2.129 & 47,222$\pm$0.236 & 720,513$\pm$3.603 & 78,67$\pm$0.393  \\ \hline
-\textless v1\textgreater        & -4,4$\pm$0.1       & -0,12$\pm$0.01   & -3,3$\pm$0.01    & -0,112$\pm$0.001 & -3,97$\pm$0.01    & -0.093$\pm$0.002 \\ \hline
-\textless v2\textgreater        & 0.037$\pm$0.01          &4.56$\pm$0.01        & 0.044$\pm$0.01        & 0.052$\pm$0.01        & 0.054$\pm$0.01         & 0.067$\pm$0.01        \\ \hline
-multimetro                     & 220$\pm$1.1        & 220$\pm$1.1      & 222,6$\pm$1.1    & 222,3$\pm$1.1    & 222.6$\pm$1.1     & 222,6$\pm$1.1}
+
 
 
 \subsection*{I.4. Ensaio em curto-circuito do transformador}
