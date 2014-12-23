@@ -6,7 +6,7 @@ Vss	0	vss	8
 
 *Vin	in	0	AC	1m
 *Vin	in	0	SIN(0	1.5	300)
-Vin	in	0	1
+Vin	in	0	0
 
 Rg	in	10	50
 R3	10	11	10

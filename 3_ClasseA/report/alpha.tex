@@ -116,6 +116,10 @@ com transistores bipolares 2n3055}
 %Situar o problema, incluir fórmulas.
 %Quem lê o relatório deve conseguir perceber exatamente o que foi feito.
 
+\fig[.4]{../img/esquematico.png}{Circuito implementado no laboratório}
+
+Neste trabalho laboratorial implentou-se um andar de saída em classe A, conforme a \rfig{../img/esquematico.png} e que se descreve em maior detalhe em \ref{s:expreal}
+
 Analisando o circuito do andar de saída em classe A obtém-se, através das equações de Kirchoff e da característica do transístor BJT, o seguinte sistema:
 \begin{equation}
 \begin{cases} v_i=v_{{be}_1}+v_o \\ i_{e_1}=I+\frac{V_o}{R_L}\\i_{e_1}=I_{ES}\exp \left(\frac{V_{{be}_1}}{\eta V_T}\right)-1\approx I_{ES}\exp \left(\frac{V_{{be}_1}}{\eta V_T}\right)
@@ -190,13 +194,37 @@ Com estas fórmulas para a potência é agora possível determinar a eficiência
 \eta=\frac{1}{4}\frac{v_{o_m}}{IR_L}\frac{v_{o_m}}{V_{CC}}\approx\frac{1}{4}=25\%
 \end{equation}
 
+
+
+
+\subsection{Ponto de funcionamento em repouso}
+Para o cálculo do ponto de funcionamento em repouso utilizaram-se as seguintes relações para os transístores:
+\eq{i_C = \beta_f i_b}
+\eq{I_C	= I_{ES} \lr{e^{\frac{v_{EB}}{\eta V_T}}}}
+
+
+\subsection{Impedâncias de entrada e saída}
+
+De modo a determinar a impedância de entrada do circuito mede-se a corrente e a tensão de entrada utilizando um multímetro e determina-se a impedância a partir da equação \ref{eq:impedanciaentrada}.
+\begin{equation}
+Z_{in}=\frac{V_{in}}{I_{in}}
+\label{eq:impedanciaentrada}
+\end{equation}
+Para determinar a impedância de saída do circuito utilizam-se duas cargas diferentes e considera-se que o circuito é linear de modo a poder ser possível considerar um equivalente de Thévenin. A impedância de saída é obtida através da equação \ref{eq:impedanciasaida}.
+\begin{equation}
+Z_{out}=\frac{R_L \frac{dV_0}{dR_L}}{\frac{V_0}{R_L}-\frac{dV_0}{dR_L}}
+\label{eq:impedanciasaida}
+\end{equation}
+
+É também pretendido verificar a resposta em frequência do circuito e para tal varia-se a frequência do sinal de entrada e apresenta-se o gráfico de $\frac{i_0}{i_i} (dB)$ em função de $log(f)$. De modo a saber as correntes de entrada e saída medem-se as tensões respectivas e utiliza-se $I=\frac{V}{R}$. Determina-se ainda o limite superior da banda passante a $-3dB$ partir da intersecção dessa recta com o gráfico já referido. 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Experiência realizada %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experiência Realizada}
 \label{s:expreal}
 %Incluir diagrama de blocos da montagem
-De acordo com as instruções do guia, implentou-se o circuito da \rfig{../img/circuito.png}. Apresentam-se na tabela \ref{partlist} os componentes utilizados.
+De acordo com as instruções do guia, implentou-se o circuito da \rfig{../img/esquematico.png}. Apresentam-se na tabela \ref{partlist} os componentes utilizados.
 
-\fig[.4]{../img/circuito.png}{Circuito implementado no laboratório}
+
 
 \tabela[partlist]{Lista dos componentes utilizados}{lrrr}{
 	Descrição		&Modelo/Valor		&Qt.			&Referência	\\ \hline
@@ -214,9 +242,37 @@ De acordo com as instruções do guia, implentou-se o circuito da \rfig{../img/c
 
 \subsection{Ponto de funcionamento em repouso}
 Apresentam-se na tabela \ref{PFR} os valores de tensões e correntes relevantes medidos experiementalmente, calculados teoricamente e obtidos na simulação.
-\tabela[PFR]{Valores de corrente e tensão, conforme legenda da \rfig{esquema}}{llll}{
+
+\tabela[PFR]{Valores de corrente e tensão, conforme legenda da \rfig{../esquematico.png}}{llll}{
+ID	&Experimental		&Teórico	&Simulação	\\ \hline
+Vdd (V)	&$8.022\pm0.01$		&$8.000$	&$8.000$	\\
+Vss (V)	&$-8.006\pm0.01$	&$-8.000$	&$-8.000$	\\
+10  (V)	&$-0.420\pm0.002$	&	&$-0.365$	\\
+11  (V)	&$-0.574\pm0.001$	&	&$-0.438$\\
+12  (V) &$-1.296\pm0.001$	&	&$-1.149$\\
+13  (V) &$-7.253\pm0.001$	&	&$-7.275$\\ \hline
+20  (A) &$1.12\pm0.02$		&	&$0.724$\\
+21  (A) &$1.88\pm0.02$		&	&$1.574$\\
+22  (A) &$1.23\pm0.02$		&$0.7154$	&$0.847$
 
 }
+
+\tabela[Potdiss]{Potências dissipadas no PFR, valores em Watt}{llll}{
+ID	&Experimental		&Teórico	&Simulação	\\ \hline
+$Vdd$		&$-9.06\pm0.17$		&	&$-5.79$
+$Vss$		&$-15.05\pm0.18$	&	&$-12.59$
+Ger. sinais	&$-0.0064\pm0.0001$	&	&$-0.0026$
+$R_1$		&$0.1680\pm0.0003$	&	&
+$R_2$		&$5.2606\pm0.0014$	&	&
+$R_3$		&$0.0024\pm0.0001$	&	&
+$Q_1$		&$10.53\pm0.20$		&	&
+$Q_2$		&$8.25\pm0.15$		&	&
+$Q_3$		&$0.489\pm0.037$	&	&
+
+
+
+}
+
 
 \subsection{Função de transferência}
 Neste ponto obtiveram-se as relações entre as correntes e as tensões de entrada e saída da montage utilizada. Foi utilizado o osciloscópio para medir tanto a tensão de entrada como a de saída do circuito, obtiveram-se as correntes de entrada e saída medindo a tensão aos terminais da resistência de entrada e de saída com o osciloscópio, tendo-se obtido a corrente através da lei de Ohm.\\
@@ -280,38 +336,55 @@ Neste ponto mediram-se a tensão e corrente de entrada directamente utilizando o
 \begin{table}[h]
     \begin{tabular}{|l|l|}
 \hline
-          v_i (V)	&	$0.874  \pm 0.01$		                    \\ \hline
-	i_i (A)	&	$0.00034 \pm 0.0001$			\\ \hline 
-	R_1 ($\Omega$) &	$10\pm0.1$			 \\ \hline
-	v_{01} (V)	&   	$0.851\pm0.01$	                       \\ \hline
-           R_2 ($\Omega$) &  $8\pm0.1$   \\ \hline
-           v_{02} (V) &   $0.835 \pm 0.01$ \\ \hline
+         $ V_i (V)$	&	$0.874  \pm 0.01$		                    \\ \hline
+	$I_i (A)$	&	$0.00034 \pm 0.0001$			\\ \hline 
+	$R_1$ ($\Omega$) &	$10\pm0.1$			 \\ \hline
+	$V_{01}  (V)$	&   	$0.851\pm0.01$	                       \\ \hline
+           $R_2$ ($\Omega$) &  $8\pm0.1$   \\ \hline
+           $V_{02} (V)$ &   $0.835 \pm 0.01$ \\ \hline
 
     \end{tabular}
+    \caption{Valores obtidos das tensões e correntes de entrada e saída.}
+    \label{tab:impedancia}
 \end{table}
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \subsection{Resposta em frequência}
+Variou-se a frequência do sinal de entrada e mediu-se utilizando multímetros a tensão de saída e a tensão de entrada. Os resultados obtidos encontram-se na tabela \ref{tab:respostafrequenciaresultados}
+\begin{table}[h]
+    \begin{tabular}{|l|l|l|}
+    \hline
+    Frequência sinal de entrada (Hz) & Vi(V) & Vo(V) \\ \hline
+    100                              & 1.20  & 10.6  \\ \hline
+    200                              & 1.20  & 10.8  \\ \hline
+    400                              & 1.04  & 11.2  \\ \hline
+    600                              & 0.96  & 11.4  \\ \hline
+    800                              & 1,04  & 11.7  \\ \hline
+    1000                             & 0.80  & 12.1  \\ \hline
+    2000                             & 0.64  & 12.4  \\ \hline
+    4000                             & 0.56  & 12.9  \\ \hline
+    6000                             & 0.56  & 12.8  \\ \hline
+    8000                             & 0.48  & 13.0  \\ \hline
+    10000                            & 0.32  & 13.0  \\ \hline
+    20000                            & 0.32  & 12.9  \\ \hline
+    40000                            & 0.32  & 13.0  \\ \hline
+    60000                            & 0.48  & 12.8  \\ \hline
+    80000                            & 0.56  & 12.8  \\ \hline
+    100000                           & 0.64  & 12.8  \\ \hline
+    200000                           & 2.12  & 12.7  \\ \hline
+    400000                           & 2.40  & 12.4  \\ \hline
+    600000                           & 3.92  & 13.0  \\ \hline
+    800000                           & 4.64  & 13.7  \\ \hline
+    1000000                          & 7.04  & 14.1  \\ \hline
+    \end{tabular}
+\caption{Dados obtidos para a determinação da resposta em frequência do circuito}
+\label{tab:respostafrequenciaresultados}
+\end{table}
+
+
 
 
 
@@ -325,7 +398,62 @@ Neste ponto mediram-se a tensão e corrente de entrada directamente utilizando o
 \subsection{Função de transferência}
 \subsection{Potências fornecidas e dissipadas}
 \subsection{Impedâncias de entrada e saída}
+A impedância de entrada foi determinada através dos dados da tabela \ref{tab:impedancia} e da equação \ref{eq:impedanciaentrada}. Para a impedância de saída obtiveram-se 2 valores, sendo que se utilizaram as duas cargas para os cálculos, utilizando a equação \ref{eq:impedanciasaida}. Considerou-se que $\frac{dV_0}{dR_L}=\frac{V_{01}-V_{02}}{R_1-R_2}$ quando se utilizou $R_1$ para os cálculos e $\frac{dV_0}{dR_L}=\frac{V_{02}-V_{01}}{R_2-R_1}$ quando se utilizou $R_2$. Os resultados obtidos encontram-se na tabela \ref{tab:analiseimpedancias}
+
+
+\begin{table}[h]
+    \begin{tabular}{|l|l|l|}
+    \hline
+    $Z_{in}$($\Omega$) & $2570.59 \pm 78.55$ \\ \hline
+    $Z_{01}$($\Omega$) & $1.038\pm 0.751$  \\ \hline
+    $Z_{02}$($\Omega$) & $0.664\pm0.009$  \\ \hline
+    \end{tabular}
+\caption{Resultados obtidos para as impedâncias de entrada e saída}
+\label{tab:analiseimpedancias}
+\end{table}
+
+Verifica-se, como seria de esperar, que o andar de saída em classe A é um andar com uma alta impedância de entrada e uma baixa impedância de saída.
+
+
 \subsection{Resposta em frequência}
+Tendo em conta os dados da tabela \ref{tab:respostafrequenciadados} e atendendo a que $R_i=70.2 \pm 0.1\Omega$ e $R_o=6.9 \pm 0.1\Omega$ foi possível obter as correntes $i_i$ e $i_o$ a partir de $i=V/R$. Apresenta-se na tabela \ref{tab:respostafrequenciaanalise} $log(f)$ e também $\frac{i_0}{i_i}$ em $dB$. 
+
+
+\begin{table}
+    \begin{tabular}{|l|l|}
+    \hline
+    Log(f) (Hz) & $ i_o/i_i (dB)$ \\ \hline
+    2.0         & 39.1           \\ \hline
+    2.3         & 39.2           \\ \hline
+    2.6         & 40.8           \\ \hline
+    2.8         & 41.6           \\ \hline
+    2.9         & 41.2           \\ \hline
+    3.0         & 43.7           \\ \hline
+    3.3         & 45.9           \\ \hline
+    3.6         & 47.4           \\ \hline
+    3.8         & 47.3           \\ \hline
+    3.9         & 48.8           \\ \hline
+    4.0         & 52.3           \\ \hline
+    4.3         & 52.3           \\ \hline
+    4.6         & 52.3           \\ \hline
+    4.8         & 48.7           \\ \hline
+    4.9         & 47.3           \\ \hline
+    5.0         & 46.2           \\ \hline
+    5.3         & 35.7           \\ \hline
+    5.6         & 34.4           \\ \hline
+    5.8         & 30.6           \\ \hline
+    5.9         & 29.6           \\ \hline
+    6.0         & 26.2           \\ \hline
+    \end{tabular}
+\caption{Resultados para $log(f)$ e $\frac{i_o}{i_i}$ em $dB$}
+\label{tab:respostafrequenciaanalise}
+\end{table}
+
+O gráfico de $\frac{i_0}{i_i} (dB)$ em função de $log(f) (Hz)$ encontra-se na  \rfig{../img/resposta_frequencia.png}
+
+\fig[.35]{../img/resposta_frequencia.png}{Resposta em frequência do circuito}
+
+Considerando que o máximo tem o valor de $52.3 dB$, utilizando o $Mathematica$ fez-se uma função interpoladora e determinou-se a sua intersecção a $-3 dB$ do máximo, ou seja, a $49.3 dB$, sendo que essa intersecção corresponde ao limite superior da banda passante. O valor a que se chegou foi de $f_{limite superior}=57853Hz$. Conclui-se que a partir de $57853Hz$ a atenuação é superior a $3dB$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Conclusões e Críticas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
