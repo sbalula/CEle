@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[    120267,       2308]
-NotebookOptionsPosition[    118403,       2239]
-NotebookOutlinePosition[    118746,       2254]
-CellTagsIndexPosition[    118703,       2251]
+NotebookDataLength[    120743,       2320]
+NotebookOptionsPosition[    118879,       2251]
+NotebookOutlinePosition[    119222,       2266]
+CellTagsIndexPosition[    119179,       2263]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1629,50 +1629,58 @@ Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"ListPlot", "[", 
-  RowBox[{"{", 
-   RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2.0", ",", "39.1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2.3", ",", "39.2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2.6", ",", "40.8"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2.8", ",", "41.6"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2.9", ",", "41.2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3.0", ",", "43.7"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3.3", ",", "45.9"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3.6", ",", "47.4"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3.8", ",", "47.3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3.9", ",", "48.8"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4.0", ",", "52.3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4.3", ",", "52.3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4.6", ",", "52.3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4.8", ",", "48.7"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4.9", ",", "47.3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5.0", ",", "46.2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5.3", ",", "35.7"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5.6", ",", "34.4"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5.8", ",", "30.6"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5.9", ",", "29.6"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"6.0", ",", "26.2"}], "}"}]}], "}"}], ",", 
+   RowBox[{"AxesLabel", "\[Rule]", 
     RowBox[{"{", 
-     RowBox[{"2.0", ",", "39.1"}], "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{"2.3", ",", "39.2"}], "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{"2.6", ",", "40.8"}], "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{"2.8", ",", "41.6"}], "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{"2.9", ",", "41.2"}], "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{"3.0", ",", "43.7"}], "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{"3.3", ",", "45.9"}], "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{"3.6", ",", "47.4"}], "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{"3.8", ",", "47.3"}], "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{"3.9", ",", "48.8"}], "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{"4.0", ",", "52.3"}], "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{"4.3", ",", "52.3"}], "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{"4.6", ",", "52.3"}], "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{"4.8", ",", "48.7"}], "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{"4.9", ",", "47.3"}], "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{"5.0", ",", "46.2"}], "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{"5.3", ",", "35.7"}], "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{"5.6", ",", "34.4"}], "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{"5.8", ",", "30.6"}], "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{"5.9", ",", "29.6"}], "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{"6.0", ",", "26.2"}], "}"}]}], "}"}], "]"}]], "Input"],
+     RowBox[{
+     "\"\<log(f)\>\"", ",", 
+      "\"\<\!\(\*FractionBox[\(i0\), \(ii\)]\) (dB)\>\""}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.6283588880834103`*^9, 3.6283588984234247`*^9}}],
 
 Cell[BoxData[
  GraphicsBox[{{}, 
@@ -1684,13 +1692,17 @@ LQ41xw5Kw/i2UPMkoOqsHACQYHWf
      "]]}, {}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   Axes->True,
-  AxesLabel->{None, None},
+  AxesLabel->{
+    FormBox["\"log(f)\"", TraditionalForm], 
+    FormBox[
+    "\"\\!\\(\\*FractionBox[\\(i0\\), \\(ii\\)]\\) (dB)\"", TraditionalForm]},
   AxesOrigin->{2., 26.2},
   Method->{},
   PlotRange->{{2., 6.}, {26.2, 52.3}},
   PlotRangeClipping->True,
   PlotRangePadding->{{0.08, 0.08}, {0.522, 0.522}}]], "Output",
- CellChangeTimes->{3.628355969035041*^9}]
+ CellChangeTimes->{
+  3.628355969035041*^9, {3.628358891663416*^9, 3.628358900851429*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2295,20 +2307,20 @@ Cell[86880, 1618, 138, 2, 31, "Input"],
 Cell[87021, 1622, 163, 2, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[87221, 1629, 1474, 45, 52, "Input"],
-Cell[88698, 1676, 649, 16, 245, "Output"]
+Cell[87221, 1629, 1776, 53, 95, "Input"],
+Cell[89000, 1684, 823, 20, 292, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[89384, 1697, 2801, 83, 122, "Input"],
-Cell[92188, 1782, 25498, 427, 260, "Output"]
+Cell[89860, 1709, 2801, 83, 122, "Input"],
+Cell[92664, 1794, 25498, 427, 260, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[117723, 2214, 267, 7, 31, "Input"],
-Cell[117993, 2223, 140, 3, 31, "Output"]
+Cell[118199, 2226, 267, 7, 31, "Input"],
+Cell[118469, 2235, 140, 3, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[118170, 2231, 138, 2, 31, "Input"],
-Cell[118311, 2235, 76, 1, 63, "Output"]
+Cell[118646, 2243, 138, 2, 31, "Input"],
+Cell[118787, 2247, 76, 1, 31, "Output"]
 }, Open  ]]
 }
 ]
