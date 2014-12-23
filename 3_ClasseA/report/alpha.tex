@@ -115,6 +115,15 @@ com transistores bipolares 2n3055}
 %Situar o problema, incluir fórmulas.
 %Quem lê o relatório deve conseguir perceber exatamente o que foi feito.
 
+\fig[.4]{../img/circuito.png}{Circuito implementado no laboratório}
+
+Neste trabalho laboratorial implentou-se um andar de saída em classe A, conforme a \rfig{../img/circuito.png} e que se descreve em maior detalhe em \ref{s:expreal}
+
+\subsection{Ponto de funcionamento em repouso}
+Para o cálculo do ponto de funcionamento em repouso utilizaram-se as seguintes relações para os transístores:
+\eq{i_C = \beta_f i_b}
+\eq{I_C = I_{ES} \lr{e^{\frac{v_{EB}}{\eta V_T}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Experiência realizada %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experiência Realizada}
@@ -122,7 +131,7 @@ com transistores bipolares 2n3055}
 %Incluir diagrama de blocos da montagem
 De acordo com as instruções do guia, implentou-se o circuito da \rfig{../img/circuito.png}. Apresentam-se na tabela \ref{partlist} os componentes utilizados.
 
-\fig[.4]{../img/circuito.png}{Circuito implementado no laboratório}
+
 
 \tabela[partlist]{Lista dos componentes utilizados}{lrrr}{
 	Descrição		&Modelo/Valor		&Qt.			&Referência	\\ \hline
@@ -152,7 +161,23 @@ Vss (V)	&$-8.006\pm0.01$	&$-8.000$	&$-8.000$	\\
 13  (V) &$-7.253\pm0.001$	&	&$-7.275$\\ \hline
 20  (A) &$1.12\pm0.02$		&	&$0.724$\\
 21  (A) &$1.88\pm0.02$		&	&$1.574$\\
-22  (A) &$1.23\pm0.02$		&	&$0.847$
+22  (A) &$1.23\pm0.02$		&$0.7154$	&$0.847$
+
+}
+
+\tabela[Potdiss]{Potências dissipadas no PFR, valores em Watt}{llll}{
+ID	&Experimental		&Teórico	&Simulação	\\ \hline
+$Vdd$		&$-9.06\pm0.17$		&	&$-5.79$
+$Vss$		&$-15.05\pm0.18$	&	&$-12.59$
+Ger. sinais	&$-0.0064\pm0.0001$	&	&$-0.0026$
+$R_1$		&$0.1680\pm0.0003$	&	&
+$R_2$		&$5.2606\pm0.0014$	&	&
+$R_3$		&$0.0024\pm0.0001$	&	&
+$Q_1$		&$10.53\pm0.20$		&	&
+$Q_2$		&$8.25\pm0.15$		&	&
+$Q_3$		&$0.489\pm0.037$	&	&
+
+
 
 }
 
