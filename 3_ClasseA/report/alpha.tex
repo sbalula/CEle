@@ -195,6 +195,7 @@ $Q_3$		&$0.489\pm0.037$	&	&
 
 }
 
+
 \subsection{Função de transferência}
 \subsection{Potências fornecidas e dissipadas}
 \subsection{Impedâncias de entrada e saída}
@@ -316,9 +317,11 @@ Tendo em conta os dados da tabela \ref{tab:respostafrequenciadados} e atendendo 
 \label{tab:respostafrequenciaanalise}
 \end{table}
 
-O gráfico de $\frac{i_0}{i_i} (dB)$ em função de $log(f) (Hz)$ encontra-se na figura \ref{fig:respostafrequencia}
+O gráfico de $\frac{i_0}{i_i} (dB)$ em função de $log(f) (Hz)$ encontra-se na  \rfig{../img/resposta_frequencia.png}
 
+\fig[.35]{../img/resposta_frequencia.png}{Resposta em frequência do circuito}
 
+Considerando que o máximo tem o valor de $52.3 dB$, utilizando o $Mathematica$ fez-se uma função interpoladora e determinou-se a sua intersecção a $-3 dB$ do máximo, ou seja, a $49.3 dB$, sendo que essa intersecção corresponde ao limite superior da banda passante. O valor a que se chegou foi de $f_{limite superior}=57853Hz$. Conclui-se que a partir de $57853Hz$ a atenuação é superior a $3dB$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Conclusões e Críticas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
