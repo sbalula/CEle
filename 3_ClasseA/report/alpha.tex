@@ -115,6 +115,17 @@ com transistores bipolares 2n3055}
 %Situar o problema, incluir fórmulas.
 %Quem lê o relatório deve conseguir perceber exatamente o que foi feito.
 
+De modo a determinar a impedância de entrada do circuito mede-se a corrente e a tensão de entrada utilizando um multímetro e determina-se a impedância a partir da equação \ref{eq:impedanciaentrada}.
+\begin{equation}
+Z_{in}=\frac{V_{in}}{I_{in}}
+\label{eq:impedanciaentrada}
+\end{equation}
+Para determinar a impedância de saída do circuito utilizam-se duas cargas diferentes e considera-se que o circuito é linear de modo a poder ser possível considerar um equivalente de Thévenin. A impedância de saída é obtida através da equação \ref{eq:impedanciasaida}.
+\begin{equation}
+Z_{out}=\frac{R_L \frac{dV_0}{dR_L}}{\frac{V_0}{R_L}-\frac{dV_0}{dR_L}}
+\label{eq:impedanciasaida}
+\end{equation}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Experiência realizada %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experiência Realizada}
@@ -151,32 +162,17 @@ Neste ponto mediram-se a tensão e corrente de entrada directamente utilizando o
 \begin{table}[h]
     \begin{tabular}{|l|l|}
 \hline
-          v_i (V)	&	$0.874  \pm 0.01$		                    \\ \hline
-	i_i (A)	&	$0.00034 \pm 0.0001$			\\ \hline 
-	R_1 ($\Omega$) &	$10\pm0.1$			 \\ \hline
-	v_{01} (V)	&   	$0.851\pm0.01$	                       \\ \hline
-           R_2 ($\Omega$) &  $8\pm0.1$   \\ \hline
-           v_{02} (V) &   $0.835 \pm 0.01$ \\ \hline
+         $ V_i (V)$	&	$0.874  \pm 0.01$		                    \\ \hline
+	$I_i (A)$	&	$0.00034 \pm 0.0001$			\\ \hline 
+	$R_1$ ($\Omega$) &	$10\pm0.1$			 \\ \hline
+	$V_{01}  (V)$	&   	$0.851\pm0.01$	                       \\ \hline
+           $R_2$ ($\Omega$) &  $8\pm0.1$   \\ \hline
+           $V_{02} (V)$ &   $0.835 \pm 0.01$ \\ \hline
 
     \end{tabular}
+    \caption{Valores obtidos das tensões e correntes de entrada e saída.}
+    \label{tab:impedancia}
 \end{table}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -196,6 +192,23 @@ Neste ponto mediram-se a tensão e corrente de entrada directamente utilizando o
 \subsection{Função de transferência}
 \subsection{Potências fornecidas e dissipadas}
 \subsection{Impedâncias de entrada e saída}
+A impedância de entrada foi determinada através dos dados da tabela \ref{tab:impedancia} e da equação \ref{eq:impedanciaentrada}. Para a impedância de saída obtiveram-se 2 valores, sendo que se utilizaram as duas cargas para os cálculos, utilizando a equação \ref{eq:impedanciasaida}. Considerou-se que $\frac{dV_0}{dR_L}=\frac{V_{01}-V_{02}}{R_1-R_2}$ quando se utilizou $R_1$ para os cálculos e $\frac{dV_0}{dR_L}=\frac{V_{02}-V_{01}}{R_2-R_1}$ quando se utilizou $R_2$. Os resultados obtidos encontram-se na tabela \ref{tab:analiseimpedancias}
+
+
+\begin{table}[h]
+    \begin{tabular}{|l|l|l|}
+    \hline
+    $Z_{in}$($\Omega$) & $2570.59 \pm 78.55$ \\ \hline
+    $Z_{01}$($\Omega$) & $1.038\pm 0.751$  \\ \hline
+    $Z_{02}$($\Omega$) & $0.664\pm0.009$  \\ \hline
+    \end{tabular}
+\caption{Resultados obtidos para as impedâncias de entrada e saída}
+\label{tab:analiseimpedancias}
+\end{table}
+
+Verifica-se, como seria de esperar, que o andar de saída em classe A é um andar com uma alta impedância de entrada e uma baixa impedância de saída.
+
+
 \subsection{Resposta em frequência}
 
 
