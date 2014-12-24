@@ -105,7 +105,7 @@ com transistores bipolares 2n3055}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-
+Em falta......
 \end{abstract}
 \maketitle
 
@@ -116,14 +116,29 @@ com transistores bipolares 2n3055}
 %Situar o problema, incluir fórmulas.
 %Quem lê o relatório deve conseguir perceber exatamente o que foi feito.
 
-\fig{../img/esquematico.png}{Circuito implementado no laboratório}
+\fig[.30]{../img/esquematico.png}{Circuito implementado no laboratório}
 
 Neste trabalho laboratorial implentou-se um andar de saída em classe A, conforme a \rfig{../img/esquematico.png} e que se descreve em maior detalhe em \ref{s:expreal}
 
 \subsection{Ponto de funcionamento em repouso}
 Para o cálculo do ponto de funcionamento em repouso utilizaram-se as seguintes relações para os transístores:
 \eq{i_C = \beta_f i_B}
-\eq{i_C	= I_{ES} \lr{e^{\frac{v_{EB}}{\eta V_T}}-1}}
+\eq{i_E = \lr{\beta_f +1} i_B}
+\eq{i_E = \frac{\beta_f+1}{\beta_f} i_C}
+\eq{i_E	= I_{ES} \lr{e^{\frac{v_{BE}}{\eta V_T}}-1}}
+\eq[i0]{v_{BE} = \eta V_T \log\lr{\frac{i_E}{i_{ES}}+1} = \eta V_T \log\lr{\frac{i_C}{i_{ES}}\frac{\beta_f+1}{\beta_f}+1}}
+
+Analise-se o circuito de fonte de corrente, constituido pelos transístores Q2 e Q3, e pela resistência R2. Dada a simetria do circuito, as correntes e tensões nos dois transístores são iguais ($i_{B2}=i_{B3}$, $i_{C2}=i_{C3}=I$, $v_{BE1}=v_{BE3}$). Pode assim escrever-se:
+\eq{i_R = i_C + i_{B2} + i_{B3} = i_C + 2 i_B}
+\eq{-\frac{V_{SS}+V_{BE2}}{R_2} = \frac{\beta_f + 2} i_B = \frac{\beta_f + 2}{\beta_f} I}
+
+Resolvendo em ordem a $v_{BE}$:
+\eq[i1]{v_{BE} = -R_2 \frac{\beta_f + 2}{\beta_f} I - V_{SS}}
+
+Igualando \eqref{i0} e \eqref{i1}:
+\eq{I = - \frac{\beta_f}{\beta_f + 2}  \frac{V_{SS} + \eta V_T \log\lr{\frac{I}{i_{ES}}\frac{\beta_f+1}{\beta_f}+1}}{R_2}}
+
+Esta é uma equação transcendente, que pode ser resolvida numericamente.
 
 \subsection{Função de transferência}
 Analisando o circuito do andar de saída em classe A obtém-se, através das equações de Kirchoff e da característica do transístor BJT, o seguinte sistema:
