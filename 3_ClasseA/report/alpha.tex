@@ -116,10 +116,16 @@ com transistores bipolares 2n3055}
 %Situar o problema, incluir fórmulas.
 %Quem lê o relatório deve conseguir perceber exatamente o que foi feito.
 
-\fig[.4]{../img/esquematico.png}{Circuito implementado no laboratório}
+\fig{../img/esquematico.png}{Circuito implementado no laboratório}
 
 Neste trabalho laboratorial implentou-se um andar de saída em classe A, conforme a \rfig{../img/esquematico.png} e que se descreve em maior detalhe em \ref{s:expreal}
 
+\subsection{Ponto de funcionamento em repouso}
+Para o cálculo do ponto de funcionamento em repouso utilizaram-se as seguintes relações para os transístores:
+\eq{i_C = \beta_f i_B}
+\eq{i_C	= I_{ES} \lr{e^{\frac{v_{EB}}{\eta V_T}}-1}}
+
+\subsection{Função de transferência}
 Analisando o circuito do andar de saída em classe A obtém-se, através das equações de Kirchoff e da característica do transístor BJT, o seguinte sistema:
 \begin{equation}
 \begin{cases} v_i=v_{{be}_1}+v_o \\ i_{e_1}=I+\frac{V_o}{R_L}\\i_{e_1}=I_{ES}\exp \left(\frac{V_{{be}_1}}{\eta V_T}\right)-1\approx I_{ES}\exp \left(\frac{V_{{be}_1}}{\eta V_T}\right)
@@ -193,15 +199,6 @@ Com estas fórmulas para a potência é agora possível determinar a eficiência
 \begin{equation}
 \eta=\frac{1}{4}\frac{v_{o_m}}{IR_L}\frac{v_{o_m}}{V_{CC}}\approx\frac{1}{4}=25\%
 \end{equation}
-
-
-
-
-\subsection{Ponto de funcionamento em repouso}
-Para o cálculo do ponto de funcionamento em repouso utilizaram-se as seguintes relações para os transístores:
-\eq{i_C = \beta_f i_b}
-\eq{I_C	= I_{ES} \lr{e^{\frac{v_{EB}}{\eta V_T}}}}
-
 
 \subsection{Impedâncias de entrada e saída}
 
@@ -295,6 +292,8 @@ Para a relação entre corrente de entrada e de saída do circuito também se re
 \label{fig:curr_rel}
 \end{figure}
 Os resultados obtidos através do ajuste foram os seguintes: $a=G_i=78.12\pm1.07$, $b=0.16\pm0.04$A. A partir da equação \ref{eq:g_i} determinou-se que o ganho dos transístores utilizados era de $\beta_F=77.12$, estando este valor de acordo com as especificações do fabricante, que estipula que o ganho de corrente dos transístores é de cerca de 70.
+
+
 \subsection{Potências fornecidas e dissipadas}
 Os dados obtidos estão apresentados na tabela \ref{tab:fixe}:
 % Please add the following required packages to your document preamble:
