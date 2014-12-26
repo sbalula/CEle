@@ -148,11 +148,11 @@ Aplicando a lei dos nós ao ponto 12 do circuito:
 
 \eq{i_{E1} = I_{R1} + I = \frac{v_0}{R_1} + I}
 
-\eq{v_{BE} = v_i - i_B R_3 - v_0 = v_i - \frac{i_e}{1 + \beta_f} R_3 - v_0}
+\eq{v_{BE} = v_i - i_B (R_g + R_3) - v_0 = v_i - \frac{i_e}{1 + \beta_f} (R_3+R_g) - v_0}
 
 Pode assim escrever-se a característica $v_i(v_o)$:
 
-\eq{v_i = \eta V_T \log\lr{\frac{\frac{v_0}{R_1} + I }{I_{ES}} + 1} + v_0 + \lr{\frac{v_0}{R_1} + I}\frac{R_1}{1+\beta_f}}
+\eq{v_i = \eta V_T \log\lr{\frac{\frac{v_0}{R_1} + I }{I_{ES}} + 1} + v_0 + \lr{\frac{v_0}{R_1} + I}\frac{R_3 + R_g}{1+\beta_f}}
 
 Desprezando o termo +1 no argumento do logaritmo e o último termo da expressão:
 
@@ -248,9 +248,10 @@ De acordo com as instruções do guia, implentou-se o circuito da \rfig{../img/e
 
 \tabela[partlist]{Lista dos componentes utilizados}{lrrr}{
 	Descrição		&Modelo/Valor		&Qt.			&Referência	\\ \hline
-	Ampl. operacional	&			&1			&		\\
-	Cond. cerâmico		&nF			&1			&		\\
-	Resistência .25W	&$\Omega$		&4			&		\\
+	Transístor J. Bipolar	&2n3055			&3			&Q1,Q2,Q3	\\
+	Gerador de Sinais	&			&1			&		\\
+	Resistência de potência	&10$\Omega$		&2			&R2,R3	\\
+	Reóstato de potência	&12$\Omega$		&1			&R1
 }
 
 
@@ -267,27 +268,27 @@ Apresentam-se na tabela \ref{PFR} os valores de tensões e correntes relevantes 
 ID	&Experimental		&Teórico	&Simulação	\\ \hline
 Vdd (V)	&$8.022\pm0.01$		&$8.000$	&$8.000$	\\
 Vss (V)	&$-8.006\pm0.01$	&$-8.000$	&$-8.000$	\\
-10  (V)	&$-0.420\pm0.002$	&	&$-0.365$	\\
-11  (V)	&$-0.574\pm0.001$	&	&$-0.438$\\
-12  (V) &$-1.296\pm0.001$	&	&$-1.149$\\
-13  (V) &$-7.253\pm0.001$	&	&$-7.275$\\ \hline
-20  (A) &$1.12\pm0.02$		&	&$0.724$\\
-21  (A) &$1.88\pm0.02$		&	&$1.574$\\
-22  (A) &$1.23\pm0.02$		&$0.7154$	&$0.847$
+10  (V)	&$-0.420\pm0.002$	&$-0.181$	&$-0.365$	\\
+11  (V)	&$-0.574\pm0.001$	&$-0.218$	&$-0.438$\\
+12  (V) &$-1.296\pm0.001$	&$-1.639$	&$-1.149$\\
+13  (V) &$-7.253\pm0.001$	&$-6.454$	&$-7.275$\\ \hline
+20  (A) &$1.12\pm0.02$		&$0.468$	&$0.724$\\
+21  (A) &$1.88\pm0.02$		&$1.281$	&$1.574$\\
+22  (A) &$1.23\pm0.02$		&$0.636$	&$0.847$
 
 }
 
 \tabela[Potdiss]{Potências dissipadas no PFR, valores em Watt}{llll}{
 ID	&Experimental		&Teórico	&Simulação	\\ \hline
-$Vdd$		&$-9.06\pm0.17$		&	&$-5.79$
-$Vss$		&$-15.05\pm0.18$	&	&$-12.59$
-Ger. sinais	&$-0.0064\pm0.0001$	&	&$-0.0026$
-$R_1$		&$0.1680\pm0.0003$	&	&
-$R_2$		&$5.2606\pm0.0014$	&	&
-$R_3$		&$0.0024\pm0.0001$	&	&
-$Q_1$		&$10.53\pm0.20$		&	&
-$Q_2$		&$8.25\pm0.15$		&	&
-$Q_3$		&$0.489\pm0.037$	&	&
+$Vdd$		&$-9.06\pm0.17$		&$-3.74$	&$-5.79$ \\
+$Vss$		&$-15.05\pm0.18$	&$-10.24$	&$-12.59$\\
+Ger. sinais	&$-0.0064\pm0.0001$	&$-0.0007$	&$-0.0026$\\
+$R_1$		&$0.1680\pm0.0003$	&$0.2686$	&$0.1320$\\
+$R_2$		&$5.2606\pm0.0014$	&$4.1654$	&$5.2926$\\
+$R_3$		&$0.0024\pm0.0001$	&$0.0001$	&$0.0005$\\
+$Q_1$		&$10.53\pm0.20$		&$4.5111$	&$6.6239$\\
+$Q_2$		&$8.25\pm0.15$		&$4.04$		&$5.80$\\
+$Q_3$		&$0.489\pm0.037$	&$1.00$		&$0.527$
 
 
 
