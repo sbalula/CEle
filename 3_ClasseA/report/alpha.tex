@@ -105,7 +105,11 @@ com transistores bipolares 2n3055}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-Em falta......
+Neste trabalho laboratorial é montado um andar de saída em classe A, usando transístores bipolares 2n3055.
+Medem-se, calculam-se e determinam-se com recurso a uma simulação em spice as correntes, tensões e potências com o circuito no ponto de funcionamento em repouso bem como com sinais periódicos de diferentes frequências.
+Determinam-se a função de transferência, característica de corrente, impedâncias de entrada e saída e banda passante.
+RESULTADOS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 \end{abstract}
 \maketitle
 
@@ -116,9 +120,11 @@ Em falta......
 %Situar o problema, incluir fórmulas.
 %Quem lê o relatório deve conseguir perceber exatamente o que foi feito.
 
+Um andar de saída em classe A é um tipo de amplificador que permite aumentar a potência de um sinal e fornecê-lo a uma carga. Nesta tipologia o dispositivo está em condução em todo o ciclo do sinal, o que resulta numa baixa distorção do sinal mas uma baixa eficiência.
+
 \fig[.30]{../img/esquematico.png}{Circuito implementado no laboratório}
 
-Neste trabalho laboratorial implentou-se um andar de saída em classe A, conforme a \rfig{../img/esquematico.png} e que se descreve em maior detalhe em \ref{s:expreal}
+Neste trabalho laboratorial implentou-se o circuito representado na \rfig{../img/esquematico.png} e que se descreve em maior detalhe em \ref{s:expreal}
 
 \subsection{Ponto de funcionamento em repouso}
 Para o cálculo do ponto de funcionamento em repouso utilizaram-se as seguintes relações para os transístores:
@@ -130,7 +136,7 @@ i_E = \frac{\beta_f+1}{\beta_f} i_C
 \eq[r1]{i_E	= I_{ES} \lr{e^{\frac{v_{BE}}{\eta V_T}}-1} \approx I_{ES} \lr{e^{\frac{v_{BE}}{\eta V_T}}}}
 \eq[i0]{v_{BE} = \eta V_T \log\lr{\frac{i_E}{i_{ES}}+1} = \eta V_T \log\lr{\frac{i_C}{i_{ES}}\frac{\beta_f+1}{\beta_f}+1}}
 
-Analise-se o circuito de fonte de corrente, constituido pelos transístores Q2 e Q3, e pela resistência R2. Dada a simetria do circuito, as correntes e tensões nos dois transístores são iguais ($i_{B2}=i_{B3}$, $i_{C2}=i_{C3}=I$, $v_{BE1}=v_{BE3}$). Pode assim escrever-se:
+Analise-se o circuito de fonte de corrente, constituído pelos transístores Q2 e Q3, e pela resistência R2. Dada a simetria do circuito, as correntes e tensões nos dois transístores são iguais ($i_{B2}=i_{B3}$, $i_{C2}=i_{C3}=I$, $v_{BE1}=v_{BE3}$). Pode assim escrever-se:
 \eq{i_R = i_C + i_{B2} + i_{B3} = i_C + 2 i_B}
 \eq{-\frac{V_{SS}+V_{BE2}}{R_2} = \lr{\beta_f + 2} i_B = \frac{\beta_f + 2}{\beta_f} I}
 
@@ -179,13 +185,13 @@ E consequentemente o ganho em corrente é dado por:
 G_i=\beta_F+1
 \label{eq:g_i}
 \end{equation}
-Para determinar a tensão máxima na saída, basta notar que quando a tensão na saída é maxima, o transístor entra na região de saturação, pelo que a sua tensão $V_{CE}$ vai ter um valor bem definido e logo:
+Para determinar a tensão máxima na saída, basta notar que quando a tensão na saída é máxima, o transístor entra na região de saturação, pelo que a sua tensão $V_{CE}$ vai ter um valor bem definido e logo:
 \begin{equation}
 V_{o_{max}}=V_{CC}-V_{{CE}_{sat}}
 \label{eq:sat}
 \end{equation}
 
-Para determinar a eficiência das montagens e o rendimento dos transístores, é necessário determinar a potência dissipada pelos transistores Q1 e Q2.
+Para determinar a eficiência das montagens e o rendimento dos transístores, é necessário determinar a potência dissipada pelos transístores Q1 e Q2.
 A potência dissipada pelo transístor Q1 é dada por:
 \begin{equation}
 P_{Q1}=\langle i_{c_1} V_{{CE}_1}\rangle
@@ -236,14 +242,14 @@ Z_{out}=\frac{R_1 \frac{dV_0}{dR_1}}{\frac{V_0}{R_1}-\frac{dV_0}{dR_1}}
 \label{eq:impedanciasaida}
 \end{equation}
 
-É também pretendido verificar a resposta em frequência do circuito e para tal varia-se a frequência do sinal de entrada e apresenta-se o gráfico de $\frac{i_0}{i_i} (dB)$ em função de $log(f)$. De modo a saber as correntes de entrada e saída medem-se as tensões respectivas e utiliza-se $I=\frac{V}{R}$. Determina-se ainda o limite superior da banda passante a $-3dB$ partir da intersecção dessa recta com o gráfico já referido. 
+É também pretendido verificar a resposta em frequência do circuito e para tal varia-se a frequência do sinal de entrada e apresenta-se o gráfico de $\frac{i_0}{i_i} (dB)$ em função de $log(f)$. De modo a saber as correntes de entrada e saída medem-se as tensões respetivas e utiliza-se $I=\frac{V}{R}$. Determina-se ainda o limite superior da banda passante a $-3dB$ partir da intersecção dessa recta com o gráfico já referido. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Experiência realizada %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experiência Realizada}
 \label{s:expreal}
 %Incluir diagrama de blocos da montagem
-De acordo com as instruções do guia, implentou-se o circuito da \rfig{../img/esquematico.png}. Apresentam-se na tabela \ref{partlist} os componentes utilizados.
-
+De acordo com as instruções do guia, implementou-se o circuito da \rfig{../img/esquematico.png}. Apresentam-se na tabela \ref{partlist} os componentes utilizados.
+Efetuaram-se as medi
 
 
 \tabela[partlist]{Lista dos componentes utilizados}{lrrr}{
@@ -262,7 +268,7 @@ De acordo com as instruções do guia, implentou-se o circuito da \rfig{../img/e
 %incluir tabelas. Excesso de dados => grafico com valores mais significativos
 
 \subsection{Ponto de funcionamento em repouso}
-Apresentam-se na tabela \ref{PFR} os valores de tensões e correntes relevantes medidos experiementalmente, calculados teoricamente e obtidos na simulação.
+Apresentam-se na tabela \ref{PFR} os valores de tensões e correntes relevantes medidos experimentalmente, calculados teoricamente e obtidos na simulação.\footnote{Para facilidade de leitura apresentam-se apenas os valores que foram medidos diretamente. As restantes correntes e tensões que não estão apresentadas podem ser calculadas por aplicação direta da lei de Ohm}
 
 \tabela[PFR]{Valores de corrente e tensão, conforme legenda da \rfig{../esquematico.png}}{llll}{
 ID	&Experimental		&Teórico	&Simulação	\\ \hline
@@ -274,7 +280,8 @@ Vss (V)	&$-8.006\pm0.01$	&$-8.000$	&$-8.000$	\\
 13  (V) &$-7.253\pm0.001$	&$-6.454$	&$-7.275$\\ \hline
 20  (A) &$1.12\pm0.02$		&$0.468$	&$0.724$\\
 21  (A) &$1.88\pm0.02$		&$1.281$	&$1.574$\\
-22  (A) &$1.23\pm0.02$		&$0.636$	&$0.847$
+22  (A) &$1.23\pm0.02$		&$0.636$	&$0.847$\\
+R1  ($\Omega$)	&$10\pm1$	&$10$		&$10$
 
 }
 
@@ -288,8 +295,8 @@ $R_2$		&$5.2606\pm0.0014$	&$4.1654$	&$5.2926$\\
 $R_3$		&$0.0024\pm0.0001$	&$0.0001$	&$0.0005$\\
 $Q_1$		&$10.53\pm0.20$		&$4.5111$	&$6.6239$\\
 $Q_2$		&$8.25\pm0.15$		&$4.04$		&$5.80$\\
-$Q_3$		&$0.489\pm0.037$	&$1.00$		&$0.527$
-
+$Q_3$		&$0.489\pm0.037$	&$1.00$		&$0.527$\\ \hline
+Somatório	&$0.580\pm0.858$	&$-0.005$	&$-0.003$
 
 
 }
@@ -418,6 +425,8 @@ Variou-se a frequência do sinal de entrada e mediu-se utilizando multímetros a
 \section{Análise de resultados}
 \label{s:aresul}
 \subsection{Ponto de funcionamento em repouso}
+Os resultados experimentais apresentados na \ref{PFR} não são compatíveis com as previsões teóricas ou com os resultados da simulação. São, todavia, coerentes para cada análise, conforme se pode verificar pelo somatório das potências na tabela \ref{Potdiss}, que admite o valor zero experimentalmente e tem valores muito próximos de zero tanto na análise teórica como na simulação. Pode explicar-se esta diferença com a sensibilidade aos valores das resistências, conforme se pode verificar facilmente pela variação dos valores destas na simulação. Em particular, se se variar a resistência de saída do gerador num fator inferior a 2, os resultados da simulação aproximam-se dos verificados experimentalmente. Contribuem para estas diferenças entre os valores marcados dos componentes e os efetivos no circuito as ligações elétricas, que se revelaram nalguns pontos pouco fidedignas, ou os cabos, com comprimentos consideráveis e cujas resistências podem não ser desprezadas quando comparadas com as baixas resistências dos componentes envolvidos.
+
 \subsection{Função de transferência}
 \subsection{Potências fornecidas e dissipadas}
 \subsection{Impedâncias de entrada e saída}
@@ -483,6 +492,12 @@ Considerando que o máximo tem o valor de $52.3 dB$, utilizando o $Mathematica$ 
 \section{Conclusões e Críticas}
 \label{s:conclu}
 %Incluir melhorias propostas à experiência
+...
+
+Os valores medidos para o ponto de funcionamento em repouso diferem do previsto, mas são coerentes entre si, visto a potência total (dissipada - fornecida) admitir o valor zero.
+
+...
+
 
 
 %\begin{acknowledgments}
