@@ -137,14 +137,24 @@ De acordo com as instruções do guia, implentou-se o circuito da \rfig{../img/c
 \label{s:resul}
 %incluir tabelas. Excesso de dados => grafico com valores mais significativos
 
-\subsection{Ponto de funcionamento em repouso}
-Apresentam-se na tabela \ref{PFR} os valores de tensões e correntes relevantes medidos experiementalmente, calculados teoricamente e obtidos na simulação.
-\tabela[PFR]{Valores de corrente e tensão, conforme legenda da \rfig{esquema}}{llll}{
-
-}
+Tal como sugerido no guia, verificou-se que anulando a entrada ambos os transístores estão em corte, a tensão de saída anula-se e não há dissipação de potência no andar de saída
 
 \subsection{Função de transferência}
+
+\fig{../gnuplot/vo(vi).pdf}{Função de transferência vo(vi) para tensão alternada sinusoidal de 300$Hz$. Ajuste pelo método dos mínimos quadrados a uma função do tipo $y=mx+b$. Parâmetros de ajuste: $m=0.91\pm0.02$, $b=-0.60\pm0.09 V$, $Chi_{ndf}=0.05$}
+
+\fig{../gnuplot/io(ii).pdf}{Característica de corrente io(ii) para tensão alternada sinusoidal de 300$Hz$.
+Ajuste pelo método dos mínimos quadrados a uma função do tipo $y=mx+b$. Parâmetros de ajuste: $m=110\pm2$, $b=-0.047\pm0.008 (A)$, $Chi_{ndf}=4\e{-4}$}
+
+\fig{../gnuplot/xy.pdf}{Dados experimentais obtidos no osciloscópio no modo xy para a característica vo(vi)}
+
+Apresenta-se na \rfig{../gnuplot/vo(vi).pdf} a funçao de transferência vo(vi) e na \rfig{../gnuplot/io(ii).pdf} a característica de corrente io(ii). Procedeu-se a um ajuste aos pontos (sem considerar erros experimentais), com o qual se determinou o ganho de tensão $0.91\pm0.02$ e de corrente $110\pm2$. Apresenta-se também na \rfig{../gnuplot/xy.pdf} uma aquisição do osciloscópio no modo xy.
+Determinou-se que o valor máximo de vo para o qual não há distorção é $6.57 V rms$
+
 \subsection{Potências fornecidas e dissipadas}
+
+
+
 \subsection{Impedâncias de entrada e saída}
 \subsection{Resposta em frequência}
 
@@ -156,7 +166,7 @@ Apresentam-se na tabela \ref{PFR} os valores de tensões e correntes relevantes 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Análise dos resultados %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Análise de resultados}
 \label{s:aresul}
-\subsection{Ponto de funcionamento em repouso}
+
 \subsection{Função de transferência}
 \subsection{Potências fornecidas e dissipadas}
 \subsection{Impedâncias de entrada e saída}
