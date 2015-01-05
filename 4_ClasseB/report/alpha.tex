@@ -148,8 +148,13 @@ Ajuste pelo método dos mínimos quadrados a uma função do tipo $y=mx+b$. Par�
 
 \fig{../gnuplot/xy.pdf}{Dados experimentais obtidos no osciloscópio no modo xy para a característica vo(vi)}
 
+%\fig{../ngspice/plot.pdf}{Função de transferência vo(vi) obtida na simulação em ngspice}
+
 Apresenta-se na \rfig{../gnuplot/vo(vi).pdf} a funçao de transferência vo(vi) e na \rfig{../gnuplot/io(ii).pdf} a característica de corrente io(ii). Procedeu-se a um ajuste aos pontos (sem considerar erros experimentais), com o qual se determinou o ganho de tensão $0.91\pm0.02$ e de corrente $110\pm2$. Apresenta-se também na \rfig{../gnuplot/xy.pdf} uma aquisição do osciloscópio no modo xy.
-Determinou-se que o valor máximo de vo para o qual não há distorção é $6.57 V rms$
+Determinou-se que o valor máximo de vo para o qual não há distorção é $6.57 V rms$, isto é $9.29 V$ de amplitude.
+
+A distorção ocorre quando a tensão de saída atinge $V_{dd} - V_{ce_{saturacao}}$ ou $V_{ss} + V_{ec_{saturacao}}$, sendo que neste caso os valores são iguais em módulo. Como $V_{ce_{saturacao}}~0.7V$, $vo_{max}\approx9.7 V$.
+
 
 \subsection{Potências fornecidas e dissipadas}
 
@@ -168,6 +173,9 @@ Determinou-se que o valor máximo de vo para o qual não há distorção é $6.5
 \label{s:aresul}
 
 \subsection{Função de transferência}
+
+O valor obtido para a tensão máxima sem distorção está de acordo com o obtido experimentalmente.
+
 \subsection{Potências fornecidas e dissipadas}
 \subsection{Impedâncias de entrada e saída}
 \subsection{Resposta em frequência}
