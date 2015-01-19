@@ -249,7 +249,7 @@ Z_{out}=\frac{R_1 \frac{dV_0}{dR_1}}{\frac{V_0}{R_1}-\frac{dV_0}{dR_1}}
 \label{s:expreal}
 %Incluir diagrama de blocos da montagem
 De acordo com as instruções do guia, implementou-se o circuito da \rfig{../img/esquematico.png}. Apresentam-se na tabela \ref{partlist} os componentes utilizados.
-Efetuaram-se as medi
+Efetuaram-se as medições:
 
 
 \tabela[partlist]{Lista dos componentes utilizados}{lrrr}{
@@ -315,18 +315,18 @@ Onde a variável x é a tensão de entrada, a variável y a tensão de saída, a
 \label{fig:v_rel}
 \end{figure}
 Os resultados obtidos através do ajuste foram os seguintes: a=$G_v=0.96\pm0.01$, b=$-0.69\pm0.01$V.
-Este resultado encontra-se de acordo com teoria, visto que está em concordância com a equação \ref{eq:g_v} e com o valor esperado de $G_v=1$. Nota-se também que a tensão mínima de saída é de cerca de $V_{o_{min}\approx7.8$, o que implicaria que a tensão de saturação do transístor seria de $V_{{CE}_{sat}}\approx0.2V$, o que está de acordo com as especificações do fabricante, que estipula que o valor máximo desta tensão não ultrapassa 1.1V.
+
 Para a relação entre corrente de entrada e de saída do circuito também se realizou um ajuste linear semelhante ao realizado anteriormente para se obter o ganho de corrente, apresentado juntamente com os dados experimentais na figura \ref{fig:curr_rel}.
 \begin{figure}
 \includegraphics[width=3in]{curr_rel.pdf}
 \caption{Gráfico da relação entre corrente de entrada e de saída da montagem utilizada e respectivo ajuste linear.}
 \label{fig:curr_rel}
 \end{figure}
-Os resultados obtidos através do ajuste foram os seguintes: $a=G_i=78.12\pm1.07$, $b=0.16\pm0.04$A. A partir da equação \ref{eq:g_i} determinou-se que o ganho dos transístores utilizados era de $\beta_F=77.12$, estando este valor de acordo com as especificações do fabricante, que estipula que o ganho de corrente dos transístores é de cerca de 70.
+Os resultados obtidos através do ajuste foram os seguintes: $a=G_i=78.12\pm1.07$, $b=0.16\pm0.04$A. 
 
 
 \subsection{Potências fornecidas e dissipadas}
-Os dados obtidos estão apresentados na tabela \ref{tab:fixe}:
+Os dados obtidos estão apresentados na tabela \ref{tab:fixe}, juntamente com os resultados dos cálculos para a potência dissipada e para o rendimento.
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
 \begin{table}[h]
@@ -428,7 +428,12 @@ Variou-se a frequência do sinal de entrada e mediu-se utilizando multímetros a
 Os resultados experimentais apresentados na \ref{PFR} não são compatíveis com as previsões teóricas ou com os resultados da simulação. São, todavia, coerentes para cada análise, conforme se pode verificar pelo somatório das potências na tabela \ref{Potdiss}, que admite o valor zero experimentalmente e tem valores muito próximos de zero tanto na análise teórica como na simulação. Pode explicar-se esta diferença com a sensibilidade aos valores das resistências, conforme se pode verificar facilmente pela variação dos valores destas na simulação. Em particular, se se variar a resistência de saída do gerador num fator inferior a 2, os resultados da simulação aproximam-se dos verificados experimentalmente. Contribuem para estas diferenças entre os valores marcados dos componentes e os efetivos no circuito as ligações elétricas, que se revelaram nalguns pontos pouco fidedignas, ou os cabos, com comprimentos consideráveis e cujas resistências podem não ser desprezadas quando comparadas com as baixas resistências dos componentes envolvidos.
 
 \subsection{Função de transferência}
+O resultado experimental obtido para o ganho de tensão da montagem, $G_v=0.96\pm0.01$, está em concordância com a equação \ref{eq:g_v} e com o valor esperado de $G_v=1$. Nota-se também que a tensão mínima de saída é de cerca de $V_{o_{min}}\approx7.8$, o que implicaria que a tensão de saturação do transístor seria de $V_{{CE}_{sat}}\approx0.2V$, o que está de acordo com as especificações do fabricante, que estipula que o valor máximo desta tensão não ultrapassa 1.1V.\\
+Quanto ao ganho de corrente, o resultado obtido foi de $G_i=78.12\pm1.07$. Pela equação \ref{eq:g_i} determinou-se que o ganho dos transístores utilizados era de $\beta_F=77.12$, estando este valor de acordo com as especificações do fabricante, que estipula que o ganho de corrente dos transístores é de cerca de 70.
+
 \subsection{Potências fornecidas e dissipadas}
+A partir dos dados obtidos na tabela \ref{tab:fixe}, conclui-se que o rendimento obtido é bastante baixo, na ordem dos 15\% quando $v_o=v_{o_{max}}$ e na ordem dos 4\% quando $v_o=\frac{v_{o_m}}{2}$, como seria de esperar para uma montagem de classe A. Observa-se também que a diminuição da amplitude do sinal de entrada leva a uma diminuição da eficiência, outra característica típica destes andares de saída.  É interessante notar que a eficiência obtida  experimentalmente é bastante inferior à eficiência de 25\% obtida teoricamente. Isto deve-se ao facto de no cálculo da eficiência apenas se ter considerado as perdas nos transístores $Q_1$ e $Q_2$, quando existem outros elementos do circuito onde também existe dissipação.
+
 \subsection{Impedâncias de entrada e saída}
 A impedância de entrada foi determinada através dos dados da tabela \ref{tab:impedancia} e da equação \ref{eq:impedanciaentrada}. Para a impedância de saída obtiveram-se 2 valores, sendo que se utilizaram as duas cargas para os cálculos, utilizando a equação \ref{eq:impedanciasaida}. Considerou-se que $\frac{dV_0}{dR_1}=\frac{V_{01}-V_{02}}{R_1-R_2}$ quando se utilizou $R_1$ para os cálculos e $\frac{dV_0}{dR_1}=\frac{V_{02}-V_{01}}{R_2-R_1}$ quando se utilizou $R_2$. Os resultados obtidos encontram-se na tabela \ref{tab:analiseimpedancias}
 
@@ -498,11 +503,10 @@ Considerando que o máximo tem o valor de $52.3 dB$, utilizando o $Mathematica$ 
 No que diz respeito às impedâncias de entrada e saída, conclui-se que o circuito têm uma grande impedância de entrada e uma baixa impedância de saída, como se pode verificar pela análise da tabela \ref{tab:analiseimpedancias}.
 Verificou-se ainda qual a atenuação a $-3dB$ e concluiu-se que esta acontece a cerca de $58kHz$, ou seja, a partir desta frequência o ganho de tensão decresce drasticamente.
 
-Os valores medidos para o ponto de funcionamento em repouso diferem do previsto, mas são coerentes entre si, visto a potência total (dissipada - fornecida) admitir o valor zero.
-
+Os valores medidos para o ponto de funcionamento em repouso diferem do previsto, mas são coerentes entre si, visto a potência total (dissipada - fornecida) admitir o valor zero.\\
+Os resultados obtidos para as características deste andar de saída são coerentes tanto com as previsões teóricas  e os valores obtidos estão dentro dos limites especificados pelo fabricante para o modelo de transístor usado.\\
+Obtém-se um valor baixo para o rendimento, típico deste andar de saída, mas com um rendimento máximo de $\eta\approx15\%$,  bastante abaixo do valor esperado de 25\%. Concluiu-se que esta diferença se devia à dissipação dos outros componentes do circuito, que não foram contabilizados.\\
 ...
-
-
 
 %\begin{acknowledgments}
 %\end{acknowledgments}
