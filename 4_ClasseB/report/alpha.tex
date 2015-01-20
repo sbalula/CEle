@@ -114,7 +114,41 @@ com transistores bipolares 2n3055}
 \label{s:intro}
 %Situar o problema, incluir fórmulas.
 %Quem lê o relatório deve conseguir perceber exatamente o que foi feito.
-
+\subsection{Potências dissipadas e eficiência}
+O andar de saída em classe B como tem dois transístores que funcionam alternadamente para amplificar o sinal de entrada, possui uma eficiência bastante superior quando comparado com a eficiência do andar de classe A.\\
+Teoricamente a potência fornecida pelas fontes de alimentação do andar de saída em que a fonte positiva fornece uma tensão igual em módulo à da fonte negativa é dada por:
+\begin{equation}
+P_{forn}=V_{CC}<i_{C1}>+V_{CC}<i_{C1}>
+\label{eq:p_fonte}
+\end{equation}
+Como as fonte de tensão positiva só fornece tensão à parte positiva do sinal de entrada e a fonte negativa apenas à parte negativa, pode-se afirmar que $<i_{C1}>$ é o valor médio de uma sinusoide simplesmente rectificada e logo a média é calculada como (desprezando a distorção de cruzamento):
+\begin{equation}
+<i_{C1}>=\frac{1}{2\pi}\int_0^{\pi} \! I_{o_m}\sin(\theta) \, \mathrm{d}\theta=\frac{V_{o_m}}{R_L\pi}
+\label{eq:curr}
+\end{equation}
+Visto que se está a desprezar a distorção de cruzamento e que o sinal é sinusoidal, pode-se considerar que $<i_{C1}>=<i_{C2}>$ e introduzindo a corrente determinada em \ref{eq:curr} na equação para a potência das fontes \ref{eq:p_fonte}, obtém-se:
+\begin{equation}
+P_{forn}=2\frac{V_{CC}V_{o_m}}{R_L\pi}
+\label{eq:p_fonte_f}
+\end{equation}
+Finalmente, visto que a potência fornecida à carga é dada por:
+\begin{equation}
+P_L=\frac{V_{o_m}^2}{2R_L}
+\end{equation}
+A eficiência é dada por:
+\begin{equation}
+\eta=\frac{P_L}{P_{forn}}=\frac{\pi V_{o_m}}{4V_{CC}}
+\label{eq:eff}
+\end{equation}
+Por análise da equação \ref{eq:eff}, nota-se que a eficiência é máxima quando a tensão de saída é máxima. O valor de tensão máximo é dado $V_{o_m}\approx V_{CC}$ se se desprezar a tensão de saturação do transístor e consequentemente a eficiência máxima é dada por:
+\begin{equation}
+\eta_{\mathrm{max}}\approx \frac{\pi}{4}=78.5\%
+\end{equation}
+Finalmente, a potência dissipada pelos transístores pode ser calculada fazendo:
+\begin{equation}
+P_D=P_{forn}-P_L=\frac{2V_{CC}V_{o_m}}{\pi R_L}-\frac{V_{o_m}^2}{2R_L}
+\label{eq:p_diss}
+\end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Experiência realizada %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experiência Realizada}
