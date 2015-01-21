@@ -150,6 +150,21 @@ P_D=P_{forn}-P_L=\frac{2V_{CC}V_{o_m}}{\pi R_L}-\frac{V_{o_m}^2}{2R_L}
 \label{eq:p_diss}
 \end{equation}
 
+\subsection{Impedâncias de entrada e saída}
+Com a finalidade de determinar a impedância de entrada do circuito mede-se a corrente e a tensão de entrada utilizando um multímetro e determina-se a impedância de entrada a partir da equação \ref{eq:impedanciaentrada}.
+\begin{equation}
+Z_{in}=\frac{V_{in}}{I_{in}}
+\label{eq:impedanciaentrada}
+\end{equation}
+Para determinar a impedância de saída utilizam-se duas cargas diferentes e mede-se a queda de tensão nelas. Considera-se que todo o circuito é linear e portanto pode ser representado por um equivalente de Thévenin (uma fonte de tensão e uma impedância em série, neste caso essa impedância corresponde à impedância de saída do circuito). A impedância de saída é então dada pela equação \ref{eq:impedanciasaida}
+
+\begin{equation}
+Z_{out}=\frac{R_1 \frac{dV_0}{dR_1}}{\frac{V_0}{R_1}-\frac{dV_0}{dR_1}}
+\label{eq:impedanciasaida}
+\end{equation}
+
+\subsection{Resposta em frequência}
+Pretende-se verificar a resposta em frequência do circuito e para tal varria-se a frequência do sinal de entrada e apresenta-se o gráfico de $\frac{i_o}{i_i} (dB)$ em função de $log(f)$. Para determinar as correntes de entrada e de saída medem-se as quedas de tensão nas resistências à entrada e à saída do circuito e utilizando $I=V/R$ obtêm-se as correntes. Determina-se ainda o limite superior da banda passante a $-3 dB$ a partir da intersecção dessa recta com o gráfico já referido.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Experiência realizada %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experiência Realizada}
 \label{s:expreal}
@@ -195,7 +210,43 @@ A distorção ocorre quando a tensão de saída atinge $V_{dd} - V_{ce_{saturaca
 
 
 \subsection{Impedâncias de entrada e saída}
+
+
+
+
+
 \subsection{Resposta em frequência}
+Variando a frequência do sinal de entrada mediram-se as tensões de entrada e de saída. Os resultados encontram-se na tabela \ref{tab:respostafrequencia}.
+\begin{table}[h]
+    \begin{tabular}{|l|l|l|l|l|}
+    \hline
+    $F_{sinal de entrada} (Hz)$ & Vi(V) & Vo(V)& Log(f) (Hz)& $i_o/i_i (dB)$ \\ \hline
+    100                                               & 0.88  & 7.76 & 2.0	& 16.6                                  \\ \hline
+    200                              		    & 0.88  & 7.76 & 2.3	&16.6		\\ \hline
+    400                              		    & 0.80 & 7.92 & 2.6	&17.6			\\ \hline
+    600                              		    & 0.72  & 8.32 & 2.8	&19.0			\\ \hline
+    800                              		    & 0.72  & 8.42 & 2.9	&19.1			\\ \hline
+    1000                             		    & 0.72  & 8.64&  3.0	&19.3			\\ \hline
+    2000                             		    & 0.56  & 8.96&  3.3	&21.8			\\ \hline
+    4000                             		    & 0.56  & 9.20&  3.6	&22.0			\\ \hline
+    6000                             		    & 0.56  & 9.36&  3.8	&22.2			\\ \hline
+    8000                             		    & 0.40  & 9.44&  3.9	&25.2			\\ \hline
+    10000                            		    & 0.40  & 9.44&  4.0	&25.2				\\ \hline
+    20000                            		    & 0.40  & 9.44&  4.3	&25.2				\\ \hline
+    40000                            		    & 0.32  & 9.36&  4.6	&27.1				\\ \hline
+    60000                            		    & 0.48  & 9.36&  4.8	&23.5				\\ \hline
+    80000                            		    & 0.48  & 9.36&  4.9	&23.5				\\ \hline
+    100000                           	    & 0.64  & 9.44&  5.0	&21.1				\\ \hline
+    200000                           	    & 1.04  & 9.36&  5.3	&16.8			\\ \hline
+    400000                           	    & 1.36  & 9.44&  5.6	&14.6				\\ \hline
+    600000                           	    & 1.52  & 9.04&  5.8	&13.2				\\ \hline
+    800000                           	    & 1.92  & 9.12&  5.9	&11.3				\\ \hline
+    1000000                          	    & 2.24  & 8.72&  6.0	&9.5				\\ \hline
+    2000000				    &4.4     &8.16 &  6.3     &3.1                          \\ \hline
+    \end{tabular}
+\caption{Dados obtidos para a determinação da resposta em frequência do circuito}
+\label{tab:respostafrequencia}
+\end{table}
 
 
 
@@ -213,7 +264,10 @@ O valor obtido para a tensão máxima sem distorção está de acordo com o obti
 \subsection{Potências fornecidas e dissipadas}
 \subsection{Impedâncias de entrada e saída}
 \subsection{Resposta em frequência}
+Tendo em conta os dados da tabela \ref{tab:respostafrequencia} e que $R_i=47.0 \pm 0.1 \Omega$ e que $R_o=6.1 \pm 0.1 \Omega$ apresentam-se também na tabela \ref{tab:respostafrequencia} $Log(f)$ e $i_o / i_i $ em $dB$. Encontra-se na  \rfig{../img/Ponto_D.png} o gráfico de $i_o/i_i (dB)$ em função de $Log(f) (Hz)$.
 
+\fig[.28]{../img/Ponto_D.png}{Resposta em frequência do circuito}
+Tendo em conta que o máximo de  $i_o/i_i (dB)$ é de $27.1 dB$ traçou-se uma recta a $24.1 dB$ e verificou-se assim que o limite superior da banda passante se encontra em $63kHz$. Conclui-se assim que a atenuação a partir de $63kHz$ o ganho de corrente decresce bastante.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Conclusões e Críticas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusões e Críticas}
