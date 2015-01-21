@@ -68,6 +68,27 @@ includefoot
 %height=10in,a5paper,hmargin={3cm,0.8in},
 ]{geometry}
 
+
+%\oddsidemargin = 0pt                    % Margem do lado esquerdo: 31pt
+\topmargin = -70pt                        % Margem superior: 20pt  
+\headheight = 10pt                       % Tamanho do 'header': 12pt 
+\headsep = 1pt                          % Espaço entre o 'header' e o texto: 25pt
+\textheight = 287mm                      % Altura do texto: 592pt
+\textwidth = 200mm                      % Largura do texto: 390pt
+%\marginparsep = 10pt                     % Espaço entre margem esquerda e o texto: 10pt
+%\marginparwidth = 35pt                   % Margem esquerda: 35pt
+\footskip = 0pt                         % Espaço entre o texto e o 'footer': 30pt
+\oddsidemargin = -20mm
+
+
+\abovedisplayskip = 1mm
+\belowdisplayskip = 1mm
+%\belowcaptionskip = -1mm
+
+\textfloatsep = 2mm
+
+
+
 \begin{document}
 \preprint{APS/123-QED}
 %\captionsetup[table]{font=small,skip=0pt}
@@ -102,17 +123,15 @@ com transistores bipolares 2n3055}
 %\collaboration{Grupo 57}
 
 \date{\today}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
 Neste trabalho laboratorial é montado um andar de saída em classe A, usando transístores bipolares 2n3055.
 Medem-se, calculam-se e determinam-se com recurso a uma simulação em spice as correntes, tensões e potências com o circuito no ponto de funcionamento em repouso bem como com sinais periódicos de diferentes frequências.
 Determinam-se a função de transferência, característica de corrente, impedâncias de entrada e saída e banda passante.
-RESULTADOS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Determina-se que o ganho de tensão é de $G_v=0.96\pm0.01$, e o de corrente de $G_i=78.12\pm1.07$.
 
 \end{abstract}
 \maketitle
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Introdução %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introdução}
@@ -494,19 +513,16 @@ Considerando que o máximo tem o valor de $52.3 dB$, utilizando o $Mathematica$ 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Conclusões e Críticas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Conclusões e Críticas}
 \label{s:conclu}
 %Incluir melhorias propostas à experiência
-...
-
-
-No que diz respeito às impedâncias de entrada e saída, conclui-se que o circuito têm uma grande impedância de entrada e uma baixa impedância de saída, como se pode verificar pela análise da tabela \ref{tab:analiseimpedancias}.
-Verificou-se ainda qual a atenuação a $-3dB$ e concluiu-se que esta acontece a cerca de $58kHz$, ou seja, a partir desta frequência o ganho de tensão decresce drasticamente.
-
 Os valores medidos para o ponto de funcionamento em repouso diferem do previsto, mas são coerentes entre si, visto a potência total (dissipada - fornecida) admitir o valor zero.\\
 Os resultados obtidos para as características deste andar de saída são coerentes tanto com as previsões teóricas  e os valores obtidos estão dentro dos limites especificados pelo fabricante para o modelo de transístor usado.\\
 Obtém-se um valor baixo para o rendimento, típico deste andar de saída, mas com um rendimento máximo de $\eta\approx15\%$,  bastante abaixo do valor esperado de 25\%. Concluiu-se que esta diferença se devia à dissipação dos outros componentes do circuito, que não foram contabilizados.\\
-...
+
+No que diz respeito às impedâncias de entrada e saída, conclui-se que o circuito têm uma grande impedância de entrada e uma baixa impedância de saída, como se pode verificar pela análise da tabela \ref{tab:analiseimpedancias}.
+Verificou-se ainda qual a atenuação a $-3dB$ e concluiu-se que esta acontece a cerca de $58kHz$, ou seja, a partir desta frequência o ganho de tensão decresce drasticamente.
 
 %\begin{acknowledgments}
 %\end{acknowledgments}
