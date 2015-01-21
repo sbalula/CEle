@@ -104,6 +104,7 @@ com transistores bipolares 2n3055}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
+Neste trabalho laboratorial é montado um andar de saída em classe B, obtendo-se a característica de tensão e corrente, a partir das quais se determina o respectivo ganho. Determina-se a potência fornecida e dissipada por cada um dos elementos do circuito, a eficiência, as impedâncias de entrada e saída, e o ganho de corrente em função da frequência.
 
 \end{abstract}
 \maketitle
@@ -114,7 +115,28 @@ com transistores bipolares 2n3055}
 \label{s:intro}
 %Situar o problema, incluir fórmulas.
 %Quem lê o relatório deve conseguir perceber exatamente o que foi feito.
+O andar final de amplificação em classe B permite fornecer o sinal a uma carga de impedância baixa, com uma eficiência superior ao andar em classe A. Neste apenas um dos transístores está em condução a qualquer momento, o que leva a uma distorção de cruzamento para tensões de entrada próximas de zero. São usados em circuitos em que a potência disponível é limitada e a distorção do sinal é admissível, embora existam técnicas para reduzir grandemente este efeito, como pela utilização de amplificadores operacionais
 
+
+
+
+\subsection{Função de transferência}
+Pela análise do circuito da \rfig{../img/esquematico.png}, podem escrever-se as equações \eqref{opedroefeio} e \eqref{oluisefeio}.
+\eq[opedroefeio]{v_i - v_{R_2} - v_{BE} -v_o = 0}
+\eq[oluisefeio]{v_i - v_{R_2} + v_{EB} - v_o = 0}
+
+Conhecem-se também as equações características do transístor npn, \eqref{npncara1} e \eqref{npncara2}, apresentando expressões análogas para o transístor pnp.
+
+\eq[npncara1]{i_E = I_{ES} \lr{e^{\frac{v_{BE}}{\eta V_t}} - 1}}
+\eq[npncara2]{i_C = \beta_f i_B}
+
+Assumindo Q1 em condução e Q2 em corte:
+\eq{v_i = v_o \lr{\frac{1}{R_1 (\beta_f + 1)} + 1} + \eta V_t \ln{\lr{\frac{v_o}{R_1}\frac{1}{I_{ES}} + 1}}}
+
+\eq{G_v = \frac{\partial v_0}{\partial v_i} = \lr{\frac{1}{R_1 (\beta_f + 1)} + \eta V_t \frac{
+\frac{1}{I_{ES} R_1}
+}{
+\frac{v_o}{I_{ES} R_1} + 1} + 1}^{-1}}
 
 \subsection{Potências dissipadas e eficiência}
 O andar de saída em classe B como tem dois transístores que funcionam alternadamente para amplificar o sinal de entrada, possui uma eficiência bastante superior quando comparado com a eficiência do andar de classe A.\\
@@ -177,16 +199,16 @@ Tal como sugerido no guia, verificou-se que anulando a entrada ambos os transís
 
 \subsection{Função de transferência}
 
-\fig{../gnuplot/vo(vi).pdf}{Função de transferência vo(vi) para tensão alternada sinusoidal de 300$Hz$. Ajuste pelo método dos mínimos quadrados a uma função do tipo $y=mx+b$. Parâmetros de ajuste: $m=0.91\pm0.02$, $b=-0.60\pm0.09 V$, $Chi_{ndf}=0.05$}
+\fig{../gnuplot/vo(vi).pdf}{Função de transferência vo(vi) para tensão alternada sinusoidal de 300$Hz$. Ajuste pelo método dos mínimos quadrados a uma função do tipo $y=mx+b$. Parâmetros de ajuste: $m=0.978\pm0.015$, $b=-0.96\pm0.07 V$, $Chi_{ndf}=0.01$}
 
 \fig{../gnuplot/io(ii).pdf}{Característica de corrente io(ii) para tensão alternada sinusoidal de 300$Hz$.
-Ajuste pelo método dos mínimos quadrados a uma função do tipo $y=mx+b$. Parâmetros de ajuste: $m=110\pm2$, $b=-0.047\pm0.008 (A)$, $Chi_{ndf}=4\e{-4}$}
+Ajuste pelo método dos mínimos quadrados a uma função do tipo $y=mx+b$. Parâmetros de ajuste: $m=118\pm1$, $b=-0.079\pm0.005 (A)$, $Chi_{ndf}=7.3\e{-5}$}
 
 \fig{../gnuplot/xy.pdf}{Dados experimentais obtidos no osciloscópio no modo xy para a característica vo(vi)}
 
 %\fig{../ngspice/plot.pdf}{Função de transferência vo(vi) obtida na simulação em ngspice}
 
-Apresenta-se na \rfig{../gnuplot/vo(vi).pdf} a funçao de transferência vo(vi) e na \rfig{../gnuplot/io(ii).pdf} a característica de corrente io(ii). Procedeu-se a um ajuste aos pontos (sem considerar erros experimentais), com o qual se determinou o ganho de tensão $0.91\pm0.02$ e de corrente $110\pm2$. Apresenta-se também na \rfig{../gnuplot/xy.pdf} uma aquisição do osciloscópio no modo xy.
+Apresenta-se na \rfig{../gnuplot/vo(vi).pdf} a funçao de transferência vo(vi) e na \rfig{../gnuplot/io(ii).pdf} a característica de corrente io(ii). Procedeu-se a um ajuste aos pontos (sem considerar erros experimentais), com o qual se determinou o ganho de tensão $0.978\pm0.015$ e de corrente $118\pm1$. Apresenta-se também na \rfig{../gnuplot/xy.pdf} uma aquisição do osciloscópio no modo xy.
 Determinou-se que o valor máximo de vo para o qual não há distorção é $6.57 V rms$, isto é $9.29 V$ de amplitude.
 
 A distorção ocorre quando a tensão de saída atinge $V_{dd} - V_{ce_{saturacao}}$ ou $V_{ss} + V_{ec_{saturacao}}$, sendo que neste caso os valores são iguais em módulo. Como $V_{ce_{saturacao}}~0.7V$, $vo_{max}\approx9.7 V$.
@@ -209,6 +231,8 @@ A distorção ocorre quando a tensão de saída atinge $V_{dd} - V_{ce_{saturaca
 \label{s:aresul}
 
 \subsection{Função de transferência}
+
+Os valores obtidos para o ganho de tensão e de corrente estão de acordo com o esperado, com 
 
 O valor obtido para a tensão máxima sem distorção está de acordo com o obtido experimentalmente.
 
