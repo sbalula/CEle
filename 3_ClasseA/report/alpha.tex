@@ -129,6 +129,7 @@ Neste trabalho laboratorial é montado um andar de saída em classe A, usando tr
 Medem-se, calculam-se e determinam-se com recurso a uma simulação em spice as correntes, tensões e potências com o circuito no ponto de funcionamento em repouso bem como com sinais periódicos de diferentes frequências.
 Determinam-se a função de transferência, característica de corrente, impedâncias de entrada e saída e banda passante.
 Determina-se que o ganho de tensão é de $G_v=0.96\pm0.01$, e o de corrente de $G_i=78.12\pm1.07$.
+Verifica-se que as impedâncias de entrada e saída são, respectivamente, 
 
 \end{abstract}
 \maketitle
@@ -404,30 +405,30 @@ Neste ponto mediram-se a tensão e corrente de entrada directamente utilizando o
 \subsection{Resposta em frequência}
 Variou-se a frequência do sinal de entrada e mediu-se utilizando multímetros a tensão de saída e a tensão de entrada. Os resultados obtidos encontram-se na tabela \ref{tab:respostafrequenciaresultados}
 \begin{table}[h]
-    \begin{tabular}{|l|l|l|}
+    \begin{tabular}{|l|l|l|l|l|}
     \hline
-    Frequência sinal de entrada (Hz) & Vi(V) & Vo(V) \\ \hline
-    100                              & 1.20  & 10.6  \\ \hline
-    200                              & 1.20  & 10.8  \\ \hline
-    400                              & 1.04  & 11.2  \\ \hline
-    600                              & 0.96  & 11.4  \\ \hline
-    800                              & 1,04  & 11.7  \\ \hline
-    1000                             & 0.80  & 12.1  \\ \hline
-    2000                             & 0.64  & 12.4  \\ \hline
-    4000                             & 0.56  & 12.9  \\ \hline
-    6000                             & 0.56  & 12.8  \\ \hline
-    8000                             & 0.48  & 13.0  \\ \hline
-    10000                            & 0.32  & 13.0  \\ \hline
-    20000                            & 0.32  & 12.9  \\ \hline
-    40000                            & 0.32  & 13.0  \\ \hline
-    60000                            & 0.48  & 12.8  \\ \hline
-    80000                            & 0.56  & 12.8  \\ \hline
-    100000                           & 0.64  & 12.8  \\ \hline
-    200000                           & 2.12  & 12.7  \\ \hline
-    400000                           & 2.40  & 12.4  \\ \hline
-    600000                           & 3.92  & 13.0  \\ \hline
-    800000                           & 4.64  & 13.7  \\ \hline
-    1000000                          & 7.04  & 14.1  \\ \hline
+    Frequência sinal de entrada (Hz) & Vi(V) & Vo(V)& Log(f) (Hz)& $i_o/i_i (dB)$ \\ \hline
+    100                              & 1.20  & 10.6 & 2.0& 39.1                                  \\ \hline
+    200                              & 1.20  & 10.8 & 2.3	&39.2			\\ \hline
+    400                              & 1.04  & 11.2 & 2.6	&40.8			\\ \hline
+    600                              & 0.96  & 11.4 & 2.8	&41.6			\\ \hline
+    800                              & 1,04  & 11.7 & 2.9	&41.2			\\ \hline
+    1000                             & 0.80  & 12.1&  3.0	&43.7			\\ \hline
+    2000                             & 0.64  & 12.4&  3.3	&45.9			\\ \hline
+    4000                             & 0.56  & 12.9&  3.6	&47.4			\\ \hline
+    6000                             & 0.56  & 12.8&  3.8	&47.3			\\ \hline
+    8000                             & 0.48  & 13.0&  3.9	&48.8			\\ \hline
+    10000                            & 0.32  & 13.0&  4.0&52.3				\\ \hline
+    20000                            & 0.32  & 12.9&  4.3&52.3				\\ \hline
+    40000                            & 0.32  & 13.0&  4.6&52.3				\\ \hline
+    60000                            & 0.48  & 12.8&  4.8&48.7				\\ \hline
+    80000                            & 0.56  & 12.8&  4.9&47.3				\\ \hline
+    100000                           & 0.64  & 12.8&  5.0&46.2				\\ \hline
+    200000                           & 2.12  & 12.7&  5.3&35.7			\\ \hline
+    400000                           & 2.40  & 12.4&  5.6&34.4				\\ \hline
+    600000                           & 3.92  & 13.0&  5.8&30.6				\\ \hline
+    800000                           & 4.64  & 13.7&  5.9&29.6				\\ \hline
+    1000000                          & 7.04  & 14.1&  6.0&26.2				\\ \hline
     \end{tabular}
 \caption{Dados obtidos para a determinação da resposta em frequência do circuito}
 \label{tab:respostafrequenciaresultados}
@@ -472,42 +473,42 @@ Verifica-se, como seria de esperar, que o andar de saída em classe A é um anda
 
 
 \subsection{Resposta em frequência}
-Tendo em conta os dados da tabela \ref{tab:respostafrequenciaresultados} e atendendo a que $R_i=70.2 \pm 0.1\Omega$ e $R_o=6.9 \pm 0.1\Omega$ foi possível obter as correntes $i_i$ e $i_o$ a partir de $i=V/R$. Apresenta-se na tabela \ref{tab:respostafrequenciaanalise} $log(f)$ e também $\frac{i_0}{i_i}$ em $dB$. 
+Tendo em conta os dados da tabela \ref{tab:respostafrequenciaresultados} e atendendo a que $R_i=70.2 \pm 0.1\Omega$ e $R_o=6.9 \pm 0.1\Omega$ foi possível obter as correntes $i_i$ e $i_o$ a partir de $i=V/R$. Apresenta-se também na tabela \ref{tab:respostafrequenciaresultados} $log(f)$ e também $\frac{i_0}{i_i}$ em $dB$. 
 
 
-\begin{table}
-    \begin{tabular}{|l|l|}
-    \hline
-    Log(f) (Hz) & $ i_o/i_i (dB)$ \\ \hline
-    2.0         & 39.1           \\ \hline
-    2.3         & 39.2           \\ \hline
-    2.6         & 40.8           \\ \hline
-    2.8         & 41.6           \\ \hline
-    2.9         & 41.2           \\ \hline
-    3.0         & 43.7           \\ \hline
-    3.3         & 45.9           \\ \hline
-    3.6         & 47.4           \\ \hline
-    3.8         & 47.3           \\ \hline
-    3.9         & 48.8           \\ \hline
-    4.0         & 52.3           \\ \hline
-    4.3         & 52.3           \\ \hline
-    4.6         & 52.3           \\ \hline
-    4.8         & 48.7           \\ \hline
-    4.9         & 47.3           \\ \hline
-    5.0         & 46.2           \\ \hline
-    5.3         & 35.7           \\ \hline
-    5.6         & 34.4           \\ \hline
-    5.8         & 30.6           \\ \hline
-    5.9         & 29.6           \\ \hline
-    6.0         & 26.2           \\ \hline
-    \end{tabular}
-\caption{Resultados para $log(f)$ e $\frac{i_o}{i_i}$ em $dB$}
-\label{tab:respostafrequenciaanalise}
-\end{table}
+%\begin{table}
+   % \begin{tabular}{|l|l|}
+    %\hline
+   % Log(f) (Hz) & $ i_o/i_i (dB)$ \\ \hline
+   % 2.0         & 39.1           \\ \hline
+    %2.3         & 39.2           \\ \hline
+    %2.6         & 40.8           \\ \hline
+    %2.8         & 41.6           \\ \hline
+    %2.9         & 41.2           \\ \hline
+    %3.0         & 43.7           \\ \hline
+    %3.3         & 45.9           \\ \hline
+    %3.6         & 47.4           \\ \hline
+    %3.8         & 47.3           \\ \hline
+    %3.9         & 48.8           \\ \hline
+    %4.0         & 52.3           \\ \hline
+    %4.3         & 52.3           \\ \hline
+    %4.6         & 52.3           \\ \hline
+    %4.8         & 48.7           \\ \hline
+    %4.9         & 47.3           \\ \hline
+    %5.0         & 46.2           \\ \hline
+    %5.3         & 35.7           \\ \hline
+    %5.6         & 34.4           \\ \hline
+    %5.8         & 30.6           \\ \hline
+    %5.9         & 29.6           \\ \hline
+    %6.0         & 26.2           \\ \hline
+    %\end{tabular}
+%\caption{Resultados para $log(f)$ e $\frac{i_o}{i_i}$ em $dB$}
+%\label{tab:respostafrequenciaanalise}
+%\end{table}
 
 O gráfico de $\frac{i_0}{i_i} (dB)$ em função de $log(f) (Hz)$ encontra-se na  \rfig{../img/resposta_frequencia.png}
 
-\fig[.35]{../img/resposta_frequencia.png}{Resposta em frequência do circuito}
+\fig[.28]{../img/resposta_frequencia.png}{Resposta em frequência do circuito}
 
 Considerando que o máximo tem o valor de $52.3 dB$, utilizando o $Mathematica$ fez-se uma função interpoladora e determinou-se a sua intersecção a $-3 dB$ do máximo, ou seja, a $49.3 dB$, sendo que essa intersecção corresponde ao limite superior da banda passante. O valor a que se chegou foi de $f_{limite superior}=57853Hz$. Conclui-se que a partir de $57853Hz$ a atenuação é superior a $3dB$.
 
