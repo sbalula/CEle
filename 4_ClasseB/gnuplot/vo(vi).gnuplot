@@ -15,8 +15,8 @@ set ylabel "Amplitude da tensao de saida (V rms)"
 
 plot \
 f(x) lt rgb "black" title 'f(x)=m*x+b',\
-file.".dat" notitle lt rgb "red"
-
+file.".dat" notitle lt rgb "black" pt 1,\
+file."_not.dat" notitle lt rgb "red" pt 1\
 
 set terminal postscript eps color lw 1 "Sans,20"
 set output file.'.eps'

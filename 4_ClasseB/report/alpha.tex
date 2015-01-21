@@ -114,6 +114,8 @@ com transistores bipolares 2n3055}
 \label{s:intro}
 %Situar o problema, incluir fórmulas.
 %Quem lê o relatório deve conseguir perceber exatamente o que foi feito.
+
+
 \subsection{Potências dissipadas e eficiência}
 O andar de saída em classe B como tem dois transístores que funcionam alternadamente para amplificar o sinal de entrada, possui uma eficiência bastante superior quando comparado com a eficiência do andar de classe A.\\
 Teoricamente a potência fornecida pelas fontes de alimentação do andar de saída em que a fonte positiva fornece uma tensão igual em módulo à da fonte negativa é dada por:
@@ -154,15 +156,15 @@ P_D=P_{forn}-P_L=\frac{2V_{CC}V_{o_m}}{\pi R_L}-\frac{V_{o_m}^2}{2R_L}
 \section{Experiência Realizada}
 \label{s:expreal}
 %Incluir diagrama de blocos da montagem
-De acordo com as instruções do guia, implentou-se o circuito da \rfig{../img/circuito.png}. Apresentam-se na tabela \ref{partlist} os componentes utilizados.
+De acordo com as instruções do guia, implentou-se o circuito da \rfig{../img/esquematico.png}. Apresentam-se na tabela \ref{partlist} os componentes utilizados.
 
-\fig[.4]{../img/circuito.png}{Circuito implementado no laboratório}
+\fig{../img/esquematico.png}{Circuito implementado no laboratório}
 
 \tabela[partlist]{Lista dos componentes utilizados}{lrrr}{
 	Descrição		&Modelo/Valor		&Qt.			&Referência	\\ \hline
-	Ampl. operacional	&			&1			&		\\
-	Cond. cerâmico		&nF			&1			&		\\
-	Resistência .25W	&$\Omega$		&4			&		\\
+	TJB NPN			&2N3055			&1			&Q1	\\
+	TJB PNP			&MJ2955			&1			&Q2		\\
+	Resistência 		&10$\Omega$		&2			&R1, R2		\\
 }
 
 
