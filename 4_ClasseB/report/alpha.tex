@@ -149,6 +149,22 @@ Finalmente, a potência dissipada pelos transístores pode ser calculada fazendo
 P_D=P_{forn}-P_L=\frac{2V_{CC}V_{o_m}}{\pi R_L}-\frac{V_{o_m}^2}{2R_L}
 \label{eq:p_diss}
 \end{equation}
+Atráves da equação \ref{eq:p_diss}, tem-se para os valores implementados no laboratório (que podem ser consultados na tabela \ref{tab:fixe}) que a potência dissipada pelo andar é de:
+\begin{equation}
+P_D\approx1.35 W
+\end{equation}
+Para calcular a eficiência experimentalmente é necessário o cálculo das potências fornecidas por ambas as fontes e a potência consumida pela resistência de carga. Visto que o andar é puramente resistivo, o valor das potência fornecida pela fonte $i$ é calculado por:
+\begin{equation}
+P_{forn_i}=V_i \cdot I_i(\mathrm{rms})
+\end{equation}
+A potência consumida pela resistência de carga é dada por:
+\begin{equation}
+P_L=\frac{(V_L(\mathrm{rms}))^2}{R_L}
+\end{equation}
+Sendo que finalmente a eficiência é dada do andar é dada por:
+\begin{equation}
+\eta=\frac{P_L}{P_{forn_i}}=\frac{V_i \cdot I_i(\mathrm{rms})}{\frac{(V_L(\mathrm{rms}))^2}{R_L}}
+\end{equation}
 
 \subsection{Impedâncias de entrada e saída}
 Com a finalidade de determinar a impedância de entrada do circuito mede-se a corrente e a tensão de entrada utilizando um multímetro e determina-se a impedância de entrada a partir da equação \ref{eq:impedanciaentrada}.
@@ -206,8 +222,27 @@ A distorção ocorre quando a tensão de saída atinge $V_{dd} - V_{ce_{saturaca
 
 
 \subsection{Potências fornecidas e dissipadas}
-
-
+Os resultados obtidos para as medições quando $v_0=v_{0_m}$ necessárias para calcular as potências dissipadas e o rendimento, juntamente com estas quantidades estão apresentados na tabela \ref{tab:fixe}.
+\begin{table}[h]
+\begin{tabular}{c|c}
+                  & $v_{o}=v_{o_m}$ \\ \hline
+$V_{+}$ (V)       & 9.26            \\ \hline
+$V_{-}$ (V)       & -9.89           \\ \hline
+$I_{+}$ (rms) (A) & 0.33            \\ \hline
+$I_{-}$ (rms) (A) & 0.33            \\ \hline
+$v_{0}$ (rms) (V) & 6.57            \\ \hline
+$P_{R_L}$ (W)     & 4.32            \\ \hline
+$P_{forn_+}$ (W)  & 3.05            \\ \hline
+$P_{forn_-}$ (W)  & 3.26           \\ \hline
+$P_{Q_N}$ (W)     & 0.896           \\ \hline
+$P_{Q_P}$ (W)     & 1.104           \\ \hline
+Eficiência (\%)   & 68.3          
+\end{tabular}
+\caption{Resultados obtidos o rendimento e valores necesários para o cálculo deste}
+\label{tab:fixe}
+\end{table}
+O rendimento obtido foi de 68.3\%, ligeiramente mais baixo que o rendimento previsto de 78.5\%
+Considerou-se para o cálculo das potências dissipadas considerou-se que metade da potência dissipada pela resistência  de carga é fornecida pela fonte positiva, e a outra metade pela fonte negativa.
 
 \subsection{Impedâncias de entrada e saída}
 
@@ -262,12 +297,22 @@ Variando a frequência do sinal de entrada mediram-se as tensões de entrada e d
 O valor obtido para a tensão máxima sem distorção está de acordo com o obtido experimentalmente.
 
 \subsection{Potências fornecidas e dissipadas}
+Dos resultados da tabela \ref{tab:fixe}, conclui-se que a eficiência do andar estudado é de 68.3\% quando a tensão de entrada é a máxima sem a existência de distorção. Este valor é ligeiramente inferior ao valor previsto pela teoria de 78.5\%, diferença essa que pode ser explicada pelo facto de apenas se considerar no modelo teórico as perdas nos transístores, enquanto que nos cálculos para a eficiência experimental se contabilizam todas as perdas.\\
+É interessante comentar que este andar é muito mais eficiente que o andar de saída em classe A, sendo que tanto teoricamente como experimentalmente a eficiência é 3 a 4 vezes no andar de classe B face ao andar de classe A.
+Somando as potências dissipadas obtidas experimentalmente para ambas os transístores, tem-se:
+\begin{equation}
+P_{D_{exp}}\approx 2
+\end{equation}
+Valor este que é aproximadamente o dobro do valor obtido teoricamente. Mais isto pode dever-se ao facto de na formulação teórica, apenas se considerar a dissipação em transístores ideais, enquanto que na realidade, os transístores possuem muitas não-idealidades que não são contabilizadas na formulação teórica mas que são suficientemente importantes para que no final, o resultado obtido seja diferente do esperado.
+
 \subsection{Impedâncias de entrada e saída}
 \subsection{Resposta em frequência}
 Tendo em conta os dados da tabela \ref{tab:respostafrequencia} e que $R_i=47.0 \pm 0.1 \Omega$ e que $R_o=6.1 \pm 0.1 \Omega$ apresentam-se também na tabela \ref{tab:respostafrequencia} $Log(f)$ e $i_o / i_i $ em $dB$. Encontra-se na  \rfig{../img/Ponto_D.png} o gráfico de $i_o/i_i (dB)$ em função de $Log(f) (Hz)$.
 
 \fig[.28]{../img/Ponto_D.png}{Resposta em frequência do circuito}
 Tendo em conta que o máximo de  $i_o/i_i (dB)$ é de $27.1 dB$ traçou-se uma recta a $24.1 dB$ e verificou-se assim que o limite superior da banda passante se encontra em $63kHz$. Conclui-se assim que a atenuação a partir de $63kHz$ o ganho de corrente decresce bastante.
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Conclusões e Críticas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusões e Críticas}
