@@ -246,7 +246,21 @@ Considerou-se para o cálculo das potências dissipadas considerou-se que metade
 
 \subsection{Impedâncias de entrada e saída}
 
+Para determinar a impedância de entrada mediu-se directamente, utilizando um multimetro, a tensão de entrada e mediu-se a tensão aos terminais de uma resistência de $10 \Omega$ de modo a determinar a corrente de entrada. Mediram-se também, utilizando duas cargas diferentes, a corrente e tensão nessas cargas, de modo a que, a partir do equivalente de Thévenin, fosse possível determinar a impedância de saída do circuito. Os resultados estão na tabela\ref{tab:impedanciadados}.
 
+\begin{table}[h]
+    \begin{tabular}{|l|l|}
+    \hline
+    $V_i $(V) & ~ \\ \hline
+    $I_i$ (A) & ~ \\ \hline
+    R1($\Omega$)    & $10.0\pm 0.1$ \\ \hline
+    $V_{o1}$   & $0.893 \pm 0.001$ \\ \hline
+    R2 ($\Omega$)   & $6.1\pm 0.1$ \\ \hline
+    $V_{o2}$   & $0.825\pm 0.001$ \\ \hline
+    \end{tabular}
+\caption{Dados obtidos para a determinação das impedâncias de entrada e de saída}
+\label{tab:impedanciadados}
+\end{table}
 
 
 
@@ -306,6 +320,12 @@ P_{D_{exp}}\approx 2
 Valor este que é aproximadamente o dobro do valor obtido teoricamente. Mais isto pode dever-se ao facto de na formulação teórica, apenas se considerar a dissipação em transístores ideais, enquanto que na realidade, os transístores possuem muitas não-idealidades que não são contabilizadas na formulação teórica mas que são suficientemente importantes para que no final, o resultado obtido seja diferente do esperado.
 
 \subsection{Impedâncias de entrada e saída}
+
+
+
+
+
+
 \subsection{Resposta em frequência}
 Tendo em conta os dados da tabela \ref{tab:respostafrequencia} e que $R_i=47.0 \pm 0.1 \Omega$ e que $R_o=6.1 \pm 0.1 \Omega$ apresentam-se também na tabela \ref{tab:respostafrequencia} $Log(f)$ e $i_o / i_i $ em $dB$. Encontra-se na  \rfig{../img/Ponto_D.png} o gráfico de $i_o/i_i (dB)$ em função de $Log(f) (Hz)$.
 
