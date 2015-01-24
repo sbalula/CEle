@@ -254,9 +254,9 @@ Para determinar a impedância de entrada mediu-se directamente, utilizando um mu
     $V_i $(V) & ~ \\ \hline
     $I_i$ (A) & ~ \\ \hline
     R1($\Omega$)    & $10.0\pm 0.1$ \\ \hline
-    $V_{o1}$   & $0.893 \pm 0.001$ \\ \hline
+    $V_{o1}$ (V)   & $0.893 \pm 0.001$ \\ \hline
     R2 ($\Omega$)   & $6.1\pm 0.1$ \\ \hline
-    $V_{o2}$   & $0.825\pm 0.001$ \\ \hline
+    $V_{o2}$ (V)   & $0.825\pm 0.001$ \\ \hline
     \end{tabular}
 \caption{Dados obtidos para a determinação das impedâncias de entrada e de saída}
 \label{tab:impedanciadados}
@@ -321,8 +321,20 @@ Valor este que é aproximadamente o dobro do valor obtido teoricamente. Mais ist
 
 \subsection{Impedâncias de entrada e saída}
 
+A impedância de entrada foi determinada através dos dados da tabela \ref{tab:impedanciadados} e da equação \ref{eq:impedanciaentrada}. Para a impedância de saída obtiveram-se 2 valores, dado que se utilizaram duas cargas para os cálculos, utilizando a equação \ref{eq:impedanciasaida}. Considerou-se que $\frac{dV_o}{dR_1}=\frac{V_{o1}-V_{o2}}{R_1-R_2}$ quando se utilizou $R_1$ epara os cálculos e  $\frac{dV_o}{dR_1}=\frac{V_{o2}-V_{o1}}{R_2-R_1}$ quando se utilizou $R_2$. Os resultados obtidos encontram-se na tabela \ref{tab:impedanciaresultados}.
 
+\begin{table}[h]
+    \begin{tabular}{|l|l|}
+    \hline
+    $Z_{in} (\Omega)$ & ~ \\ \hline
+    $Z_{o1} (\Omega)$ & $2.43 \pm0.06$ \\ \hline
+    $Z_{o2} (\Omega)$ & $0.90 \pm 0.03$ \\ \hline
+    \end{tabular}
+\caption{Resultados obtidos para as impedâncias de entrada e de saída}
+\label{tab:impedanciaresultados}
+\end{table}
 
+Como seria de esperar, o andar de saída em classe B tem uma impedância de entrada alta e uma impedância de saída baixa.
 
 
 
