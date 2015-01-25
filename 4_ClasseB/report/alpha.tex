@@ -173,7 +173,38 @@ Finalmente, a potência dissipada pelos transístores pode ser calculada fazendo
 P_D=P_{forn}-P_L=\frac{2V_{CC}V_{o_m}}{\pi R_L}-\frac{V_{o_m}^2}{2R_L}
 \label{eq:p_diss}
 \end{equation}
+Atráves da equação \ref{eq:p_diss}, tem-se para os valores implementados no laboratório (que podem ser consultados na tabela \ref{tab:fixe}) que a potência dissipada pelo andar é de:
+\begin{equation}
+P_D\approx1.35 W
+\end{equation}
+Para calcular a eficiência experimentalmente é necessário o cálculo das potências fornecidas por ambas as fontes e a potência consumida pela resistência de carga. Visto que o andar é puramente resistivo, o valor das potência fornecida pela fonte $i$ é calculado por:
+\begin{equation}
+P_{forn_i}=V_i \cdot I_i(\mathrm{rms})
+\end{equation}
+A potência consumida pela resistência de carga é dada por:
+\begin{equation}
+P_L=\frac{(V_L(\mathrm{rms}))^2}{R_L}
+\end{equation}
+Sendo que finalmente a eficiência é dada do andar é dada por:
+\begin{equation}
+\eta=\frac{P_L}{P_{forn_i}}=\frac{V_i \cdot I_i(\mathrm{rms})}{\frac{(V_L(\mathrm{rms}))^2}{R_L}}
+\end{equation}
 
+\subsection{Impedâncias de entrada e saída}
+Com a finalidade de determinar a impedância de entrada do circuito mede-se a corrente e a tensão de entrada utilizando um multímetro e determina-se a impedância de entrada a partir da equação \ref{eq:impedanciaentrada}.
+\begin{equation}
+Z_{in}=\frac{V_{in}}{I_{in}}
+\label{eq:impedanciaentrada}
+\end{equation}
+Para determinar a impedância de saída utilizam-se duas cargas diferentes e mede-se a queda de tensão nelas. Considera-se que todo o circuito é linear e portanto pode ser representado por um equivalente de Thévenin (uma fonte de tensão e uma impedância em série, neste caso essa impedância corresponde à impedância de saída do circuito). A impedância de saída é então dada pela equação \ref{eq:impedanciasaida}
+
+\begin{equation}
+Z_{out}=\frac{R_1 \frac{dV_0}{dR_1}}{\frac{V_0}{R_1}-\frac{dV_0}{dR_1}}
+\label{eq:impedanciasaida}
+\end{equation}
+
+\subsection{Resposta em frequência}
+Pretende-se verificar a resposta em frequência do circuito e para tal varria-se a frequência do sinal de entrada e apresenta-se o gráfico de $\frac{i_o}{i_i} (dB)$ em função de $log(f)$. Para determinar as correntes de entrada e de saída medem-se as quedas de tensão nas resistências à entrada e à saída do circuito e utilizando $I=V/R$ obtêm-se as correntes. Determina-se ainda o limite superior da banda passante a $-3 dB$ a partir da intersecção dessa recta com o gráfico já referido.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Experiência realizada %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experiência Realizada}
 \label{s:expreal}
@@ -215,11 +246,80 @@ A distorção ocorre quando a tensão de saída atinge $V_{dd} - V_{ce_{saturaca
 
 
 \subsection{Potências fornecidas e dissipadas}
-
-
+Os resultados obtidos para as medições quando $v_0=v_{0_m}$ necessárias para calcular as potências dissipadas e o rendimento, juntamente com estas quantidades estão apresentados na tabela \ref{tab:fixe}.
+\begin{table}[h]
+\begin{tabular}{c|c}
+                  & $v_{o}=v_{o_m}$ \\ \hline
+$V_{+}$ (V)       & 9.26            \\ \hline
+$V_{-}$ (V)       & -9.89           \\ \hline
+$I_{+}$ (rms) (A) & 0.33            \\ \hline
+$I_{-}$ (rms) (A) & 0.33            \\ \hline
+$v_{0}$ (rms) (V) & 6.57            \\ \hline
+$P_{R_L}$ (W)     & 4.32            \\ \hline
+$P_{forn_+}$ (W)  & 3.05            \\ \hline
+$P_{forn_-}$ (W)  & 3.26           \\ \hline
+$P_{Q_N}$ (W)     & 0.896           \\ \hline
+$P_{Q_P}$ (W)     & 1.104           \\ \hline
+Eficiência (\%)   & 68.3          
+\end{tabular}
+\caption{Resultados obtidos o rendimento e valores necesários para o cálculo deste}
+\label{tab:fixe}
+\end{table}
+O rendimento obtido foi de 68.3\%, ligeiramente mais baixo que o rendimento previsto de 78.5\%
+Considerou-se para o cálculo das potências dissipadas considerou-se que metade da potência dissipada pela resistência  de carga é fornecida pela fonte positiva, e a outra metade pela fonte negativa.
 
 \subsection{Impedâncias de entrada e saída}
+
+Para determinar a impedância de entrada mediu-se directamente, utilizando um multimetro, a tensão de entrada e mediu-se a tensão aos terminais de uma resistência de $10 \Omega$ de modo a determinar a corrente de entrada. Mediram-se também, utilizando duas cargas diferentes, a corrente e tensão nessas cargas, de modo a que, a partir do equivalente de Thévenin, fosse possível determinar a impedância de saída do circuito. Os resultados estão na tabela\ref{tab:impedanciadados}.
+
+\begin{table}[h]
+    \begin{tabular}{|l|l|}
+    \hline
+    $V_i $(V) & ~ \\ \hline
+    $I_i$ (A) & ~ \\ \hline
+    R1($\Omega$)    & $10.0\pm 0.1$ \\ \hline
+    $V_{o1}$ (V)   & $0.893 \pm 0.001$ \\ \hline
+    R2 ($\Omega$)   & $6.1\pm 0.1$ \\ \hline
+    $V_{o2}$ (V)   & $0.825\pm 0.001$ \\ \hline
+    \end{tabular}
+\caption{Dados obtidos para a determinação das impedâncias de entrada e de saída}
+\label{tab:impedanciadados}
+\end{table}
+
+
+
 \subsection{Resposta em frequência}
+Variando a frequência do sinal de entrada mediram-se as tensões de entrada e de saída. Os resultados encontram-se na tabela \ref{tab:respostafrequencia}.
+\begin{table}[h]
+    \begin{tabular}{|l|l|l|l|l|}
+    \hline
+    $F_{sinal de entrada} (Hz)$ & Vi(V) & Vo(V)& Log(f) (Hz)& $i_o/i_i (dB)$ \\ \hline
+    100                                               & 0.88  & 7.76 & 2.0	& 16.6                                  \\ \hline
+    200                              		    & 0.88  & 7.76 & 2.3	&16.6		\\ \hline
+    400                              		    & 0.80 & 7.92 & 2.6	&17.6			\\ \hline
+    600                              		    & 0.72  & 8.32 & 2.8	&19.0			\\ \hline
+    800                              		    & 0.72  & 8.42 & 2.9	&19.1			\\ \hline
+    1000                             		    & 0.72  & 8.64&  3.0	&19.3			\\ \hline
+    2000                             		    & 0.56  & 8.96&  3.3	&21.8			\\ \hline
+    4000                             		    & 0.56  & 9.20&  3.6	&22.0			\\ \hline
+    6000                             		    & 0.56  & 9.36&  3.8	&22.2			\\ \hline
+    8000                             		    & 0.40  & 9.44&  3.9	&25.2			\\ \hline
+    10000                            		    & 0.40  & 9.44&  4.0	&25.2				\\ \hline
+    20000                            		    & 0.40  & 9.44&  4.3	&25.2				\\ \hline
+    40000                            		    & 0.32  & 9.36&  4.6	&27.1				\\ \hline
+    60000                            		    & 0.48  & 9.36&  4.8	&23.5				\\ \hline
+    80000                            		    & 0.48  & 9.36&  4.9	&23.5				\\ \hline
+    100000                           	    & 0.64  & 9.44&  5.0	&21.1				\\ \hline
+    200000                           	    & 1.04  & 9.36&  5.3	&16.8			\\ \hline
+    400000                           	    & 1.36  & 9.44&  5.6	&14.6				\\ \hline
+    600000                           	    & 1.52  & 9.04&  5.8	&13.2				\\ \hline
+    800000                           	    & 1.92  & 9.12&  5.9	&11.3				\\ \hline
+    1000000                          	    & 2.24  & 8.72&  6.0	&9.5				\\ \hline
+    2000000				    &4.4     &8.16 &  6.3     &3.1                          \\ \hline
+    \end{tabular}
+\caption{Dados obtidos para a determinação da resposta em frequência do circuito}
+\label{tab:respostafrequencia}
+\end{table}
 
 
 
@@ -237,8 +337,39 @@ Os valores obtidos para o ganho de tensão e de corrente estão de acordo com o 
 O valor obtido para a tensão máxima sem distorção está de acordo com o obtido experimentalmente.
 
 \subsection{Potências fornecidas e dissipadas}
+Dos resultados da tabela \ref{tab:fixe}, conclui-se que a eficiência do andar estudado é de 68.3\% quando a tensão de entrada é a máxima sem a existência de distorção. Este valor é ligeiramente inferior ao valor previsto pela teoria de 78.5\%, diferença essa que pode ser explicada pelo facto de apenas se considerar no modelo teórico as perdas nos transístores, enquanto que nos cálculos para a eficiência experimental se contabilizam todas as perdas.\\
+É interessante comentar que este andar é muito mais eficiente que o andar de saída em classe A, sendo que tanto teoricamente como experimentalmente a eficiência é 3 a 4 vezes no andar de classe B face ao andar de classe A.
+Somando as potências dissipadas obtidas experimentalmente para ambas os transístores, tem-se:
+\begin{equation}
+P_{D_{exp}}\approx 2
+\end{equation}
+Valor este que é aproximadamente o dobro do valor obtido teoricamente. Mais isto pode dever-se ao facto de na formulação teórica, apenas se considerar a dissipação em transístores ideais, enquanto que na realidade, os transístores possuem muitas não-idealidades que não são contabilizadas na formulação teórica mas que são suficientemente importantes para que no final, o resultado obtido seja diferente do esperado.
+
 \subsection{Impedâncias de entrada e saída}
+
+A impedância de entrada foi determinada através dos dados da tabela \ref{tab:impedanciadados} e da equação \ref{eq:impedanciaentrada}. Para a impedância de saída obtiveram-se 2 valores, dado que se utilizaram duas cargas para os cálculos, utilizando a equação \ref{eq:impedanciasaida}. Considerou-se que $\frac{dV_o}{dR_1}=\frac{V_{o1}-V_{o2}}{R_1-R_2}$ quando se utilizou $R_1$ epara os cálculos e  $\frac{dV_o}{dR_1}=\frac{V_{o2}-V_{o1}}{R_2-R_1}$ quando se utilizou $R_2$. Os resultados obtidos encontram-se na tabela \ref{tab:impedanciaresultados}.
+
+\begin{table}[h]
+    \begin{tabular}{|l|l|}
+    \hline
+    $Z_{in} (\Omega)$ & ~ \\ \hline
+    $Z_{o1} (\Omega)$ & $2.43 \pm0.06$ \\ \hline
+    $Z_{o2} (\Omega)$ & $0.90 \pm 0.03$ \\ \hline
+    \end{tabular}
+\caption{Resultados obtidos para as impedâncias de entrada e de saída}
+\label{tab:impedanciaresultados}
+\end{table}
+
+Como seria de esperar, o andar de saída em classe B tem uma impedância de entrada alta e uma impedância de saída baixa.
+
+
+
 \subsection{Resposta em frequência}
+Tendo em conta os dados da tabela \ref{tab:respostafrequencia} e que $R_i=47.0 \pm 0.1 \Omega$ e que $R_o=6.1 \pm 0.1 \Omega$ apresentam-se também na tabela \ref{tab:respostafrequencia} $Log(f)$ e $i_o / i_i $ em $dB$. Encontra-se na  \rfig{../img/Ponto_D.png} o gráfico de $i_o/i_i (dB)$ em função de $Log(f) (Hz)$.
+
+\fig[.28]{../img/Ponto_D.png}{Resposta em frequência do circuito}
+Tendo em conta que o máximo de  $i_o/i_i (dB)$ é de $27.1 dB$ traçou-se uma recta a $24.1 dB$ e verificou-se assim que o limite superior da banda passante se encontra em $63kHz$. Conclui-se assim que a atenuação a partir de $63kHz$ o ganho de corrente decresce bastante.
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Conclusões e Críticas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
