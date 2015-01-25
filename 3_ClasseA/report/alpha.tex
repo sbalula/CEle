@@ -122,7 +122,7 @@ Neste trabalho laboratorial é montado um andar de saída em classe A, usando tr
 Medem-se, calculam-se e determinam-se com recurso a uma simulação em spice as correntes, tensões e potências com o circuito no ponto de funcionamento em repouso bem como com sinais periódicos de diferentes frequências.
 Determinam-se a função de transferência, característica de corrente, impedâncias de entrada e saída e banda passante.
 Determina-se que o ganho de tensão é de $G_v=0.96\pm0.01$, e o de corrente de $G_i=78.12\pm1.07$.
-Verifica-se que as impedâncias do circuito são $Z_{in}=2570.59\pm78.55 \Omega$, $Z_{01}=1.038\pm0.751 \Omega$ e $Z_{02}=0.664\pm0.009 \Omega$. O limite superior da banda passan-te a $-3dB$ encontra-se em $58kHz$.
+Verifica-se que as impedâncias do circuito são $Z_{in}=2570.59\pm78.55 \Omega$, $Z_{01}=1.038\pm0.751 \Omega$ e $Z_{02}=0.664\pm0.009 \Omega$. O limite superior da banda passante a $-3dB$ encontra-se em $58kHz$.
 
 \end{abstract}
 \maketitle
@@ -137,7 +137,21 @@ Um andar de saída em classe A é um tipo de amplificador que permite aumentar a
 
 \fig[.30]{../img/esquematico.png}{Circuito implementado no laboratório}
 
-Neste trabalho laboratorial implentou-se o circuito representado na \rfig{../img/esquematico.png} e que se descreve em maior detalhe em \ref{s:expreal}
+\subsection{Experiência Realizada}
+\label{s:expreal}
+%Incluir diagrama de blocos da montagem
+De acordo com as instruções do guia, implementou-se o circuito da \rfig{../img/esquematico.png}. Apresentam-se na tabela \ref{partlist} os componentes utilizados.
+Efetuaram-se as medições:
+
+
+\tabela[partlist]{Lista dos componentes utilizados}{lrrr}{
+	Descrição		&Modelo/Valor		&Qt.			&Referência	\\ \hline
+	Transístor J. Bipolar	&2n3055			&3			&Q1,Q2,Q3	\\
+	Gerador de Sinais	&			&1			&		\\
+	Resistência de potência	&10$\Omega$		&2			&R2,R3	\\
+	Reóstato de potência	&12$\Omega$		&1			&R1
+}
+
 
 \subsection{Ponto de funcionamento em repouso}
 Para o cálculo do ponto de funcionamento em repouso utilizaram-se as seguintes relações para os transístores:
@@ -258,20 +272,6 @@ Z_{out}=\frac{R_1 \frac{dV_0}{dR_1}}{\frac{V_0}{R_1}-\frac{dV_0}{dR_1}}
 É também pretendido verificar a resposta em frequência do circuito e para tal varia-se a frequência do sinal de entrada e apresenta-se o gráfico de $\frac{i_0}{i_i} (dB)$ em função de $log(f)$. De modo a saber as correntes de entrada e saída medem-se as tensões respetivas e utiliza-se $I=\frac{V}{R}$. Determina-se ainda o limite superior da banda passante a $-3dB$ partir da intersecção dessa recta com o gráfico já referido. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Experiência realizada %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Experiência Realizada}
-\label{s:expreal}
-%Incluir diagrama de blocos da montagem
-De acordo com as instruções do guia, implementou-se o circuito da \rfig{../img/esquematico.png}. Apresentam-se na tabela \ref{partlist} os componentes utilizados.
-Efetuaram-se as medições:
-
-
-\tabela[partlist]{Lista dos componentes utilizados}{lrrr}{
-	Descrição		&Modelo/Valor		&Qt.			&Referência	\\ \hline
-	Transístor J. Bipolar	&2n3055			&3			&Q1,Q2,Q3	\\
-	Gerador de Sinais	&			&1			&		\\
-	Resistência de potência	&10$\Omega$		&2			&R2,R3	\\
-	Reóstato de potência	&12$\Omega$		&1			&R1
-}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Resultados %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -396,7 +396,7 @@ Neste ponto mediram-se a tensão e corrente de entrada directamente utilizando o
 
 
 \subsection{Resposta em frequência}
-Variou-se a frequência do sinal de entrada e mediu-se utilizando multímetros a tensão de saída e a tensão de entrada. Os resultados obtidos encontram-se na tabela \ref{tab:respostafrequenciaresultados}
+Variou-se a frequência do sinal de entrada e mediu-se, utilizando multímetros, a tensão de saída e a tensão de entrada. Os resultados obtidos encontram-se na tabela \ref{tab:respostafrequenciaresultados}
 \begin{table}[h]
     \begin{tabular}{|l|l|l|l|l|}
     \hline
@@ -438,7 +438,7 @@ Variou-se a frequência do sinal de entrada e mediu-se utilizando multímetros a
 \section{Análise de resultados}
 \label{s:aresul}
 \subsection{Ponto de funcionamento em repouso}
-Os resultados experimentais apresentados na \ref{PFR} não são compatíveis com as previsões teóricas ou com os resultados da simulação. São, todavia, coerentes para cada análise, conforme se pode verificar pelo somatório das potências na tabela \ref{Potdiss}, que admite o valor zero experimentalmente e tem valores muito próximos de zero tanto na análise teórica como na simulação. Pode explicar-se esta diferença com a sensibilidade aos valores das resistências, conforme se pode verificar facilmente pela variação dos valores destas na simulação. Em particular, se se variar a resistência de saída do gerador num fator inferior a 2, os resultados da simulação aproximam-se dos verificados experimentalmente. Contribuem para estas diferenças entre os valores marcados dos componentes e os efetivos no circuito as ligações elétricas, que se revelaram nalguns pontos pouco fidedignas, ou os cabos, com comprimentos consideráveis e cujas resistências podem não ser desprezadas quando comparadas com as baixas resistências dos componentes envolvidos.
+Os resultados experimentais apresentados na tabela \ref{PFR} não são compatíveis com as previsões teóricas ou com os resultados da simulação. São, todavia, coerentes para cada análise, conforme se pode verificar pelo somatório das potências na tabela \ref{Potdiss}, que admite o valor zero experimentalmente e tem valores muito próximos de zero tanto na análise teórica como na simulação. Pode explicar-se esta diferença com a sensibilidade aos valores das resistências, conforme se pode verificar facilmente pela variação dos valores destas na simulação. Em particular, se se variar a resistência de saída do gerador num fator inferior a 2, os resultados da simulação aproximam-se dos verificados experimentalmente. Contribuem para estas diferenças entre os valores marcados dos componentes e os efetivos no circuito as ligações elétricas, que se revelaram nalguns pontos pouco fidedignas, ou os cabos, com comprimentos consideráveis e cujas resistências podem não ser desprezadas quando comparadas com as baixas resistências dos componentes envolvidos.
 
 \subsection{Função de transferência}
 O resultado experimental obtido para o ganho de tensão da montagem, $G_v=0.96\pm0.01$, está em concordância com a equação \ref{eq:g_v} e com o valor esperado de $G_v=1$. Nota-se também que a tensão mínima de saída é de cerca de $V_{o_{min}}\approx7.8$, o que implicaria que a tensão de saturação do transístor seria de $V_{{CE}_{sat}}\approx0.2V$, o que está de acordo com as especificações do fabricante, que estipula que o valor máximo desta tensão não ultrapassa 1.1V.\\
@@ -448,7 +448,7 @@ Quanto ao ganho de corrente, o resultado obtido foi de $G_i=78.12\pm1.07$. Pela 
 A partir dos dados obtidos na tabela \ref{tab:fixe}, conclui-se que o rendimento obtido é bastante baixo, na ordem dos 15\% quando $v_o=v_{o_{max}}$ e na ordem dos 4\% quando $v_o=\frac{v_{o_m}}{2}$, como seria de esperar para uma montagem de classe A. Observa-se também que a diminuição da amplitude do sinal de entrada leva a uma diminuição da eficiência, outra característica típica destes andares de saída.  É interessante notar que a eficiência obtida  experimentalmente é bastante inferior à eficiência de 25\% obtida teoricamente. Isto deve-se ao facto de no cálculo da eficiência apenas se ter considerado as perdas nos transístores $Q_1$ e $Q_2$, quando existem outros elementos do circuito onde também existe dissipação.
 
 \subsection{Impedâncias de entrada e saída}
-A impedância de entrada foi determinada através dos dados da tabela \ref{tab:impedancia} e da equação \ref{eq:impedanciaentrada}. Para a impedância de saída obtiveram-se 2 valores, sendo que se utilizaram as duas cargas para os cálculos, utilizando a equação \ref{eq:impedanciasaida}. Considerou-se que $\frac{dV_0}{dR_1}=\frac{V_{01}-V_{02}}{R_1-R_2}$ quando se utilizou $R_1$ para os cálculos e $\frac{dV_0}{dR_1}=\frac{V_{02}-V_{01}}{R_2-R_1}$ quando se utilizou $R_2$. Os resultados obtidos encontram-se na tabela \ref{tab:analiseimpedancias}
+A impedância de entrada foi determinada através dos dados da tabela \ref{tab:impedancia} e da equação \ref{eq:impedanciaentrada}. Para a impedância de saída obtiveram-se 2 valores, sendo que se utilizaram as duas cargas para os cálculos, utilizando a equação \ref{eq:impedanciasaida}. Considerou-se que $\frac{dV_0}{dR_1}=\frac{V_{01}-V_{02}}{R_1-R_2}$ quando se utilizou $R_1$ para os cálculos e $\frac{dV_0}{dR_1}=\frac{V_{02}-V_{01}}{R_2-R_1}$ quando se utilizou $R_2$. Os resultados obtidos encontram-se na tabela \ref{tab:analiseimpedancias}.
 
 
 \begin{table}[h]
