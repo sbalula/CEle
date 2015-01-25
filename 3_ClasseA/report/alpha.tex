@@ -68,35 +68,28 @@ includefoot
 %height=10in,a5paper,hmargin={3cm,0.8in},
 ]{geometry}
 
-
+\if11
+%%%%%%%%%%%%%%% Poupar espaço
 %\oddsidemargin = 0pt                    % Margem do lado esquerdo: 31pt
-\topmargin = -70pt                        % Margem superior: 20pt  
+\topmargin = -20mm                        % Margem superior: 20pt  
 \headheight = 10pt                       % Tamanho do 'header': 12pt 
-\headsep = 1pt                          % Espaço entre o 'header' e o texto: 25pt
-\textheight = 287mm                      % Altura do texto: 592pt
-\textwidth = 200mm                      % Largura do texto: 390pt
+\headsep = 3mm                      % Espaço entre o 'header' e o texto: 25pt
+\textheight = 275mm                      % Altura do texto: 592pt
+\textwidth = 190mm                      % Largura do texto: 390pt
 %\marginparsep = 10pt                     % Espaço entre margem esquerda e o texto: 10pt
 %\marginparwidth = 35pt                   % Margem esquerda: 35pt
 \footskip = 0pt                         % Espaço entre o texto e o 'footer': 30pt
-\oddsidemargin = -20mm
-
-
+\oddsidemargin = -15mm
 \abovedisplayskip = 1mm
 \belowdisplayskip = 1mm
-%\belowcaptionskip = -1mm
+\textfloatsep = 1mm
 
-\textfloatsep = 2mm
-
-
+\usepackage[compact]{titlesec}
+%%%%%%%%%%%%%
+\fi
 
 \begin{document}
 \preprint{APS/123-QED}
-%\captionsetup[table]{font=small,skip=0pt}
-%\captionsetup[figure]{font=small,skip=0pt}
-%\titlespacing{\section}{0pt}{*0}{*0}            %Poupar espaço
-%\titlespacing{\subsection}{0pt}{*0}{*0}
-%\titlespacing{\subsubsection}{0pt}{*0}{*0}
-
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Início %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -105,7 +98,7 @@ includefoot
 
 \title{Andar final de amplificação em classe A\\
 com transistores bipolares 2n3055}
-\thanks{}
+%\thanks{}
 
 \author{Pedro Ribeiro}%
 \email{73221, pedro.q.ribeiro@tecnico.ulisboa.pt}
@@ -290,7 +283,7 @@ Efetuaram-se as medições:
 \subsection{Ponto de funcionamento em repouso}
 Apresentam-se na tabela \ref{PFR} os valores de tensões e correntes relevantes medidos experimentalmente, calculados teoricamente e obtidos na simulação.\footnote{Para facilidade de leitura apresentam-se apenas os valores que foram medidos diretamente. As restantes correntes e tensões que não estão apresentadas podem ser calculadas por aplicação direta da lei de Ohm}
 
-\tabela[PFR]{Valores de corrente e tensão, conforme legenda da \rfig{../esquematico.png}}{llll}{
+\tabela[PFR]{Valores de corrente e tensão, conforme legenda da \rfig{../img/esquematico.png}}{llll}{
 ID	&Experimental		&Teórico	&Simulação	\\ \hline
 Vdd (V)	&$8.022\pm0.01$		&$8.000$	&$8.000$	\\
 Vss (V)	&$-8.006\pm0.01$	&$-8.000$	&$-8.000$	\\
@@ -518,9 +511,11 @@ Considerando que o máximo tem o valor de $52.3 dB$, utilizando o $Mathematica$ 
 \section{Conclusões e Críticas}
 \label{s:conclu}
 %Incluir melhorias propostas à experiência
-Os valores medidos para o ponto de funcionamento em repouso diferem do previsto, mas são coerentes entre si, visto a potência total (dissipada - fornecida) admitir o valor zero.\\
-Os resultados obtidos para as características deste andar de saída são coerentes tanto com as previsões teóricas  e os valores obtidos estão dentro dos limites especificados pelo fabricante para o modelo de transístor usado.\\
-Obtém-se um valor baixo para o rendimento, típico deste andar de saída, mas com um rendimento máximo de $\eta\approx15\%$,  bastante abaixo do valor esperado de 25\%. Concluiu-se que esta diferença se devia à dissipação dos outros componentes do circuito, que não foram contabilizados.\\
+Os valores medidos para o ponto de funcionamento em repouso diferem do previsto, mas são coerentes entre si, visto a potência total (dissipada - fornecida) admitir o valor zero.
+
+Os resultados obtidos para as características deste andar de saída são coerentes tanto com as previsões teóricas  e os valores obtidos estão dentro dos limites especificados pelo fabricante para o modelo de transístor usado.
+
+Obtém-se um valor baixo para o rendimento, típico deste andar de saída, mas com um rendimento máximo de $\eta\approx15\%$,  bastante abaixo do valor esperado de 25\%. Concluiu-se que esta diferença se devia à dissipação dos outros componentes do circuito, que não foram contabilizados.
 
 No que diz respeito às impedâncias de entrada e saída, conclui-se que o circuito têm uma grande impedância de entrada e uma baixa impedância de saída, como se pode verificar pela análise da tabela \ref{tab:analiseimpedancias}.
 Verificou-se ainda qual a atenuação a $-3dB$ e concluiu-se que esta acontece a cerca de $58kHz$, ou seja, a partir desta frequência o ganho de tensão decresce drasticamente.
