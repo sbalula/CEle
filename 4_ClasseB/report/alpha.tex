@@ -67,13 +67,30 @@ includefoot
 %height=10in,a5paper,hmargin={3cm,0.8in},
 ]{geometry}
 
+
+\if11
+%%%%%%%%%%%%%%% Poupar espaço
+%\oddsidemargin = 0pt                    % Margem do lado esquerdo: 31pt
+\topmargin = -20mm                        % Margem superior: 20pt  
+\headheight = 10pt                       % Tamanho do 'header': 12pt 
+\headsep = 3mm                      % Espaço entre o 'header' e o texto: 25pt
+\textheight = 275mm                      % Altura do texto: 592pt
+\textwidth = 190mm                      % Largura do texto: 390pt
+%\marginparsep = 10pt                     % Espaço entre margem esquerda e o texto: 10pt
+%\marginparwidth = 35pt                   % Margem esquerda: 35pt
+\footskip = 0pt                         % Espaço entre o texto e o 'footer': 30pt
+\oddsidemargin = -15mm
+\abovedisplayskip = 1mm
+\belowdisplayskip = 1mm
+\textfloatsep = 1mm
+
+\usepackage[compact]{titlesec}
+%%%%%%%%%%%%%
+\fi
+
+
 \begin{document}
 \preprint{APS/123-QED}
-%\captionsetup[table]{font=small,skip=0pt}
-%\captionsetup[figure]{font=small,skip=0pt}
-%\titlespacing{\section}{0pt}{*0}{*0}            %Poupar espaço
-%\titlespacing{\subsection}{0pt}{*0}{*0}
-%\titlespacing{\subsubsection}{0pt}{*0}{*0}
 
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
@@ -83,7 +100,7 @@ includefoot
 
 \title{Andar final de amplificação em classe B\\
 com transistores bipolares 2n3055}
-\thanks{}
+%\thanks{}
 
 \author{Pedro Ribeiro}%
 \email{73221, pedro.q.ribeiro@tecnico.ulisboa.pt}
@@ -104,7 +121,7 @@ com transistores bipolares 2n3055}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-Neste trabalho laboratorial é montado um andar de saída em classe B, obtendo-se a característica de tensão e corrente, a partir das quais se determina o respectivo ganho. Determina-se a potência fornecida e dissipada por cada um dos elementos do circuito, a eficiência, as impedâncias de entrada e saída, e o ganho de corrente em função da frequência.
+Neste trabalho laboratorial é montado um andar de saída em classe B, obtendo-se a característica de tensão e corrente, a partir das quais se determina um ganho de tensão $0.978\pm0.015$ e de corrente $118\pm1$. Determina-se a potência fornecida e dissipada por cada um dos elementos do circuito, a eficiência, as impedâncias de entrada e saída, e o ganho de corrente em função da frequência.
 
 \end{abstract}
 \maketitle
@@ -137,6 +154,9 @@ Assumindo Q1 em condução e Q2 em corte:
 \frac{1}{I_{ES} R_1}
 }{
 \frac{v_o}{I_{ES} R_1} + 1} + 1}^{-1}}
+
+Obtêm-se uma expressão equivalente para Q2 em condução e Q1 em corte. Para os valores em causa, $G_v \sim 1$. Para a corrente, pode escrever-se \eqref{transi}, sendo o ganho $G_i = \beta_f +1$.
+\eq[transi]{i_o = (\beta_f + 1) i_i}
 
 \subsection{Potências dissipadas e eficiência}
 O andar de saída em classe B como tem dois transístores que funcionam alternadamente para amplificar o sinal de entrada, possui uma eficiência bastante superior quando comparado com a eficiência do andar de classe A.\\
@@ -242,7 +262,7 @@ Ajuste pelo método dos mínimos quadrados a uma função do tipo $y=mx+b$. Par�
 Apresenta-se na \rfig{../gnuplot/vo(vi).pdf} a funçao de transferência vo(vi) e na \rfig{../gnuplot/io(ii).pdf} a característica de corrente io(ii). Procedeu-se a um ajuste aos pontos (sem considerar erros experimentais), com o qual se determinou o ganho de tensão $0.978\pm0.015$ e de corrente $118\pm1$. Apresenta-se também na \rfig{../gnuplot/xy.pdf} uma aquisição do osciloscópio no modo xy.
 Determinou-se que o valor máximo de vo para o qual não há distorção é $6.57 V rms$, isto é $9.29 V$ de amplitude.
 
-A distorção ocorre quando a tensão de saída atinge $V_{dd} - V_{ce_{saturacao}}$ ou $V_{ss} + V_{ec_{saturacao}}$, sendo que neste caso os valores são iguais em módulo. Como $V_{ce_{saturacao}}~0.7V$, $vo_{max}\approx9.7 V$.
+A distorção ocorre quando a tensão de saída atinge $V_{dd} - V_{ce_{saturacao}}$ ou $V_{ss} + V_{ec_{saturacao}}$, sendo que neste caso os valores são iguais em módulo. Como $V_{ce_{saturacao}}\sim0.5V$, $vo_{max}\approx9.5 V$.
 
 
 \subsection{Potências fornecidas e dissipadas}
@@ -266,7 +286,7 @@ Eficiência (\%)   & 68.3
 \label{tab:fixe}
 \end{table}
 O rendimento obtido foi de 68.3\%, ligeiramente mais baixo que o rendimento previsto de 78.5\%
-Considerou-se para o cálculo das potências dissipadas considerou-se que metade da potência dissipada pela resistência  de carga é fornecida pela fonte positiva, e a outra metade pela fonte negativa.
+Considerou-se para o cálculo das potências dissipadas considerou-se que metade da potência dissipada pela resistência de carga é fornecida pela fonte positiva, e a outra metade pela fonte negativa.
 
 \subsection{Impedâncias de entrada e saída}
 
@@ -332,9 +352,11 @@ Variando a frequência do sinal de entrada mediram-se as tensões de entrada e d
 
 \subsection{Função de transferência}
 
-Os valores obtidos para o ganho de tensão e de corrente estão de acordo com o esperado, com 
+Os valores obtidos para o ganho de tensão e de corrente estão de acordo com o esperado, obtendo-se $\beta_f = 117\pm1$, o que é coerente com o indicado na figura 3 de \cite{data}, para uma temperatura ambiente de cerca de 25 ºC e uma corrente de cerca de 1A.
 
-O valor obtido para a tensão máxima sem distorção está de acordo com o obtido experimentalmente.
+O valor obtido para a tensão máxima sem distorção está aproximadamente de acordo com o obtido experimentalmente.
+
+Ambas as funções de transferência apresentam um comportamento linear.
 
 \subsection{Potências fornecidas e dissipadas}
 Dos resultados da tabela \ref{tab:fixe}, conclui-se que a eficiência do andar estudado é de 68.3\% quando a tensão de entrada é a máxima sem a existência de distorção. Este valor é ligeiramente inferior ao valor previsto pela teoria de 78.5\%, diferença essa que pode ser explicada pelo facto de apenas se considerar no modelo teórico as perdas nos transístores, enquanto que nos cálculos para a eficiência experimental se contabilizam todas as perdas.\\
@@ -376,7 +398,7 @@ Tendo em conta que o máximo de  $i_o/i_i (dB)$ é de $27.1 dB$ traçou-se uma r
 \section{Conclusões e Críticas}
 \label{s:conclu}
 %Incluir melhorias propostas à experiência
-
+O andar de saída em classe B proporciona um ganho de tensão próximo da unidade e um ganho de corrente na ordem da centena, para as condições de trabalho utilizadas, o que está de acordo com as previsões teóricas e a caracterização do fabricante.
 
 %\begin{acknowledgments}
 %\end{acknowledgments}
