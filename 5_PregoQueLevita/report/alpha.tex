@@ -173,13 +173,21 @@ O circuito apresentado na \rfig{../img/divtensao.png} é um simples divisor de t
 
 
 
-\subsection{Fotoresistencia}
+\subsection{Fotoresistência}
 %6
-
-
-
-
-
+Uma fotoresistência é um componente composto por um material que sofre variação da sua resistividade com a variação da intensidade da luz incidente neste (também conhecido como fotocondutividade).\\
+O dispositivo utilizado sofria um aumento da sua condutividade (e consequentemente uma diminuição da resistência) com o aumento da intensidade luminosa. Integrando este dispositivo num divisor de tensão, como se mostra na figura \ref{fig:foto_res}, que obedece à relação:
+\begin{equation}
+V_{out}=\frac{R_3}{R_3+R_4}V_{in}
+\label{eq:div_t}
+\end{equation}
+\begin{figure}
+\includegraphics[width=3in]{../img/sensor.png}
+\caption{Esquemático do divisor de tensão de tensão onde se inseriu o sensor ($R_3$) com seguidor de tensão.}
+\label{fig:foto_res}
+\end{figure}
+Desta forma, e de acordo com a relação obtida em \ref{eq:div_t}, o sinal de saída do divisor de tensão será tanto maior quanto maior for a resistência $R_3$, ou seja, quanto menor for a intensidade da luz incidente no sensor.\\
+Coloca-se um seguidor de tensão em série com a saída do divisor de tensão para minimizar a impedância de saída deste.
 
 
 \subsection{tensão de referência}
