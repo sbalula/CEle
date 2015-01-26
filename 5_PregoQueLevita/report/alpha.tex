@@ -82,7 +82,7 @@ includefoot
  
 
 \title{Levitação magnética com electroiman e fotoresistência}
-\thanks{}
+%\thanks{}
 
 \author{Pedro Ribeiro}%
 \email{73221, pedro.q.ribeiro@tecnico.ulisboa.pt}
@@ -105,7 +105,7 @@ includefoot
 \begin{abstract}
 Neste trabalho laboratorial implementa-se um sistema de controlo que mantem em levitação um objeto metálico não magnetizado.
 ......................................
-#1
+%1
 
 
 \end{abstract}
@@ -117,36 +117,56 @@ Neste trabalho laboratorial implementa-se um sistema de controlo que mantem em l
 \label{s:intro}
 %Situar o problema, incluir fórmulas.
 %Quem lê o relatório deve conseguir perceber exatamente o que foi feito.
-#2
+%2
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Experiência realizada %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experiência Realizada}
 \label{s:expreal}
 %Incluir diagrama de blocos da montagem
-De acordo com as instruções do guia, implentou-se o circuito da \rfig{../img/esquematico.png}. Apresentam-se na tabela \ref{partlist} os componentes utilizados.
+De acordo com as instruções do guia, implentou-se o circuito da \rfig{../img/esquematico.png}. Apresentam-se na tabela \ref{partlist} os componentes eléctricos utilizados, montados numa breadboard.
 
 \figurao{../img/esquematico.png}{Circuito implementado no laboratório}
 
 \tabela[partlist]{Lista dos componentes utilizados}{lrrr}{
 	Descrição		&Modelo/Valor		&Qt.			&Referência	\\ \hline
-	Ampl. operacional	&			&1			&		\\
-	Cond. cerâmico		&nF			&1			&		\\
-	Resistência .25W	&$\Omega$		&4			&		\\
-	#3
+	Bobine c/ núcleo ferro	&			&1			&L1		\\
+	Fotoresistência		&			&1			&R3		\\
+	Trans. J. Bipolar NPN	&2N3055			&1			&Q1		\\
+	Trans. J. Bipolar PNP	&MJ2955			&1			&Q2		\\
+	Ampl. operacional	&LM741			&5			&UX		\\
+	LED			&red			&1			&LED		\\
+	Cond. electrolítico	&1$\mu$F		&1			&C1		\\
+	Potenciómetro		&10K$\Omega$		&1			&R5		\\
+	Resistência .25W	&100$\Omega$		&1			&R0		\\
+	Resistência .25W	&300$\Omega$		&1			&R4		\\
+	Resistência .25W	&1K$\Omega$		&1			&R10		\\
+	Resistência .25W	&2.2K$\Omega$		&1			&R12		\\
+	Resistência .25W	&5.6K$\Omega$		&1			&R1		\\
+	Resistência .25W	&10K$\Omega$		&1			&R2		\\
+	Resistência .25W	&15K$\Omega$		&1			&R11		\\
+	Resistência .25W	&56K$\Omega$		&4			&R6-9		\\
+	%3
 }
 
 Para facilidade de análise, divide-se o circuito nas suas partes constituintes, que se analisam separadamente.
 
+
 \subsection{LED}
 %4
-	
-	
+\fig[.2]{../img/led.png}{Circuito do LED}
+
+Para iluminar um led, colocado em frente à fotoresistência, utilizou-se o circuito da \rfig{../img/led.png}. Para a tensão de alimentação de cerca de 10V utilizada, a corrente é dada por \eqref{eled}. O valor é suficientemente alto para que a intensidade da radiação emitida influence a resistência variável fotosensível, estando dentro dos limites eléctricos de funcionamento.
+
+\eq[eled]{I=\frac{V_{cc}-V_d}{R_0} \approx 93 mA}
 	
 	
 \subsection{Divisor de Tensão}
 %Da a tensao de referencia
 %5
 
+\fig{../img/divtensao.png}{Excerto do esquemático representando o divisor de tensão}
+
+O circuito apresentado na \rfig{../img/divtensao.png} é um simples divisor de tensão, formado pelas resistências R1 e R2, e um seguidor de tensão, em que se usa um amplificador operacional LM741. Para uma tensão de referência de 10V, obtÊm-se uma referência de 3.6V. Utiliza-se este divisor afim de evitar tensões (e correntes) excessivas nos andares seguintes, em particular tendo em conta a fotoresistência, que pode apresentar resistências da ordem das centenas de $\Omega$.
 
 
 
@@ -182,6 +202,27 @@ Para facilidade de análise, divide-se o circuito nas suas partes constituintes,
 \subsection{Amplificador não inversor}
 %9
 
+Considere-se a tipologia apresentada na \rfig{../img/somador1.png}.
+
+\fig{../img/somador1.png}{Circuito somador}
+\fig{../img/somador2.png}{Circuito somador genérico}
+
+\eq{V_0=V_+ - R_r i_{R_r}}
+\eq{\frac{V_3-V_+}{R_3}+\frac{V_4-V_+}{R_4}=i_{R_r}}
+\eq{V_0=V_+-R_r\lr{\frac{V_3-V_+}{R_3} + \frac{V_4-V_+}{R_4}}}
+
+\eq{0 = \frac{V_1-V_+}{R_1} + \frac{V_2-V_+}{R_2}}
+\eq{V_+=\frac{\frac{V_1}{R_1} + \frac{V_2}{R_2}}{\frac{1}{R_1} + \frac{1}{R_2}}}
+
+Generalizando para j entradas não inversoras e k entradas inversoras, de acordo com o esquema da \rfig{../img/somador2.png}
+\eq[sum1]{V_+ = \frac{\sum_{i=1}^{j}{\frac{V_{pi}}{R_{pi}}}}{\sum_{i=1}^{j}{\frac{1}{R_{pi}}}}}
+\eq[sum2]{V_0 = V_+ - R_r \sum_{i=1}^{k}{\frac{V_{mi}-V_+}{R_{mi}}}}
+
+Tomando $V_{p1}=V_{in}$, $R_{p1}=0$, $V_{m1}=0$, $R_{m1}=R10$ e $R_r = R_{11}$, \eqref{sum1} e \eqref{sum2} tomam a forma:
+\eq{V_+ = V_{in}}
+\eq{V_0 = V_+\lr{1+\frac{R_{11}}{R_{10}}}}
+
+Isto é, um amplificador não inversor. Para os valores das resistências utilizadas têm-se um factor de ganho 16.
 
 
 
