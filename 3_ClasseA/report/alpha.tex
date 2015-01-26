@@ -121,7 +121,7 @@ com transistores bipolares 2n3055}
 Neste trabalho laboratorial é montado um andar de saída em classe A, usando transístores bipolares 2n3055.
 Medem-se, calculam-se e determinam-se com recurso a uma simulação em spice as correntes, tensões e potências com o circuito no ponto de funcionamento em repouso bem como com sinais periódicos de diferentes frequências.
 Determinam-se a função de transferência, característica de corrente, impedâncias de entrada e saída e banda passante.
-Determina-se que o ganho de tensão é de $G_v=0.96\pm0.01$, e o de corrente de $G_i=78.12\pm1.07$.
+Determina-se que o ganho de tensão é de $G_v=0.98\pm0.01$, e o de corrente de $G_i=78.12\pm1.07$.
 Verifica-se que as impedâncias do circuito são $Z_{in}=2570.59\pm78.55 \Omega$, $Z_{01}=1.038\pm0.751 \Omega$ e $Z_{02}=0.664\pm0.009 \Omega$. O limite superior da banda passante a $-3dB$ encontra-se em $58kHz$.
 
 \end{abstract}
@@ -327,7 +327,7 @@ Onde a variável x é a tensão de entrada, a variável y a tensão de saída, a
 \caption{Gráfico da relação entre tensão de entrada e de saída da montagem utilizada e respectivo ajuste linear. É possível observar que para valores de tensão de entrada muito negativa, começa a haver distorção.}
 \label{fig:v_rel}
 \end{figure}
-Os resultados obtidos através do ajuste foram os seguintes: a=$G_v=0.96\pm0.01$, b=$-0.69\pm0.01$V.
+Os resultados obtidos através do ajuste foram os seguintes: a=$G_v=0.98\pm0.01$, b=$-0.75\pm0.01$V.
 
 Para a relação entre corrente de entrada e de saída do circuito também se realizou um ajuste linear semelhante ao realizado anteriormente para se obter o ganho de corrente, apresentado juntamente com os dados experimentais na figura \ref{fig:curr_rel}.
 \begin{figure}
@@ -441,7 +441,7 @@ Variou-se a frequência do sinal de entrada e mediu-se, utilizando multímetros,
 Os resultados experimentais apresentados na tabela \ref{PFR} não são compatíveis com as previsões teóricas ou com os resultados da simulação. São, todavia, coerentes para cada análise, conforme se pode verificar pelo somatório das potências na tabela \ref{Potdiss}, que admite o valor zero experimentalmente e tem valores muito próximos de zero tanto na análise teórica como na simulação. Pode explicar-se esta diferença com a sensibilidade aos valores das resistências, conforme se pode verificar facilmente pela variação dos valores destas na simulação. Em particular, se se variar a resistência de saída do gerador num fator inferior a 2, os resultados da simulação aproximam-se dos verificados experimentalmente. Contribuem para estas diferenças entre os valores marcados dos componentes e os efetivos no circuito as ligações elétricas, que se revelaram nalguns pontos pouco fidedignas, ou os cabos, com comprimentos consideráveis e cujas resistências podem não ser desprezadas quando comparadas com as baixas resistências dos componentes envolvidos.
 
 \subsection{Função de transferência}
-O resultado experimental obtido para o ganho de tensão da montagem, $G_v=0.96\pm0.01$, está em concordância com a equação \ref{eq:g_v} e com o valor esperado de $G_v=1$. Nota-se também que a tensão mínima de saída é de cerca de $V_{o_{min}}\approx7.8$, o que implicaria que a tensão de saturação do transístor seria de $V_{{CE}_{sat}}\approx0.2V$, o que está de acordo com as especificações do fabricante, que estipula que o valor máximo desta tensão não ultrapassa 1.1V.\\
+O resultado experimental obtido para o ganho de tensão da montagem, $G_v=0.98\pm0.01$, está em concordância com a equação \ref{eq:g_v} e com o valor esperado de $G_v=1$. Nota-se também que a tensão mínima de saída é de cerca de $V_{o_{min}}\approx7.8$, o que implicaria que a tensão de saturação do transístor seria de $V_{{CE}_{sat}}\approx0.2V$, o que está de acordo com as especificações do fabricante, que estipula que o valor máximo desta tensão não ultrapassa 1.1V.\\
 Quanto ao ganho de corrente, o resultado obtido foi de $G_i=78.12\pm1.07$. Pela equação \ref{eq:g_i} determinou-se que o ganho dos transístores utilizados era de $\beta_F=77.12$, estando este valor de acordo com as especificações do fabricante, que estipula que o ganho de corrente dos transístores é de cerca de 70.
 
 \subsection{Potências fornecidas e dissipadas}
