@@ -103,7 +103,7 @@ includefoot
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-Neste trabalho laboratorial implementa-se um sistema de controlo que mantem em levitação um objeto metálico não magnetizado.
+Neste trabalho laboratorial implementa-se um sistema de controlo que mantém em levitação um objeto metálico não magnetizado. Para tal utilizou-se um electroíman e uma fotoresistência e implementou-se um circuito que se encarregou do controlo do sistema. Conseguiu-se manter o objecto em levitação, contudo o sistema era muito instável e quando ocorria uma perturbação o equilibrio era perdido.
 ......................................
 %1
 
@@ -181,7 +181,7 @@ O dispositivo utilizado sofria um aumento da sua condutividade (e consequentemen
 V_{out}=\frac{R_3}{R_3+R_4}V_{in}
 \label{eq:div_t}
 \end{equation}
-\begin{figure}
+\begin{figure}[h]
 \includegraphics[width=3in]{../img/sensor.png}
 \caption{Esquemático do divisor de tensão de tensão onde se inseriu o sensor ($R_3$) com seguidor de tensão.}
 \label{fig:foto_res}
@@ -190,10 +190,15 @@ Desta forma, e de acordo com a relação obtida em \ref{eq:div_t}, o sinal de sa
 Coloca-se um seguidor de tensão em série com a saída do divisor de tensão para minimizar a impedância de saída deste.
 
 
-\subsection{tensão de referência}
+\subsection{Tensão de referência}
 %7
+De modo a definir uma tensão de referência com a qual trabalhar e para ser de fácil ajuste utilizou-se um potenciómetro. Esta parte do circuito encontra-se representada na figura \ref{fig:tensaoreferencia}, sendo que o potenciómetro é representado pela resistência $R_5$. Esta tensão de referência liga posteriormente ao somador integrador. É de salientar que é esta tensão de referência que vai determinar qual a distância que queremos entre o objecto metálico e o electroíman.
 
-
+\begin{figure}[h]
+\includegraphics[width=3in]{../img/ref.png}
+\caption{Esquemático do potenciómetro utilizado, que é representado pela resistência $R_5$.}
+\label{fig:tensaoreferencia}
+\end{figure}
 
 
 
@@ -241,7 +246,12 @@ Isto é, um amplificador não inversor. Para os valores das resistências utiliz
 
 \subsection{Rectificação}
 %10
-
+Implementou-se no circuito um rectificador, sendo que a função deste é fazer com que o objecto metálico não magnetizado não seja atraído quando está demasiado perto do electroíman. Isto é conseguido uma vez que quando o objecto está mais próximo do electroíman do que se pretende (distância definida com a tensão de referência) o sinal produzido é negativo, e o objecto continuaria a ser atraído. Contudo com a implementação do rectificador isto já não acontece. Este rectificador está representado na figura \ref{fig:rectificador}.
+\begin{figure}[h]
+\includegraphics[width=3in]{../img/rectificador.png}
+\caption{Esquemático rectificador implementado.}
+\label{fig:rectificador}
+\end{figure}
 
 
 
