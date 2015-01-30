@@ -208,13 +208,39 @@ De modo a definir uma tensão de referência com a qual trabalhar e para ser de 
 
 \subsection{Somador integrador}
 %8
-
-
-
-
-
-
-
+O somador integrador utilizado pode ser decomposto como sendo um somador e um integrador em série, como está representado no esquema da figura \ref{fig:intg}.
+\begin{figure}[h]
+\includegraphics[width=3in]{../img/intg.png}
+\caption{Esquemático do somador integrador utilizado e do esquema equivalente.}
+\label{fig:intg}
+\end{figure}
+Assim, para calcular qual o valor de tensão à saída deste bloco, primeiro será necessário calcular qual a tensão à saída do somador e de seguida, qual a tensão à saída do integrador.\\
+Assumindo que as resistências são todas iguais (como é o caso na montagem utilizada) com valor $R$, utlizando a lei da sobreposição, tem-se que, anulando $V_{Ref}$:
+\begin{equation}
+\frac{V_{Sig}}{R}=\frac{V_1-V_{in}}{R}\Rightarrow V_1=2V_{Sig}
+\end{equation}
+Por outro lado, anulando $V_{Sig}$:
+\begin{equation}
+\frac{V_{ref}}{R}=-\frac{V_1}{R}\Rightarrow V_{1}=-V_{Ref}
+\end{equation}
+Somando as duas contribuições é possível obter o valor de tensão à entrada do bloco integrador:
+\begin{equation}
+V_1=2V_{Sig}-V_{Ref}
+\end{equation}
+Para o bloco integrador, a equação que descreve o circuito é simplesmente:
+\begin{equation}
+C\frac{\mathrm{d}V_{out}}{\mathrm{d}t}=-\frac{V_1}{R}
+\end{equation}
+O que resulta em (resolvendo a equação diferencial):
+\begin{equation}
+V_{out}(t)=V_1(t=0)- \frac{ 1 }{RC} \int_{0}^{T}V_{\text{1}}(t)\, \operatorname{d}t
+\end{equation}
+E consequentemente:
+\begin{equation}
+V_{out}(t)=-\frac{ 1 }{RC} \int_{0}^{T}2V_{Sig}(t)-V_{Ref}(t)\, \operatorname{d}t
+\end{equation}
+Visto que a resistência utilizada tinha $R=56\mathrm{k}\Omega$ e o condensador $C=1\mu$F, a constante de tempo deste integrador é $\tau=RC=56\mathrm{ms}$.
+A função do somador integrador é adicionar inércia ao sistema, isto é, fazer com que os valores de saída tenham tendência a ir de forma menos impulsiva para o valor de referência (que aconteceria caso só houvesse bloco proporcional ou diferencial neste PID).
 \subsection{Amplificador não inversor}
 %9
 
@@ -262,7 +288,17 @@ Implementou-se no circuito um rectificador, sendo que a função deste é fazer 
 
 \subsection{Andar de saída em classe B}
 %11
-
+O andar de saída utilizado nesta montagem (e representado na figura \ref{fig:B_team}) para alimentar a bobina que servia de electroíman, foi um andar em classe B, visto que este andar possui boa eficiência, um ganho de corrente elevado, pois este é dado por:
+\begin{equation}
+i_o=(\beta_f+1)i_i
+\end{equation}
+Onde $\beta_f\approx70$ e principalmente, porque o atraso entre a chegada do sinal a amplificar na entrada e a emissão do sinal amplificado na saída era muito reduzido. É de notar também que para o aparelho a controlar, a distorção de cruzamento era desprezável.
+\begin{figure}[h]
+\includegraphics[width=3in]{../img/andardesaida.png}
+\caption{Esquemático do andar de saída em classe B implementado.}
+\label{fig:B_team}
+\end{figure}
+Realça-se que o sinal de entrada foi condicionado de maneira a que os transístores do andar de saída nunca entrassem na zona de saturação.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Resultados %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
